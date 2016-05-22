@@ -1,0 +1,1209 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>css3教程笔记 | matt&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Matt.Wu">
+    
+
+    
+    <meta name="description" content="CSS3视频教程一、CSS3新增选择器
+【动态添加CSS样式】var rule = div &amp;#123;background:blue;&amp;#125;//在第二个&amp;lt;style&amp;gt;标签中插入的第一条规则前插入一条新规则ruledocument.styleSheets[1].insertRule(rule,0);
+【新增选择器】
+
+
+选择器
+例子
+说明
+
+
+
+
+:only-child
+p:on">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3教程笔记">
+<meta property="og:url" content="http://yoomin1106.github.io/2014/07/03/note/CSS3_note/index.html">
+<meta property="og:site_name" content="matt's blog">
+<meta property="og:description" content="CSS3视频教程一、CSS3新增选择器
+【动态添加CSS样式】var rule = div &amp;#123;background:blue;&amp;#125;//在第二个&amp;lt;style&amp;gt;标签中插入的第一条规则前插入一条新规则ruledocument.styleSheets[1].insertRule(rule,0);
+【新增选择器】
+
+
+选择器
+例子
+说明
+
+
+
+
+:only-child
+p:on">
+<meta property="og:updated_time" content="2016-01-10T05:17:54.846Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3教程笔记">
+<meta name="twitter:description" content="CSS3视频教程一、CSS3新增选择器
+【动态添加CSS样式】var rule = div &amp;#123;background:blue;&amp;#125;//在第二个&amp;lt;style&amp;gt;标签中插入的第一条规则前插入一条新规则ruledocument.styleSheets[1].insertRule(rule,0);
+【新增选择器】
+
+
+选择器
+例子
+说明
+
+
+
+
+:only-child
+p:on">
+
+    
+    <link rel="alternative" href="/atom.xml" title="matt&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="matt&#39;s blog" title="matt&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="matt&#39;s blog">matt&#39;s blog</a></h1>
+				<h2 class="blog-motto">Write to remember!</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoomin1106.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/07/03/note/CSS3_note/" title="css3教程笔记" itemprop="url">css3教程笔记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Matt.Wu" target="_blank" itemprop="author">Matt.Wu</a>
+		
+  <p class="article-time">
+    <time datetime="2014-07-02T16:00:00.000Z" itemprop="datePublished"> 发表于 2014-07-03</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS3视频教程"><span class="toc-number">1.</span> <span class="toc-text">CSS3视频教程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、CSS3新增选择器"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">一、CSS3新增选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#【动态添加CSS样式】"><span class="toc-number">1.0.0.1.1.</span> <span class="toc-text">【动态添加CSS样式】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【新增选择器】"><span class="toc-number">1.0.0.1.2.</span> <span class="toc-text">【新增选择器】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【其他选择器】"><span class="toc-number">1.0.0.1.3.</span> <span class="toc-text">【其他选择器】</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、响应式布局"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">二、响应式布局</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#【style标签里使用media】"><span class="toc-number">1.0.0.2.1.</span> <span class="toc-text">【style标签里使用media】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【media媒体类型】"><span class="toc-number">1.0.0.2.2.</span> <span class="toc-text">【media媒体类型】</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、边框"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">三、边框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、背景"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">四、背景</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#【background-origin根据位置定位】"><span class="toc-number">1.0.0.4.1.</span> <span class="toc-text">【background-origin根据位置定位】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【background-size-属性规定背景图像的尺寸】"><span class="toc-number">1.0.0.4.2.</span> <span class="toc-text">【background-size 属性规定背景图像的尺寸】</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、文本效果"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">五、文本效果</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#【新的文本属性】"><span class="toc-number">1.0.0.5.1.</span> <span class="toc-text">【新的文本属性】</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、字体"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">六、字体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#七、2D转换"><span class="toc-number">1.0.0.7.</span> <span class="toc-text">七、2D转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#【transform】"><span class="toc-number">1.0.0.7.1.</span> <span class="toc-text">【transform】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【transform-origin】"><span class="toc-number">1.0.0.7.2.</span> <span class="toc-text">【transform-origin】</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#八、3D转换"><span class="toc-number">1.0.0.8.</span> <span class="toc-text">八、3D转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#【transform】-1"><span class="toc-number">1.0.0.8.1.</span> <span class="toc-text">【transform】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【其他转换属性】"><span class="toc-number">1.0.0.8.2.</span> <span class="toc-text">【其他转换属性】</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#九、过渡"><span class="toc-number">1.0.0.9.</span> <span class="toc-text">九、过渡</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#【transition】"><span class="toc-number">1.0.0.9.1.</span> <span class="toc-text">【transition】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【transition-property】过渡的属性名"><span class="toc-number">1.0.0.9.2.</span> <span class="toc-text">【transition-property】过渡的属性名</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【transition-duration过渡花费的时间】"><span class="toc-number">1.0.0.9.3.</span> <span class="toc-text">【transition-duration过渡花费的时间】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【transition-timing-function】属性规定过渡效果的速度曲线"><span class="toc-number">1.0.0.9.4.</span> <span class="toc-text">【transition-timing-function】属性规定过渡效果的速度曲线</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【transition-delay】规定过渡效果何时开始"><span class="toc-number">1.0.0.9.5.</span> <span class="toc-text">【transition-delay】规定过渡效果何时开始</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十、动画"><span class="toc-number">1.0.0.10.</span> <span class="toc-text">十、动画</span></a></li></ol></li></ol></li></ol></li></ol>
+		
+		</div>
+		
+		<h1 id="CSS3视频教程"><a href="#CSS3视频教程" class="headerlink" title="CSS3视频教程"></a>CSS3视频教程</h1><h4 id="一、CSS3新增选择器"><a href="#一、CSS3新增选择器" class="headerlink" title="一、CSS3新增选择器"></a>一、CSS3新增选择器</h4><hr>
+<h5 id="【动态添加CSS样式】"><a href="#【动态添加CSS样式】" class="headerlink" title="【动态添加CSS样式】"></a>【动态添加CSS样式】</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> rule = div &#123;background:blue;&#125;</span><br><span class="line"><span class="comment">//在第二个&lt;style&gt;标签中插入的第一条规则前插入一条新规则rule</span></span><br><span class="line"><span class="built_in">document</span>.styleSheets[<span class="number">1</span>].insertRule(rule,<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+<h5 id="【新增选择器】"><a href="#【新增选择器】" class="headerlink" title="【新增选择器】"></a>【新增选择器】</h5><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>例子</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:only-child</code></td>
+<td><code>p:only-child</code></td>
+<td>选择器独生的P标签</td>
+</tr>
+<tr>
+<td><code>:nth-child(n)</code></td>
+<td><code>p:nth-child(2)</code></td>
+<td>匹配父元素的中第2个P元素，n可以是数字、关键词或公式，odd和even表示下标奇数或偶数</td>
+</tr>
+<tr>
+<td><code>:nth-last-child(n)</code></td>
+<td><code>p:nth-last-child(2)</code></td>
+<td>同上，从最后一个子元素开始计数</td>
+</tr>
+<tr>
+<td><code>:last-child</code></td>
+<td><code>p:last-child</code></td>
+<td>选择在其父元素中是最后一个的P元素</td>
+</tr>
+<tr>
+<td><code>:root</code></td>
+<td><code>:root</code></td>
+<td>文档的根元素</td>
+</tr>
+<tr>
+<td><code>:empty</code></td>
+<td><code>p:empty</code></td>
+<td>选择内容为空的P元素</td>
+</tr>
+<tr>
+<td></td>
+<td><code>p~ul</code></td>
+<td>选择前面有p元素的每个ul元素</td>
+</tr>
+<tr>
+<td> <code>:first-of-type</code></td>
+<td><code>p:first-of-type</code></td>
+<td>匹配同级兄弟元素中的第一个P元素</td>
+</tr>
+<tr>
+<td> <code>:only-of-type</code></td>
+<td><code>p:only-of-type</code></td>
+<td>匹配属于同类型中只有唯一兄弟元素的P</td>
+</tr>
+<tr>
+<td> <code>:target</code></td>
+<td><code>#news.target</code></td>
+<td>当前活动的<code>#news</code>元素</td>
+</tr>
+</tbody>
+</table>
+<h5 id="【其他选择器】"><a href="#【其他选择器】" class="headerlink" title="【其他选择器】"></a>【其他选择器】</h5><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>例子</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[attribute^=value]</code></td>
+<td><code>a[src^=&quot;https&quot;</code></td>
+<td>匹配src属性以https开头的a元素，<code>$=&quot;.pdf&quot;</code>匹配<code>.pdf</code>结尾，<code>*=&quot;abc&quot;</code>匹配包含abc字符串的元素</td>
+</tr>
+<tr>
+<td><code>:enabled</code></td>
+<td><code>input:enabled</code></td>
+<td>处于启用状态的input元素，相反用<code>:disabled</code></td>
+</tr>
+<tr>
+<td><code>:checked</code></td>
+<td></td>
+<td>被选中的元素</td>
+</tr>
+<tr>
+<td><code>:not(selector)</code></td>
+<td><code>:not(p)</code></td>
+<td>选择所有非P元素</td>
+</tr>
+<tr>
+<td><code>::selection</code></td>
+<td></td>
+<td>选择被用户选取的元素部分</td>
+</tr>
+</tbody>
+</table>
+<h4 id="二、响应式布局"><a href="#二、响应式布局" class="headerlink" title="二、响应式布局"></a>二、响应式布局</h4><hr>
+<p>#####【link标签响应式布局】<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"1.css"</span> <span class="attr">media</span>=<span class="string">"screen and (min-width:900px)"</span> /&gt;</span> //表示当宽度大于900像素时引入`1.CSS`文件</span><br></pre></td></tr></table></figure></p>
+<h5 id="【style标签里使用media】"><a href="#【style标签里使用media】" class="headerlink" title="【style标签里使用media】"></a>【style标签里使用media】</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (min-width:<span class="number">1000px</span>) &#123;     <span class="comment">/*当屏幕宽度大于1000像素时使用此样式规则，and表示与，还有only,not以及逗号","表示多个设备 */</span></span><br><span class="line">	<span class="selector-class">.one</span> &#123;</span><br><span class="line">		<span class="attribute">width</span>:<span class="number">300px</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> screen and (min-width:<span class="number">1000px</span>),tv and (mind-width:<span class="number">200px</span>) &#123;&#125;  <span class="comment">/*逗号用于多个设备*/</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>and 后面可选属性值还有height等，请参考属性表</p>
+</blockquote>
+<h5 id="【media媒体类型】"><a href="#【media媒体类型】" class="headerlink" title="【media媒体类型】"></a>【media媒体类型】</h5><table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>all</td>
+<td>默认，适用于所有设备</td>
+</tr>
+<tr>
+<td>screen</td>
+<td>计算机屏幕</td>
+</tr>
+<tr>
+<td>aural</td>
+<td>语音合成器</td>
+</tr>
+<tr>
+<td>braille</td>
+<td>盲文反馈装置</td>
+</tr>
+<tr>
+<td>handheld</td>
+<td>手持设备（小屏幕、有限的带宽）</td>
+</tr>
+<tr>
+<td>projection</td>
+<td>投影机</td>
+</tr>
+<tr>
+<td>print</td>
+<td>打印预览模式/打印页</td>
+</tr>
+<tr>
+<td>tty</td>
+<td>电传打字机</td>
+</tr>
+<tr>
+<td>tv</td>
+<td>电视类型设备</td>
+</tr>
+</tbody>
+</table>
+<h4 id="三、边框"><a href="#三、边框" class="headerlink" title="三、边框"></a>三、边框</h4><hr>
+<p>#####【border-radius圆角】</p>
+<p>圆角的半径表示圆心距离圆角的距离，越大则越靠近矩形中心，越趋近于圆<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span><span class="selector-pseudo">:5px</span> 10<span class="selector-tag">px</span> 20<span class="selector-tag">px</span> 5<span class="selector-tag">px</span>;    <span class="comment">/*顺序从左上角开始顺时针*/</span></span><br><span class="line"><span class="selector-tag">border-radius</span><span class="selector-pseudo">:50</span>%;   <span class="comment">/*正方形的50%表示是个圆*/</span></span><br></pre></td></tr></table></figure></p>
+<p>#####【box-shadow阴影】</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>h-shadow</td>
+<td>必需。水平阴影的位置。允许负值。    </td>
+</tr>
+<tr>
+<td>v-shadow</td>
+<td>必需。垂直阴影的位置。允许负值。    </td>
+</tr>
+<tr>
+<td>blur</td>
+<td>可选。模糊距离。    </td>
+</tr>
+<tr>
+<td>spread</td>
+<td>可选。阴影的尺寸。    </td>
+</tr>
+<tr>
+<td>color</td>
+<td>可选。阴影的颜色。请参阅 CSS 颜色值。    </td>
+</tr>
+<tr>
+<td>inset</td>
+<td>可选。将外部阴影 (outset) 改为内部阴影。</td>
+</tr>
+</tbody>
+</table>
+<p>#####【border-image边框图像】</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述    </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>border-image-source</td>
+<td>用在边框的图片的路径。    </td>
+</tr>
+<tr>
+<td>border-image-slice</td>
+<td>图片边框向内偏移。    </td>
+</tr>
+<tr>
+<td>border-image-width</td>
+<td>图片边框的宽度。    </td>
+</tr>
+<tr>
+<td>border-image-outset</td>
+<td>边框图像区域超出边框的量。    </td>
+</tr>
+<tr>
+<td>border-image-repeat</td>
+<td>图像边框是否应平铺(repeated)、铺满(rounded)或拉伸(stretched)。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="四、背景"><a href="#四、背景" class="headerlink" title="四、背景"></a>四、背景</h4><hr>
+<p>#####【background-clip背景的绘制区域】</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>border-box</td>
+<td>背景被裁剪到边框盒。</td>
+</tr>
+<tr>
+<td>padding-box</td>
+<td>背景被裁剪到内边距框。</td>
+</tr>
+<tr>
+<td>content-box</td>
+<td>背景被裁剪到内容框。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="【background-origin根据位置定位】"><a href="#【background-origin根据位置定位】" class="headerlink" title="【background-origin根据位置定位】"></a>【background-origin根据位置定位】</h5><p>background-origin 属性规定 background-position 属性相对于什么位置来定位</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>padding-box</td>
+<td>背景图像相对于内边距框来定位。</td>
+</tr>
+<tr>
+<td>border-box</td>
+<td>背景图像相对于边框盒来定位。</td>
+</tr>
+<tr>
+<td>content-box</td>
+<td>背景图像相对于内容框来定位。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="【background-size-属性规定背景图像的尺寸】"><a href="#【background-size-属性规定背景图像的尺寸】" class="headerlink" title="【background-size 属性规定背景图像的尺寸】"></a>【background-size 属性规定背景图像的尺寸】</h5><table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述    </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>length</td>
+<td>设置背景图像的高度和宽度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 “auto”。</td>
+</tr>
+<tr>
+<td>percentage</td>
+<td>以父元素的百分比来设置背景图像的宽度和高度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 “auto”。</td>
+</tr>
+<tr>
+<td>cover</td>
+<td>把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。背景图像的某些部分也许无法显示在背景定位区域中。</td>
+</tr>
+<tr>
+<td>contain</td>
+<td>把图像图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="五、文本效果"><a href="#五、文本效果" class="headerlink" title="五、文本效果"></a>五、文本效果</h4><hr>
+<h5 id="【新的文本属性】"><a href="#【新的文本属性】" class="headerlink" title="【新的文本属性】"></a>【新的文本属性】</h5><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hanging-punctuation</td>
+<td>规定标点字符是否位于线框之外。</td>
+</tr>
+<tr>
+<td>punctuation-trim</td>
+<td>规定是否对标点字符进行修剪。</td>
+</tr>
+<tr>
+<td>text-align-last</td>
+<td>设置如何对齐最后一行或紧挨着强制换行符之前的行。</td>
+</tr>
+<tr>
+<td>text-emphasis</td>
+<td>向元素的文本应用重点标记以及重点标记的前景色。</td>
+</tr>
+<tr>
+<td>text-justify</td>
+<td>规定当 text-align 设置为 “justify” 时所使用的对齐方法。</td>
+</tr>
+<tr>
+<td>text-outline</td>
+<td>规定文本的轮廓。</td>
+</tr>
+<tr>
+<td>text-overflow</td>
+<td>规定当文本溢出包含元素时发生的事情。</td>
+</tr>
+<tr>
+<td>text-shadow</td>
+<td>向文本添加阴影。</td>
+</tr>
+<tr>
+<td>text-wrap</td>
+<td>规定文本的换行规则。</td>
+</tr>
+<tr>
+<td>word-break</td>
+<td>规定非中日韩文本的换行规则。</td>
+</tr>
+<tr>
+<td>word-wrap</td>
+<td>允许对长的不可分割的单词进行分割并换行到下一行。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="六、字体"><a href="#六、字体" class="headerlink" title="六、字体"></a>六、字体</h4><hr>
+<p>在新的 @font-face 规则中，您必须首先定义字体的名称（比如 myFirstFont），然后指向该字体文件。如需为 HTML 元素使用字体，请通过 font-family 属性来引用字体的名称 (myFirstFont)：<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">@<span class="keyword">font-face</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">font-family</span>: myFirstFont;</span><br><span class="line"><span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'Sansation_Light.ttf'</span>),</span><br><span class="line">     <span class="built_in">url</span>(<span class="string">'Sansation_Light.eot'</span>); <span class="comment">/* IE9+ */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">font-family</span>:myFirstFont;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>【使用粗体字体】<br>您必须为粗体文本添加另一个包含描述符的 @font-face：<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">@<span class="keyword">font-face</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">font-family</span>: myFirstFont;</span><br><span class="line"><span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'Sansation_Bold.ttf'</span>),</span><br><span class="line">     <span class="built_in">url</span>(<span class="string">'Sansation_Bold.eot'</span>); <span class="comment">/* IE9+ */</span></span><br><span class="line"><span class="attribute">font-weight</span>:bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>描述符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>font-family</td>
+<td>必需。规定字体的名称。</td>
+</tr>
+<tr>
+<td>src</td>
+<td>必需。定义字体文件的 URL。</td>
+</tr>
+<tr>
+<td>font-stretch</td>
+<td>可选。定义如何拉伸字体。默认是 “normal”。</td>
+</tr>
+<tr>
+<td>font-style</td>
+<td>可选。定义字体的样式。默认是 “normal”。</td>
+</tr>
+<tr>
+<td>font-weight</td>
+<td>可选。定义字体的粗细。默认是 “normal”。</td>
+</tr>
+<tr>
+<td>unicode-range</td>
+<td>可选。定义字体支持的 UNICODE 字符范围。默认是 “U+0-10FFFF”。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="七、2D转换"><a href="#七、2D转换" class="headerlink" title="七、2D转换"></a>七、2D转换</h4><hr>
+<h5 id="【transform】"><a href="#【transform】" class="headerlink" title="【transform】"></a>【transform】</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">transform</span>: <span class="built_in">skew</span>(30deg,20deg);</span><br><span class="line"><span class="attribute">-ms-transform</span>: <span class="built_in">skew</span>(30deg,20deg);	<span class="comment">/* IE 9 */</span></span><br><span class="line"><span class="attribute">-webkit-transform</span>: <span class="built_in">skew</span>(30deg,20deg);	<span class="comment">/* Safari and Chrome */</span></span><br><span class="line"><span class="attribute">-o-transform</span>: <span class="built_in">skew</span>(30deg,20deg);	<span class="comment">/* Opera */</span></span><br><span class="line"><span class="attribute">-moz-transform</span>: <span class="built_in">skew</span>(30deg,20deg);	<span class="comment">/* Firefox */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>matrix(n,n,n,n,n,n)</td>
+<td>定义 2D 转换，使用六个值的矩阵。</td>
+</tr>
+<tr>
+<td>translate(x,y)</td>
+<td>定义 2D 转换，沿着 X 和 Y 轴移动元素。</td>
+</tr>
+<tr>
+<td>translateX(n)</td>
+<td>定义 2D 转换，沿着 X 轴移动元素。</td>
+</tr>
+<tr>
+<td>translateY(n)</td>
+<td>定义 2D 转换，沿着 Y 轴移动元素。</td>
+</tr>
+<tr>
+<td>scale(x,y)</td>
+<td>定义 2D 缩放转换，改变元素的宽度和高度。</td>
+</tr>
+<tr>
+<td>scaleX(n)</td>
+<td>定义 2D 缩放转换，改变元素的宽度。</td>
+</tr>
+<tr>
+<td>scaleY(n)</td>
+<td>定义 2D 缩放转换，改变元素的高度。</td>
+</tr>
+<tr>
+<td>rotate(angle)</td>
+<td>定义 2D 旋转，在参数中规定角度。</td>
+</tr>
+<tr>
+<td>skew(x-angle,y-angle)</td>
+<td>定义 2D 倾斜转换，沿着 X 和 Y 轴。</td>
+</tr>
+<tr>
+<td>skewX(angle)</td>
+<td>定义 2D 倾斜转换，沿着 X 轴。</td>
+</tr>
+<tr>
+<td>skewY(angle)</td>
+<td>定义 2D 倾斜转换，沿着 Y 轴。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="【transform-origin】"><a href="#【transform-origin】" class="headerlink" title="【transform-origin】"></a>【transform-origin】</h5><p>改变元素的位置，该属性必须与 transform 属性一同使用。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x-axis</td>
+<td>定义视图被置于 X 轴的何处。可能的值：left、center、right、length、%</td>
+</tr>
+<tr>
+<td>y-axis</td>
+<td>定义视图被置于 Y 轴的何处。可能的值：top、center、bottom、length、%</td>
+</tr>
+<tr>
+<td>z-axis</td>
+<td>定义视图被置于 Z 轴的何处。可能的值：length</td>
+</tr>
+</tbody>
+</table>
+<h4 id="八、3D转换"><a href="#八、3D转换" class="headerlink" title="八、3D转换"></a>八、3D转换</h4><hr>
+<h5 id="【transform】-1"><a href="#【transform】-1" class="headerlink" title="【transform】"></a>【transform】</h5><table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>定义不进行转换。</td>
+</tr>
+<tr>
+<td>matrix(n,n,n,n,n,n)</td>
+<td>定义 2D 转换，使用六个值的矩阵。</td>
+</tr>
+<tr>
+<td>matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)</td>
+<td>定义 3D 转换，使用 16 个值的 4x4 矩阵。    </td>
+</tr>
+<tr>
+<td>translate(x,y)</td>
+<td>定义 2D 转换。</td>
+</tr>
+<tr>
+<td>translate3d(x,y,z)</td>
+<td>定义 3D 转换。    </td>
+</tr>
+<tr>
+<td>translateX(x)</td>
+<td>定义转换，只是用 X 轴的值。</td>
+</tr>
+<tr>
+<td>translateY(y)</td>
+<td>定义转换，只是用 Y 轴的值。</td>
+</tr>
+<tr>
+<td>translateZ(z)</td>
+<td>定义 3D 转换，只是用 Z 轴的值。    </td>
+</tr>
+<tr>
+<td>scale(x,y)</td>
+<td>定义 2D 缩放转换。</td>
+</tr>
+<tr>
+<td>scale3d(x,y,z)</td>
+<td>定义 3D 缩放转换。    </td>
+</tr>
+<tr>
+<td>scaleX(x)</td>
+<td>通过设置 X 轴的值来定义缩放转换。</td>
+</tr>
+<tr>
+<td>scaleY(y)</td>
+<td>通过设置 Y 轴的值来定义缩放转换。</td>
+</tr>
+<tr>
+<td>scaleZ(z)</td>
+<td>通过设置 Z 轴的值来定义 3D 缩放转换。    </td>
+</tr>
+<tr>
+<td>rotate(angle)</td>
+<td>定义 2D 旋转，在参数中规定角度。</td>
+</tr>
+<tr>
+<td>rotate3d(x,y,z,angle)</td>
+<td>定义 3D 旋转。    </td>
+</tr>
+<tr>
+<td>rotateX(angle)</td>
+<td>定义沿着 X 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td>rotateY(angle)</td>
+<td>定义沿着 Y 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td>rotateZ(angle)</td>
+<td>定义沿着 Z 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td>skew(x-angle,y-angle)</td>
+<td>定义沿着 X 和 Y 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td>skewX(angle)</td>
+<td>定义沿着 X 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td>skewY(angle)</td>
+<td>定义沿着 Y 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td>perspective(n)</td>
+<td>为 3D 转换元素定义透视视图。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="【其他转换属性】"><a href="#【其他转换属性】" class="headerlink" title="【其他转换属性】"></a>【其他转换属性】</h5><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>transform</td>
+<td>向元素应用 2D 或 3D 转换。</td>
+</tr>
+<tr>
+<td>transform-origin</td>
+<td>允许你改变被转换元素的位置。</td>
+</tr>
+<tr>
+<td>transform-style</td>
+<td>规定被嵌套元素如何在 3D 空间中显示。</td>
+</tr>
+<tr>
+<td>perspective</td>
+<td>规定 3D 元素的透视效果。</td>
+</tr>
+<tr>
+<td>perspective-origin</td>
+<td>规定 3D 元素的底部位置。</td>
+</tr>
+<tr>
+<td>backface-visibility</td>
+<td>定义元素在不面对屏幕时是否可见。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="九、过渡"><a href="#九、过渡" class="headerlink" title="九、过渡"></a>九、过渡</h4><hr>
+<h5 id="【transition】"><a href="#【transition】" class="headerlink" title="【transition】"></a>【transition】</h5><p>应用于宽度属性的过渡效果，时长为 2 秒：<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">transition</span>: width <span class="number">2s</span>;</span><br><span class="line"><span class="attribute">-moz-transition</span>: width <span class="number">2s</span>;	<span class="comment">/* Firefox 4 */</span></span><br><span class="line"><span class="attribute">-webkit-transition</span>: width <span class="number">2s</span>;	<span class="comment">/* Safari 和 Chrome */</span></span><br><span class="line"><span class="attribute">-o-transition</span>: width <span class="number">2s</span>;	<span class="comment">/* Opera */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>注释：</strong>如果时长未规定，则不会有过渡效果，因为默认值是 0。</p>
+<p>规定当鼠标指针悬浮于 <div> 元素上时：<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:hover</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">width</span>:<span class="number">300px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
+<h5 id="【transition-property】过渡的属性名"><a href="#【transition-property】过渡的属性名" class="headerlink" title="【transition-property】过渡的属性名"></a>【transition-property】过渡的属性名</h5><table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>没有属性会获得过渡效果。</td>
+</tr>
+<tr>
+<td>all</td>
+<td>所有属性都将获得过渡效果。</td>
+</tr>
+<tr>
+<td>property</td>
+<td>定义应用过渡效果的 CSS 属性名称列表，列表以逗号分隔。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="【transition-duration过渡花费的时间】"><a href="#【transition-duration过渡花费的时间】" class="headerlink" title="【transition-duration过渡花费的时间】"></a>【transition-duration过渡花费的时间】</h5><p>默认值是 0，意味着不会有效果。</p>
+<h5 id="【transition-timing-function】属性规定过渡效果的速度曲线"><a href="#【transition-timing-function】属性规定过渡效果的速度曲线" class="headerlink" title="【transition-timing-function】属性规定过渡效果的速度曲线"></a>【transition-timing-function】属性规定过渡效果的速度曲线</h5><table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>linear</td>
+<td>规定以相同速度开始至结束的过渡效果（等于 cubic-bezier(0,0,1,1)）。</td>
+</tr>
+<tr>
+<td>ease</td>
+<td>规定慢速开始，然后变快，然后慢速结束的过渡效果（cubic-bezier(0.25,0.1,0.25,1)）。</td>
+</tr>
+<tr>
+<td>ease-in</td>
+<td>规定以慢速开始的过渡效果（等于 cubic-bezier(0.42,0,1,1)）。</td>
+</tr>
+<tr>
+<td>ease-out</td>
+<td>规定以慢速结束的过渡效果（等于 cubic-bezier(0,0,0.58,1)）。</td>
+</tr>
+<tr>
+<td>ease-in-out</td>
+<td>规定以慢速开始和结束的过渡效果（等于 cubic-bezier(0.42,0,0.58,1)）。</td>
+</tr>
+<tr>
+<td>cubic-bezier(n,n,n,n)</td>
+<td>在 cubic-bezier 函数中定</td>
+</tr>
+</tbody>
+</table>
+<h5 id="【transition-delay】规定过渡效果何时开始"><a href="#【transition-delay】规定过渡效果何时开始" class="headerlink" title="【transition-delay】规定过渡效果何时开始"></a>【transition-delay】规定过渡效果何时开始</h5><p>在过渡效果开始前等待 2 秒：<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">transition-delay</span>: <span class="number">2s</span>;   <span class="comment">/*以秒或毫秒计*/</span></span><br><span class="line"><span class="attribute">-moz-transition-delay</span>: <span class="number">2s</span>; <span class="comment">/* Firefox 4 */</span></span><br><span class="line"><span class="attribute">-webkit-transition-delay</span>: <span class="number">2s</span>; <span class="comment">/* Safari 和 Chrome */</span></span><br><span class="line"><span class="attribute">-o-transition-delay</span>: <span class="number">2s</span>; <span class="comment">/* Opera */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="十、动画"><a href="#十、动画" class="headerlink" title="十、动画"></a>十、动画</h4><hr>
+<p>(更新中……)</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/note/">note</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/css3/">css3</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoomin1106.github.io/2014/07/03/note/CSS3_note/" data-title="css3教程笔记 | matt&#39;s blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/05/20/tools/mobile/" title="移动端调试">
+  <strong>上一篇：</strong><br/>
+  <span>
+  移动端调试</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2014/05/20/note/js_basic_note/"  title="javascript基础教程笔记">
+ <strong>下一篇：</strong><br/> 
+ <span>javascript基础教程笔记
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS3视频教程"><span class="toc-number">1.</span> <span class="toc-text">CSS3视频教程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、CSS3新增选择器"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">一、CSS3新增选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#【动态添加CSS样式】"><span class="toc-number">1.0.0.1.1.</span> <span class="toc-text">【动态添加CSS样式】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【新增选择器】"><span class="toc-number">1.0.0.1.2.</span> <span class="toc-text">【新增选择器】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【其他选择器】"><span class="toc-number">1.0.0.1.3.</span> <span class="toc-text">【其他选择器】</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、响应式布局"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">二、响应式布局</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#【style标签里使用media】"><span class="toc-number">1.0.0.2.1.</span> <span class="toc-text">【style标签里使用media】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【media媒体类型】"><span class="toc-number">1.0.0.2.2.</span> <span class="toc-text">【media媒体类型】</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、边框"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">三、边框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、背景"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">四、背景</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#【background-origin根据位置定位】"><span class="toc-number">1.0.0.4.1.</span> <span class="toc-text">【background-origin根据位置定位】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【background-size-属性规定背景图像的尺寸】"><span class="toc-number">1.0.0.4.2.</span> <span class="toc-text">【background-size 属性规定背景图像的尺寸】</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、文本效果"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">五、文本效果</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#【新的文本属性】"><span class="toc-number">1.0.0.5.1.</span> <span class="toc-text">【新的文本属性】</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、字体"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">六、字体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#七、2D转换"><span class="toc-number">1.0.0.7.</span> <span class="toc-text">七、2D转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#【transform】"><span class="toc-number">1.0.0.7.1.</span> <span class="toc-text">【transform】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【transform-origin】"><span class="toc-number">1.0.0.7.2.</span> <span class="toc-text">【transform-origin】</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#八、3D转换"><span class="toc-number">1.0.0.8.</span> <span class="toc-text">八、3D转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#【transform】-1"><span class="toc-number">1.0.0.8.1.</span> <span class="toc-text">【transform】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【其他转换属性】"><span class="toc-number">1.0.0.8.2.</span> <span class="toc-text">【其他转换属性】</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#九、过渡"><span class="toc-number">1.0.0.9.</span> <span class="toc-text">九、过渡</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#【transition】"><span class="toc-number">1.0.0.9.1.</span> <span class="toc-text">【transition】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【transition-property】过渡的属性名"><span class="toc-number">1.0.0.9.2.</span> <span class="toc-text">【transition-property】过渡的属性名</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【transition-duration过渡花费的时间】"><span class="toc-number">1.0.0.9.3.</span> <span class="toc-text">【transition-duration过渡花费的时间】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【transition-timing-function】属性规定过渡效果的速度曲线"><span class="toc-number">1.0.0.9.4.</span> <span class="toc-text">【transition-timing-function】属性规定过渡效果的速度曲线</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#【transition-delay】规定过渡效果何时开始"><span class="toc-number">1.0.0.9.5.</span> <span class="toc-text">【transition-delay】规定过渡效果何时开始</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十、动画"><span class="toc-number">1.0.0.10.</span> <span class="toc-text">十、动画</span></a></li></ol></li></ol></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/html-css/" title="html/css">html/css<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/note/" title="note">note<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tools/" title="tools">tools<sup>3</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/jquery/" title="jquery">jquery<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/js/" title="js">js<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sass/" title="sass">sass<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css/" title="css">css<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css3/" title="css3">css3<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/前端工具/" title="前端工具">前端工具<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/gulp/" title="gulp">gulp<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/调试/" title="调试">调试<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/webview/" title="webview">webview<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/X5/" title="X5">X5<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.cnblogs.com/yoomin" target="_blank" title="matt&#39;s blog">matt&#39;s blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hi! This is matt. <br/>
+			</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Matt.Wu">Matt.Wu</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

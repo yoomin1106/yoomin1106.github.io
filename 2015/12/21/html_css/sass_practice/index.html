@@ -1,0 +1,594 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>sass进阶与实战 | matt&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Matt.Wu">
+    
+
+    
+    <meta name="description" content="在线编译sass网站：sass meistercss 预处理器工具列表：css processor
+前言预处理器的特性使得我们可以把样式拆成多个文件来编写，通过预处理器合并输出一个CSS文件，所以，sass文件组织得好不好，关系到可维护性。
+第一份设计稿拿到了一份设计稿，包括了《首页》、《详情页》、《列表页》，可以结合设计稿来搭建项目的基本结构了。图片。。。
+搭建项目结构按照平时写CSS的思路,我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sass进阶与实战">
+<meta property="og:url" content="http://yoomin1106.github.io/2015/12/21/html_css/sass_practice/index.html">
+<meta property="og:site_name" content="matt's blog">
+<meta property="og:description" content="在线编译sass网站：sass meistercss 预处理器工具列表：css processor
+前言预处理器的特性使得我们可以把样式拆成多个文件来编写，通过预处理器合并输出一个CSS文件，所以，sass文件组织得好不好，关系到可维护性。
+第一份设计稿拿到了一份设计稿，包括了《首页》、《详情页》、《列表页》，可以结合设计稿来搭建项目的基本结构了。图片。。。
+搭建项目结构按照平时写CSS的思路,我">
+<meta property="og:image" content="http://yoomin1106.github.io/style/images/2015-12/2015-12-24_17-09-12.png">
+<meta property="og:image" content="http://yoomin1106.github.io/style/images/2015-12/2015-12-24_17-18-48.png">
+<meta property="og:image" content="http://yoomin1106.github.io/style/images/2015-12/2015-12-24_17-20-04.png">
+<meta property="og:image" content="http://yoomin1106.github.io/style/images/2015-12/2015-12-24_17-45-53.png">
+<meta property="og:image" content="http://yoomin1106.github.io/style/images/2015-12/2015-12-24_17-50-02.png">
+<meta property="og:updated_time" content="2016-01-10T13:26:16.751Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sass进阶与实战">
+<meta name="twitter:description" content="在线编译sass网站：sass meistercss 预处理器工具列表：css processor
+前言预处理器的特性使得我们可以把样式拆成多个文件来编写，通过预处理器合并输出一个CSS文件，所以，sass文件组织得好不好，关系到可维护性。
+第一份设计稿拿到了一份设计稿，包括了《首页》、《详情页》、《列表页》，可以结合设计稿来搭建项目的基本结构了。图片。。。
+搭建项目结构按照平时写CSS的思路,我">
+<meta name="twitter:image" content="http://yoomin1106.github.io/style/images/2015-12/2015-12-24_17-09-12.png">
+
+    
+    <link rel="alternative" href="/atom.xml" title="matt&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="matt&#39;s blog" title="matt&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="matt&#39;s blog">matt&#39;s blog</a></h1>
+				<h2 class="blog-motto">Write to remember!</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoomin1106.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/12/21/html_css/sass_practice/" title="sass进阶与实战" itemprop="url">sass进阶与实战</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Matt.Wu" target="_blank" itemprop="author">Matt.Wu</a>
+		
+  <p class="article-time">
+    <time datetime="2015-12-20T16:00:00.000Z" itemprop="datePublished"> 发表于 2015-12-21</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一份设计稿"><span class="toc-number">2.</span> <span class="toc-text">第一份设计稿</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建项目结构"><span class="toc-number">3.</span> <span class="toc-text">搭建项目结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完整文件组织"><span class="toc-number">4.</span> <span class="toc-text">完整文件组织</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#main-scss"><span class="toc-number">4.1.</span> <span class="toc-text">main.scss</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sass的控制命令"><span class="toc-number">5.</span> <span class="toc-text">sass的控制命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if"><span class="toc-number">5.1.</span> <span class="toc-text">@if</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for循环"><span class="toc-number">5.2.</span> <span class="toc-text">@for循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#while循环"><span class="toc-number">5.3.</span> <span class="toc-text">@while循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#each循环"><span class="toc-number">5.4.</span> <span class="toc-text">@each循环</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串与数字相关函数"><span class="toc-number">6.</span> <span class="toc-text">字符串与数字相关函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列表函数"><span class="toc-number">7.</span> <span class="toc-text">列表函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#length-函数"><span class="toc-number">7.1.</span> <span class="toc-text">length()函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nth-函数"><span class="toc-number">7.2.</span> <span class="toc-text">nth()函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#index-函数"><span class="toc-number">7.3.</span> <span class="toc-text">index()函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结尾"><span class="toc-number">8.</span> <span class="toc-text">结尾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">9.</span> <span class="toc-text">总结</span></a></li></ol>
+		
+		</div>
+		
+		<p>在线编译sass网站：<a href="http://www.sassmeister.com/" target="_blank" rel="external">sass meister</a><br>css 预处理器工具列表：<a href="https://csspre.com/compile/" target="_blank" rel="external">css processor</a></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>预处理器的特性使得我们可以把样式拆成多个文件来编写，通过预处理器合并输出一个CSS文件，所以，sass文件组织得好不好，关系到可维护性。</p>
+<h2 id="第一份设计稿"><a href="#第一份设计稿" class="headerlink" title="第一份设计稿"></a>第一份设计稿</h2><p>拿到了一份设计稿，包括了《首页》、《详情页》、《列表页》，可以结合设计稿来搭建项目的基本结构了。<br>图片。。。</p>
+<h2 id="搭建项目结构"><a href="#搭建项目结构" class="headerlink" title="搭建项目结构"></a>搭建项目结构</h2><p>按照平时写CSS的思路,我们是像下面这样组织CSS文件：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">base.css</span><br><span class="line">common.css</span><br><span class="line">page.css</span><br></pre></td></tr></table></figure></p>
+<p>SACC文件也可以类似地组织起来，但是考虑到以后页面会增加，我们可以把page拆分：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">_base.scss</span><br><span class="line">_common.scss</span><br><span class="line">_home.scss</span><br><span class="line">_detail.scss</span><br><span class="line">_list.scss</span><br></pre></td></tr></table></figure></p>
+<p>当然，还要把这些scss文件导入到<code>main.scss</code>中，然后所有scss文件一起放到sass文件夹中，文件管理。于是main.scss变成了下面这样：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 主样式</span><br><span class="line">@import &quot;base&quot;;</span><br><span class="line">@import &quot;common&quot;;</span><br><span class="line">@import &quot;home&quot;;</span><br><span class="line">@import &quot;detail&quot;;</span><br><span class="line">@import &quot;list&quot;;</span><br></pre></td></tr></table></figure></p>
+<p>以上砖头已准备好，可以开始搬砖了。先看看设计稿：<br><img src="/style/images/2015-12/2015-12-24_17-09-12.png" alt=""><br>对照设计稿，很明显头部是一个公共的导航，嗯，样式代码可以写到<code>_common.scss</code>里面</p>
+<p>再看导航，有不少的图标，看来这时候需要一个<code>_icons.scss</code>了，菜单的图标这样写：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.ico &#123;&#125;</span><br><span class="line">.ico1 &#123;&#125;</span><br><span class="line">.ico2 &#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>看这架势，以后还会有更多的图标，于是就想到了sass的循环语句：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@for $i from 1 through 3 &#123;</span><br><span class="line">.ico#&#123;$i&#125; &#123;</span><br><span class="line">  background-image:url(img/ico1.png);</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译后生成：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.ico1 &#123;</span><br><span class="line">  background-image: url(img/ico1.png);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.ico2 &#123;</span><br><span class="line">  background-image: url(img/ico1.png);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.ico3 &#123;</span><br><span class="line">  background-image: url(img/ico1.png);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这时候想到：不同大小的图标怎么办？这可以结合上面的代码，通过命令的方法来解决。如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@for $i from 1 through 3 &#123;</span><br><span class="line">.ico_24_#&#123;$i&#125; &#123;</span><br><span class="line">  background-image:url(img/ico_24_1.png);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当你开始写sass的时候，它的嵌套写法让人感觉很舒服，模块的结构很清晰，像下面这样：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.zc_quality_list &#123;</span><br><span class="line">  padding:0;</span><br><span class="line">  .tab_hd &#123;</span><br><span class="line">    height:40px;</span><br><span class="line">    .item &#123;</span><br><span class="line">    margin-top:10px;</span><br><span class="line">      .item_txt &#123;</span><br><span class="line">      color:#fff;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译后：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.zc_quality_list &#123;</span><br><span class="line">  padding: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.zc_quality_list .tab_hd &#123;</span><br><span class="line">  height: 40px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.zc_quality_list .tab_hd .item &#123;</span><br><span class="line">  margin-top: 10px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.zc_quality_list .tab_hd .item .item_txt &#123;</span><br><span class="line">  color: #fff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>看到后面会发现，嵌套的层级太深了，这时候可以用sass的<code>@at-root</code>：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.zc_quality_list &#123;</span><br><span class="line">  padding:0;</span><br><span class="line">  .tab_hd &#123;</span><br><span class="line">    height:40px;</span><br><span class="line">    @at-root .zc_quality_item &#123;</span><br><span class="line">    margin-top:10px;</span><br><span class="line">      .item_txt &#123;</span><br><span class="line">      color:#fff;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译后，加了@at-root的选择器到最外层了：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.zc_quality_list &#123;</span><br><span class="line">  padding: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.zc_quality_list .tab_hd &#123;</span><br><span class="line">  height: 40px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.zc_quality_item &#123;</span><br><span class="line">  margin-top: 10px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.zc_quality_item .item_txt &#123;</span><br><span class="line">  color: #fff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>设计稿里还有一些弹窗和表单，这时候又添加了<code>_modals.scss</code>和<code>_forms.scss</code>文件。<br>此时sass文件夹下的文件如下：</p>
+<p>做完这个又来了的新设计稿：<br><img src="/style/images/2015-12/2015-12-24_17-18-48.png" alt=""><br>这种我们通常用背景图来实现：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">display:block;</span><br><span class="line">width:30px;</span><br><span class="line">height:30px;</span><br><span class="line">background:url(image/img1.png) no-repeat;</span><br><span class="line">background-size:30px 30px;</span><br></pre></td></tr></table></figure></p>
+<p>再来看看还有这种：<br><img src="/style/images/2015-12/2015-12-24_17-20-04.png" alt=""><br>实现的CSS代码应该是类似这样的：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">position:absolute;</span><br><span class="line">left:0;</span><br><span class="line">top:15px;</span><br><span class="line">width:50px;</span><br><span class="line">height:50px;</span><br><span class="line">background:url(image/img1.png) no-repeat;</span><br><span class="line">background-size:50px 50px;</span><br></pre></td></tr></table></figure></p>
+<p>有没有发现什么？<br>都是图片加文字的组合，关键是有一部分代码是重复的，这时候就可以利用sass最强大的混合宏<code>@mixin</code>，下面先定义一个<code>@mixin</code>：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@mixin background-base($width,$height) &#123;</span><br><span class="line">  display:inline-block;</span><br><span class="line">  width:$width;</span><br><span class="line">  height:$height;</span><br><span class="line">  background-size:$width $height;</span><br><span class="line">  background-repeat:no-repeat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用的时候只需要这样调用：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.ico &#123;</span><br><span class="line">  @include background-base(45px,45px);</span><br><span class="line">  display:block;</span><br><span class="line">  margin:0 auto;</span><br><span class="line">  background-image:url(&apos;img/about/about1&apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>那么问题就来了，这个<code>@mixin</code>的代码放在哪儿呢？这是sass的辅助代码，应该要单独的文件，于是又新建了一个<code>_mixin.scss</code>文件。<br>写完<code>_mixin.scss</code>，咱继续<br><img src="/style/images/2015-12/2015-12-24_17-45-53.png" alt=""><br>还有：<br><img src="/style/images/2015-12/2015-12-24_17-50-02.png" alt=""><br>内容的底色都是一样的，可以放到一个变量里，于是又要加一个<code>_variables.scss</code>文件。底色也是一样的，为方便管理也放到<code>_variables.scss</code>里。写到这里，我们还可以把一些常用的颜色也写上（这一步需要和设计师沟通）：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// Color</span><br><span class="line">$gray-darker:          #333;</span><br><span class="line">$gray-dark:            #666;</span><br><span class="line">$gray:                 #999;</span><br><span class="line">$gray-light:           #ccc;</span><br><span class="line"></span><br><span class="line">// 文字主色</span><br><span class="line">$main-color:         #808080;</span><br><span class="line"></span><br><span class="line">// 其他颜色</span><br><span class="line">$body-bg:              #f6f6f6;</span><br><span class="line">$mod-bg:              #fcfcfc;  // 有内容模块背景色</span><br><span class="line"></span><br><span class="line">// 常用色</span><br><span class="line">$orange: #f90;</span><br><span class="line">$red: #cb0000;</span><br></pre></td></tr></table></figure></p>
+<p>还有一些边框的公共样式：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$border-color: #e6e6e6;</span><br><span class="line">$mod-border-color: #ddd;</span><br><span class="line">$border-radius: 5px;</span><br></pre></td></tr></table></figure></p>
+<p>接下来还出现了按钮，，于是很自觉地新建了<code>_button.scss</code>。<br>先定义一个按钮的基础样式：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.uc_btn &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    font-size: 18px;</span><br><span class="line">    text-align: center;</span><br><span class="line">    border:1px solid transparent;</span><br><span class="line">    border-radius:5px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后还有其他颜色的：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.uc_btn_orange &#123;</span><br><span class="line">  background-color:$orange;</span><br><span class="line">  color:#fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.uc_btn_gray &#123;</span><br><span class="line">  background-color:$gray;</span><br><span class="line">  color:#fff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可能还会有其他大小的：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.uc_btn_small &#123;</span><br><span class="line">  height:22px;</span><br><span class="line">&#125;</span><br><span class="line">.uc_btn_big &#123;</span><br><span class="line">  height:44px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这时候有个问题，如果我要橙色的大按钮，那要挂上三个类<code>.uc_btn</code>、<code>uc_btn_orange</code>、<code>uc_btn_big</code>。还好sass有个叫<code>@extend</code>的东西：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.uc_btn_orange_big &#123;</span><br><span class="line">  @extend .uc_btn;</span><br><span class="line">  @extend .uc_btn_orange;</span><br><span class="line">  @extend .uc_btn_big;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样，我们就只需要挂一个类，如果全部按钮都这样扩展，<code>.uc_btn</code>就变得没用了，但它还是会编译到CSS文件中，所幸sass提供了一个占位符：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">%uc_btn &#123;</span><br><span class="line">  // code</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样，<code>uc_btn</code>就不会编译出来，然后我们再来引用：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.uc_btn_orange_big &#123;</span><br><span class="line">  @extend %uc_btn;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这种挂一个类的方式因为每个类都写了很多样式，这样的类多了会导致CSS文件很大，所以，具体使用组合方式还是挂大类的方式，需要根据项目权衡。</p>
+<p>另外，如果是在PC端，按钮还有个hover状态：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.uc_btn_orange &#123;</span><br><span class="line">  background-color:$orange;</span><br><span class="line">  color:#fff;</span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">    backgrounc-color:darken($orange,5%);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>&amp;</code>表示调用选择器本身，<code>darken()</code>是sass内置的颜色加深方法,对应的还有一个<code>lighten()</code>方法。<br><!-- 到了这里，基本的sass文件都有了，后面要添加的就是页面的sass文件， --><br>后面又来了几个页面：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">_usercenter.scss</span><br><span class="line">_member.scss</span><br><span class="line">_about.scss</span><br></pre></td></tr></table></figure></p>
+<p>发现已经不再需要新建基本样式文件了，只是添加页面的样式文件，至此，sass的基本框架已经搭建起来了。sass文件夹下有这些文件：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">_base.scss</span><br><span class="line">_common.scss</span><br><span class="line">_variables.scss</span><br><span class="line">_home.scss</span><br><span class="line">_detail.scss</span><br><span class="line">_list.scss</span><br><span class="line">_header.scss</span><br><span class="line">_icons.scss</span><br><span class="line">_modals.scss</span><br><span class="line">_forms.scss</span><br><span class="line">_mixin.scss</span><br><span class="line">_buttons.scss</span><br><span class="line">_usercenter.scss</span><br><span class="line">_member.scss</span><br><span class="line">_about.scss</span><br></pre></td></tr></table></figure></p>
+<p>嗯，文件有点多。没关系，我们整理一下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 基础</span><br><span class="line">base/_base.scss</span><br><span class="line">base/_common.scss</span><br><span class="line"></span><br><span class="line">// 布局</span><br><span class="line">layout/_header.scss</span><br><span class="line"></span><br><span class="line">// 组件</span><br><span class="line">components/_icons.scss</span><br><span class="line">components/_modals.scss</span><br><span class="line">components/_forms.scss</span><br><span class="line">components/_buttons.scss</span><br><span class="line"></span><br><span class="line">// 工具</span><br><span class="line">helpsers/_mixin.scss</span><br><span class="line">helpsers/_variables.scss</span><br><span class="line"></span><br><span class="line">// 页面</span><br><span class="line">page/_home.scss</span><br><span class="line">page/_detail.scss</span><br><span class="line">page/_list.scss</span><br><span class="line">page/_usercenter.scss</span><br><span class="line">page/_member.scss</span><br><span class="line">page/_about.scss</span><br></pre></td></tr></table></figure></p>
+<p>其中，layout文件夹和components文件夹可能会有些一样的，这个看个人习惯放在哪个文件夹。</p>
+<h2 id="完整文件组织"><a href="#完整文件组织" class="headerlink" title="完整文件组织"></a>完整文件组织</h2><p>这里附上一份比较完整的sass代码文件组织（来自<a href="http://www.w3cplus.com/preprocessor/architecture-sass-project.html" target="_blank" rel="external">w3cplus</a>）：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sass/ </span><br><span class="line">| </span><br><span class="line">|– base/ </span><br><span class="line">|   |– _reset.scss       # Reset/normalize </span><br><span class="line">|   |– _typography.scss  # Typography rules </span><br><span class="line">|   ...                  # Etc… </span><br><span class="line">| </span><br><span class="line">|– components/ </span><br><span class="line">|   |– _buttons.scss     # Buttons </span><br><span class="line">|   |– _carousel.scss    # Carousel </span><br><span class="line">|   |– _cover.scss       # Cover </span><br><span class="line">|   |– _dropdown.scss    # Dropdown </span><br><span class="line">|   |– _navigation.scss  # Navigation </span><br><span class="line">|   ...                  # Etc… </span><br><span class="line">| </span><br><span class="line">|– helpers/ </span><br><span class="line">|   |– _variables.scss   # Sass Variables </span><br><span class="line">|   |– _functions.scss   # Sass Functions </span><br><span class="line">|   |– _mixins.scss      # Sass Mixins </span><br><span class="line">|   |– _helpers.scss     # Class &amp; placeholders helpers </span><br><span class="line">|   ...                  # Etc… </span><br><span class="line">| </span><br><span class="line">|– layout/ </span><br><span class="line">|   |– _grid.scss        # Grid system </span><br><span class="line">|   |– _header.scss      # Header </span><br><span class="line">|   |– _footer.scss      # Footer </span><br><span class="line">|   |– _sidebar.scss     # Sidebar </span><br><span class="line">|   |– _forms.scss       # Forms </span><br><span class="line">|   ...                  # Etc… </span><br><span class="line">| </span><br><span class="line">|– pages/ </span><br><span class="line">|   |– _home.scss        # Home specific styles </span><br><span class="line">|   |– _contact.scss     # Contact specific styles </span><br><span class="line">|   ...                  # Etc… </span><br><span class="line">| </span><br><span class="line">|– themes/ </span><br><span class="line">|   |– _theme.scss       # Default theme </span><br><span class="line">|   |– _admin.scss       # Admin theme </span><br><span class="line">|   ...                  # Etc… </span><br><span class="line">| </span><br><span class="line">|– vendors/ </span><br><span class="line">|   |– _bootstrap.scss   # Bootstrap </span><br><span class="line">|   |– _jquery-ui.scss   # jQuery UI </span><br><span class="line">|   ...                  # Etc… </span><br><span class="line">| </span><br><span class="line">| </span><br><span class="line">`– main.scss             # primary Sass file</span><br></pre></td></tr></table></figure></p>
+<h3 id="main-scss"><a href="#main-scss" class="headerlink" title="main.scss"></a>main.scss</h3><p>main.scss是sass项目中唯一不用下划线开头的sass文件，作为一个枢纽，链接所有其他的sass文件，建议不要在此文件写样式，仅仅是用以引入其他的样式文件。</p>
+<p>下面讲讲sass的其他高级功能：</p>
+<h2 id="sass的控制命令"><a href="#sass的控制命令" class="headerlink" title="sass的控制命令"></a>sass的控制命令</h2><h3 id="if"><a href="#if" class="headerlink" title="@if"></a>@if</h3><p>条件判断语句，语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@mixin blockOrHidden($boolean:true) &#123;</span><br><span class="line">  @if $boolean &#123;</span><br><span class="line">    // do something</span><br><span class="line">    &#125;</span><br><span class="line">  @else &#123;</span><br><span class="line">    // do something</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用场景：<br>。。。。。。</p>
+<h3 id="for循环"><a href="#for循环" class="headerlink" title="@for循环"></a>@for循环</h3><p>循环语句，语法如下（<code>$i</code>是变量）：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@for $i from 1 through 3 &#123;</span><br><span class="line">  .item-#&#123;$i&#125; &#123; width: 2em * $i; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译后的CSS：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.item-1 &#123;</span><br><span class="line">  width: 2em;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.item-2 &#123;</span><br><span class="line">  width: 4em;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.item-3 &#123;</span><br><span class="line">  width: 6em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>还可使用to关键字:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@for $i from 1 to 3 &#123;</span><br><span class="line">  .item-#&#123;$i&#125; &#123; width: 2em * $i; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译后：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.item-1 &#123;</span><br><span class="line">  width: 2em;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.item-2 &#123;</span><br><span class="line">  width: 4em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用场景：<br>。。。。。。</p>
+<h3 id="while循环"><a href="#while循环" class="headerlink" title="@while循环"></a>@while循环</h3><p>类似于C语言的while，只是语法稍有不同，逻辑和结构是一样的：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//SCSS</span><br><span class="line">$types: 4;</span><br><span class="line">$type-width: 20px;</span><br><span class="line"></span><br><span class="line">@while $types &gt; 0 &#123;</span><br><span class="line">    .while-#&#123;$types&#125; &#123;</span><br><span class="line">        width: $type-width + $types;</span><br><span class="line">    &#125;</span><br><span class="line">    $types: $types - 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用场景和for循环一样。</p>
+<h3 id="each循环"><a href="#each循环" class="headerlink" title="@each循环"></a>@each循环</h3><p>用于遍历一个sass列表，sass列表类似一个数组，是事先定义的：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$list: adam john wynn mason kuroir;//$list 就是一个列表</span><br><span class="line">@each $people in $list &#123;</span><br><span class="line">    .photo-#&#123;$people&#125; &#123;</span><br><span class="line">        background: url(&quot;/images/avatars/#&#123;$people&#125;.png&quot;) no-repeat;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="字符串与数字相关函数"><a href="#字符串与数字相关函数" class="headerlink" title="字符串与数字相关函数"></a>字符串与数字相关函数</h2><p>字符串与数字相关的函数，我自己在项目中很少用到，因此不做详述，只是列出功能，有需要的读者研究一二。</p>
+<ul>
+<li><code>unquote()</code> 去掉字符串头尾的双引号</li>
+<li><code>quote()</code> 给字符串头尾添加双引号</li>
+<li><code>To-upper-case()</code> 将字符串所有字母转换成大写</li>
+<li><code>To-lower-case()</code> 将字符串所有字母转换成小写</li>
+<li><code>percentage()</code> 将一个不带单位的数转换成百分比值</li>
+<li><code>round()</code> 将数值四舍五入，可以带单位</li>
+<li><code>ceil()</code> 向上取整，可以带单位</li>
+<li><code>floor()</code> 向下取整，即去除小数部分，可以带单位</li>
+<li><code>abs()</code> 取绝对值</li>
+<li><code>min($number1,$number2,...)</code> 取最小值</li>
+<li><code>max($number1,$number2,...)</code> 取最大值</li>
+</ul>
+<h2 id="列表函数"><a href="#列表函数" class="headerlink" title="列表函数"></a>列表函数</h2><p>列表函数是与sass列表相关的一些函数，前面有提到过，列表是指类似数组的格式，如：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$list: jay jack aimly willian;  // 定义了一个列表</span><br></pre></td></tr></table></figure></p>
+<h3 id="length-函数"><a href="#length-函数" class="headerlink" title="length()函数"></a>length()函数</h3><p>返回一个列表的长度，列表项之间用空格隔开，不能用逗号。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;&gt; length(10px)</span><br><span class="line">1</span><br><span class="line">&gt;&gt; length(10px 20px (border 1px solid) 2em)</span><br><span class="line">4</span><br></pre></td></tr></table></figure></p>
+<p>也可以传入一个列表变量：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$list: jay jack amily willian;</span><br><span class="line">@for $i from 1 through length($list) &#123;</span><br><span class="line">  .item-#&#123;$i&#125; &#123; width: 2em * $i; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="nth-函数"><a href="#nth-函数" class="headerlink" title="nth()函数"></a>nth()函数</h3><p>nth(n)获取列表的第n个项，需要注意的是，n等于1时表示获取第1项，而不是第2项。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$list: jay jack amily willian;</span><br><span class="line">.item-#&#123;nth($list,2)&#125;&#123;width:0;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译后：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.item-jack &#123;</span><br><span class="line">  width: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="index-函数"><a href="#index-函数" class="headerlink" title="index()函数"></a>index()函数</h3><p>返回列表项的位置，同样的，位置从1起算：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;&gt; index(1px solid red, solid)</span><br><span class="line">2</span><br></pre></td></tr></table></figure></p>
+<p>以上为sass列表常用函数，更多请参考<a href="http://sass-lang.com/documentation/Sass/Script/Functions.html" target="_blank" rel="external">sass function API</a></p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>更多sass函数请参见<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html" target="_blank" rel="external">sass documentation</a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/html-css/">html/css</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/sass/">sass</a><a href="/tags/css/">css</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoomin1106.github.io/2015/12/21/html_css/sass_practice/" data-title="sass进阶与实战 | matt&#39;s blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/12/29/javascript/jquery_plugin/" title="jQuery插件开发">
+  <strong>上一篇：</strong><br/>
+  <span>
+  jQuery插件开发</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/05/20/note/snippet/"  title="代码片段">
+ <strong>下一篇：</strong><br/> 
+ <span>代码片段
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一份设计稿"><span class="toc-number">2.</span> <span class="toc-text">第一份设计稿</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建项目结构"><span class="toc-number">3.</span> <span class="toc-text">搭建项目结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完整文件组织"><span class="toc-number">4.</span> <span class="toc-text">完整文件组织</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#main-scss"><span class="toc-number">4.1.</span> <span class="toc-text">main.scss</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sass的控制命令"><span class="toc-number">5.</span> <span class="toc-text">sass的控制命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if"><span class="toc-number">5.1.</span> <span class="toc-text">@if</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for循环"><span class="toc-number">5.2.</span> <span class="toc-text">@for循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#while循环"><span class="toc-number">5.3.</span> <span class="toc-text">@while循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#each循环"><span class="toc-number">5.4.</span> <span class="toc-text">@each循环</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串与数字相关函数"><span class="toc-number">6.</span> <span class="toc-text">字符串与数字相关函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列表函数"><span class="toc-number">7.</span> <span class="toc-text">列表函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#length-函数"><span class="toc-number">7.1.</span> <span class="toc-text">length()函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nth-函数"><span class="toc-number">7.2.</span> <span class="toc-text">nth()函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#index-函数"><span class="toc-number">7.3.</span> <span class="toc-text">index()函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结尾"><span class="toc-number">8.</span> <span class="toc-text">结尾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">9.</span> <span class="toc-text">总结</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/html-css/" title="html/css">html/css<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/note/" title="note">note<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tools/" title="tools">tools<sup>3</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/jquery/" title="jquery">jquery<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/js/" title="js">js<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sass/" title="sass">sass<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css/" title="css">css<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css3/" title="css3">css3<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/前端工具/" title="前端工具">前端工具<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/gulp/" title="gulp">gulp<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/调试/" title="调试">调试<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/webview/" title="webview">webview<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/X5/" title="X5">X5<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.cnblogs.com/yoomin" target="_blank" title="matt&#39;s blog">matt&#39;s blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hi! This is matt. <br/>
+			</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Matt.Wu">Matt.Wu</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

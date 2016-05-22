@@ -1,0 +1,1390 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>李炎恢jquery视频教程笔记 | matt&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Matt.Wu">
+    
+
+    
+    <meta name="description" content="李炎恢jquery视频教程笔记==============================================================================
+一、入门
+版本信息
+新发布的分支2.X版本，不再兼容IE6/7/8,体积更小，速度更快，另一个分支1.X继续支持IE。
+生产版本是经过压缩的，开发版本未压缩，可参考源代码学习。
+
+二、基础核心
+$符号
+$和jQu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="李炎恢jquery视频教程笔记">
+<meta property="og:url" content="http://yoomin1106.github.io/2014/03/14/note/jquery/index.html">
+<meta property="og:site_name" content="matt's blog">
+<meta property="og:description" content="李炎恢jquery视频教程笔记==============================================================================
+一、入门
+版本信息
+新发布的分支2.X版本，不再兼容IE6/7/8,体积更小，速度更快，另一个分支1.X继续支持IE。
+生产版本是经过压缩的，开发版本未压缩，可参考源代码学习。
+
+二、基础核心
+$符号
+$和jQu">
+<meta property="og:updated_time" content="2016-01-10T05:17:54.846Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="李炎恢jquery视频教程笔记">
+<meta name="twitter:description" content="李炎恢jquery视频教程笔记==============================================================================
+一、入门
+版本信息
+新发布的分支2.X版本，不再兼容IE6/7/8,体积更小，速度更快，另一个分支1.X继续支持IE。
+生产版本是经过压缩的，开发版本未压缩，可参考源代码学习。
+
+二、基础核心
+$符号
+$和jQu">
+
+    
+    <link rel="alternative" href="/atom.xml" title="matt&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="matt&#39;s blog" title="matt&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="matt&#39;s blog">matt&#39;s blog</a></h1>
+				<h2 class="blog-motto">Write to remember!</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoomin1106.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/03/14/note/jquery/" title="李炎恢jquery视频教程笔记" itemprop="url">李炎恢jquery视频教程笔记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Matt.Wu" target="_blank" itemprop="author">Matt.Wu</a>
+		
+  <p class="article-time">
+    <time datetime="2014-03-13T16:00:00.000Z" itemprop="datePublished"> 发表于 2014-03-14</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#李炎恢jquery视频教程笔记"><span class="toc-number">1.</span> <span class="toc-text">李炎恢jquery视频教程笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、入门"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">一、入门</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#版本信息"><span class="toc-number">1.0.0.1.1.</span> <span class="toc-text">版本信息</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、基础核心"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">二、基础核心</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#符号"><span class="toc-number">1.0.0.2.1.</span> <span class="toc-text">$符号</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#js原生DOM对象和jquery对象互换"><span class="toc-number">1.0.0.2.2.</span> <span class="toc-text">js原生DOM对象和jquery对象互换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#多个库冲突"><span class="toc-number">1.0.0.2.3.</span> <span class="toc-text">多个库冲突</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、常规选择器"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">三、常规选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#jquery选择器容错功能"><span class="toc-number">1.0.0.3.1.</span> <span class="toc-text">jquery选择器容错功能</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、高级选择器"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">四、高级选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#层次选择器"><span class="toc-number">1.0.0.4.1.</span> <span class="toc-text">层次选择器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#属性选择器"><span class="toc-number">1.0.0.4.2.</span> <span class="toc-text">属性选择器</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#过滤选择器"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">过滤选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、基础DOM和CSS操作"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">五、基础DOM和CSS操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#常用方法"><span class="toc-number">1.0.0.6.1.</span> <span class="toc-text">常用方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#操作CSS"><span class="toc-number">1.0.0.6.2.</span> <span class="toc-text">操作CSS</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、DOM操作"><span class="toc-number">1.0.0.7.</span> <span class="toc-text">六、DOM操作</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#常用方法-1"><span class="toc-number">1.0.0.7.0.1.</span> <span class="toc-text">常用方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#七、表单选择器"><span class="toc-number">1.0.0.8.</span> <span class="toc-text">七、表单选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#伪类"><span class="toc-number">1.0.0.8.1.</span> <span class="toc-text">伪类</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#八、基础事件"><span class="toc-number">1.0.0.9.</span> <span class="toc-text">八、基础事件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#绑定事件"><span class="toc-number">1.0.0.9.1.</span> <span class="toc-text">绑定事件</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#bind绑定多个事件"><span class="toc-number">1.0.0.9.1.1.</span> <span class="toc-text">bind绑定多个事件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#解除绑定unbind"><span class="toc-number">1.0.0.9.1.2.</span> <span class="toc-text">解除绑定unbind()</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更好的绑定事件"><span class="toc-number">1.0.0.9.2.</span> <span class="toc-text">更好的绑定事件</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#其他事件"><span class="toc-number">1.0.0.9.2.1.</span> <span class="toc-text">其他事件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#九、事件对象"><span class="toc-number">1.0.0.10.</span> <span class="toc-text">九、事件对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十、高级事件"><span class="toc-number">1.0.0.11.</span> <span class="toc-text">十、高级事件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#模拟操作"><span class="toc-number">1.0.0.11.1.</span> <span class="toc-text">模拟操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#自定义事件"><span class="toc-number">1.0.0.11.2.</span> <span class="toc-text">自定义事件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#命名空间"><span class="toc-number">1.0.0.11.3.</span> <span class="toc-text">命名空间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#事件委托"><span class="toc-number">1.0.0.11.4.</span> <span class="toc-text">事件委托</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#live"><span class="toc-number">1.0.0.11.4.1.</span> <span class="toc-text">live()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十一、动画"><span class="toc-number">1.0.0.12.</span> <span class="toc-text">十一、动画</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#显示和隐藏"><span class="toc-number">1.0.0.12.1.</span> <span class="toc-text">显示和隐藏</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#自定义动画animate"><span class="toc-number">1.0.0.12.2.</span> <span class="toc-text">自定义动画animate()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#动画状态"><span class="toc-number">1.0.0.12.3.</span> <span class="toc-text">动画状态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#动画全局属性"><span class="toc-number">1.0.0.12.4.</span> <span class="toc-text">动画全局属性</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十二、Ajax"><span class="toc-number">1.0.0.13.</span> <span class="toc-text">十二、Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#load-异步加载"><span class="toc-number">1.0.0.13.1.</span> <span class="toc-text">load()异步加载</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#get-和-post-全局方法"><span class="toc-number">1.0.0.13.2.</span> <span class="toc-text">$.get()和$.post() 全局方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#getScript-和-getJSON"><span class="toc-number">1.0.0.13.3.</span> <span class="toc-text">$.getScript()和$.getJSON()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ajax-最底层方法"><span class="toc-number">1.0.0.13.4.</span> <span class="toc-text">$.ajax()最底层方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ajaxSetup-初始化ajax"><span class="toc-number">1.0.0.13.5.</span> <span class="toc-text">$.ajaxSetup()初始化ajax</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#param-解开键值对变为字符串形式"><span class="toc-number">1.0.0.13.6.</span> <span class="toc-text">$.param()解开键值对变为字符串形式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ajaxStart-和ajaxStop"><span class="toc-number">1.0.0.13.7.</span> <span class="toc-text">ajaxStart()和ajaxStop()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#error错误"><span class="toc-number">1.0.0.13.8.</span> <span class="toc-text">error错误</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#请求事件"><span class="toc-number">1.0.0.13.9.</span> <span class="toc-text">请求事件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#获取json文件"><span class="toc-number">1.0.0.13.10.</span> <span class="toc-text">获取json文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#jqXHR对象"><span class="toc-number">1.0.0.13.11.</span> <span class="toc-text">jqXHR对象</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十三、工具函数"><span class="toc-number">1.0.0.14.</span> <span class="toc-text">十三、工具函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#字符串操作"><span class="toc-number">1.0.0.14.1.</span> <span class="toc-text">字符串操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#数组和对象"><span class="toc-number">1.0.0.14.2.</span> <span class="toc-text">数组和对象</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十四、插件"><span class="toc-number">1.0.0.15.</span> <span class="toc-text">十四、插件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#简单使用插件"><span class="toc-number">1.0.0.15.1.</span> <span class="toc-text">简单使用插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#自定义插件"><span class="toc-number">1.0.0.15.2.</span> <span class="toc-text">自定义插件</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+		
+		</div>
+		
+		<h1 id="李炎恢jquery视频教程笔记"><a href="#李炎恢jquery视频教程笔记" class="headerlink" title="李炎恢jquery视频教程笔记"></a>李炎恢jquery视频教程笔记</h1><p>==============================================================================</p>
+<h4 id="一、入门"><a href="#一、入门" class="headerlink" title="一、入门"></a>一、入门</h4><hr>
+<h5 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h5><ul>
+<li>新发布的分支2.X版本，不再兼容IE6/7/8,体积更小，速度更快，另一个分支1.X继续支持IE。</li>
+<li>生产版本是经过压缩的，开发版本未压缩，可参考源代码学习。</li>
+</ul>
+<h4 id="二、基础核心"><a href="#二、基础核心" class="headerlink" title="二、基础核心"></a>二、基础核心</h4><hr>
+<h5 id="符号"><a href="#符号" class="headerlink" title="$符号"></a>$符号</h5><ul>
+<li><p>$和jQuery等价，<code>alert($ === jQuery)</code> 返回true</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">alert($);  <span class="comment">//jQuery对象的内部，返回函数代码</span></span><br><span class="line">alert($());  <span class="comment">//返回的jQuery对象</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>window.onload和ready的区别</strong></p>
+</li>
+<li>window.load只能执行一次，后面的会把前面的覆盖</li>
+<li>$(document).ready()可以执行多次，不会覆盖</li>
+</ul>
+<h5 id="js原生DOM对象和jquery对象互换"><a href="#js原生DOM对象和jquery对象互换" class="headerlink" title="js原生DOM对象和jquery对象互换"></a>js原生DOM对象和jquery对象互换</h5><p>对象互换：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">".box"</span>).get(<span class="number">0</span>);  <span class="comment">//get()方法jquery对象转为原生DOM对象，类似的eq(0)返回jquery对象 </span></span><br><span class="line">$(<span class="built_in">document</span>.getElemengById(<span class="string">'box'</span>));    <span class="comment">//用$包裹可把DOM对象转为jquery对象</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="多个库冲突"><a href="#多个库冲突" class="headerlink" title="多个库冲突"></a>多个库冲突</h5><p><strong>后引入的库会覆盖前面的库，占用$使用权</strong></p>
+<p>解决方法：<br> <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> $$ = jQuery;</span><br><span class="line">$$(<span class="string">'#box'</span>);   <span class="comment">//jquery对象</span></span><br></pre></td></tr></table></figure></p>
+<p> 另一种方法：<br> <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">jQuery.noConflict();    <span class="comment">//表示jquery放弃$的使用权，可释放给其他库使用</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="三、常规选择器"><a href="#三、常规选择器" class="headerlink" title="三、常规选择器"></a>三、常规选择器</h4><hr>
+<h5 id="jquery选择器容错功能"><a href="#jquery选择器容错功能" class="headerlink" title="jquery选择器容错功能"></a>jquery选择器容错功能</h5><p>jquery内部会判断对象是否存在,等价于原生JS的以下代码：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">document</span>.getElementById(<span class="string">'pox'</span>))&#123;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'pox'</span>).style.color = <span class="string">'red'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>另一种判断方法：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>($(<span class="string">'#pox'</span>)[<span class="number">0</span>])&#123;&#125;    <span class="comment">//返回的是DOM对象，即对DOM对象是否存在进行判断</span></span><br></pre></td></tr></table></figure></p>
+<p>多class选择器<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'.box.pox'</span>);   <span class="comment">//选择同时有这两个类的元素,CSS选择器也一样</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>注意：jquery选择器是从右往左开始解析的</strong></p>
+<h4 id="四、高级选择器"><a href="#四、高级选择器" class="headerlink" title="四、高级选择器"></a>四、高级选择器</h4><hr>
+<h5 id="层次选择器"><a href="#层次选择器" class="headerlink" title="层次选择器"></a>层次选择器</h5><ul>
+<li><code>$(&#39;#box p&#39;)</code>和<code>$(&#39;#box&#39;).find(&#39;p&#39;)</code>是等价的</li>
+<li><code>$(&#39;#box&gt;p&#39;)</code>和<code>$(&#39;#box&#39;).children(&#39;p&#39;)</code>也是等价的，children()是和子选择器等价的方法</li>
+<li><code>$(&#39;#box + p&#39;)</code>和<code>$(&#39;#box&#39;).next(&#39;p&#39;)</code>是等价的，prev()则相反</li>
+<li><code>$(&#39;#box ~ p&#39;)</code>和<code>$(&#39;#box&#39;).nextAll(&#39;p&#39;)</code>是等价的,表示后面所有的同级节点,prevAll()相反</li>
+<li><code>sibling()</code>表示所有同级元素，相当于nextAll()和prevAll()合起来<br><strong>注意：next()等价于next(‘*’),耗资源，建议少用</strong></li>
+</ul>
+<p>其他方法：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">示例</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">nextUntil(‘p’)</td>
+<td style="text-align:left">选择后面的兄弟元素（即同级）不是P的元素，遇到P则停止</td>
+</tr>
+<tr>
+<td style="text-align:left">prevUntil(‘p)</td>
+<td style="text-align:left">与上面相反</td>
+</tr>
+</tbody>
+</table>
+<p>选择器快慢比较：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语句</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$(‘#box’).find(‘p’)</td>
+<td style="text-align:left">最快，使用getElementById,ByName,ByTagName和querySlectorAll()</td>
+</tr>
+<tr>
+<td style="text-align:left">$(‘#box’).children(‘p’)</td>
+<td style="text-align:left">会使用\$.slibing()和javascript的nextSibling()方法，慢50%</td>
+</tr>
+<tr>
+<td style="text-align:left">$(‘#box &gt; p’)</td>
+<td style="text-align:left">jQuery内部使用Sizzle引擎，从右到左解析，慢约70%</td>
+</tr>
+<tr>
+<td style="text-align:left">$(‘#box p’)</td>
+<td style="text-align:left">遍历多级，速度更慢，慢77%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>综上，find()最快，$(‘#box p’)这种高级选择器最慢，先用<code>var a=$(&#39;#box&#39;)</code>会先进行缓存，提高性能</strong></p>
+<h5 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h5><table>
+<thead>
+<tr>
+<th style="text-align:left">语句</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">title竖线=”head”</td>
+<td style="text-align:left">匹配title=’head’的元素，或以head-开头</td>
+</tr>
+<tr>
+<td style="text-align:left">title$=”num”</td>
+<td style="text-align:left">匹配num结尾</td>
+</tr>
+<tr>
+<td style="text-align:left">title!=”main”</td>
+<td style="text-align:left">匹配title不等于main，CSS没有此选择器</td>
+</tr>
+<tr>
+<td style="text-align:left">title~=”num”</td>
+<td style="text-align:left">匹配空格隔开的多个属性中的num</td>
+</tr>
+<tr>
+<td style="text-align:left">title*=”num”</td>
+<td style="text-align:left">匹配包含num字符串的</td>
+</tr>
+<tr>
+<td style="text-align:left">$(‘a[title=”head”][class=”top”]’)</td>
+<td style="text-align:left">这是多属性匹配</td>
+</tr>
+</tbody>
+</table>
+<h4 id="过滤选择器"><a href="#过滤选择器" class="headerlink" title="过滤选择器"></a>过滤选择器</h4><ul>
+<li>jquery里的过滤选择器和CSS3的伪类选择器相似。</li>
+</ul>
+<p><strong>过滤器补充</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">举例</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">:header</td>
+<td style="text-align:left">选择标题元素，h1~h6</td>
+</tr>
+<tr>
+<td style="text-align:left">:animated</td>
+<td style="text-align:left">选择正在执行动画的元素</td>
+</tr>
+<tr>
+<td style="text-align:left">:focus</td>
+<td style="text-align:left">当前被选中为焦点的元素</td>
+</tr>
+</tbody>
+</table>
+<p><strong>过滤器对应的jquery方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>first()</td>
+<td>第一个元素,还有last()</td>
+</tr>
+<tr>
+<td>not()</td>
+<td>非所选择的元素，如$(‘li’).not(‘.red’);</td>
+</tr>
+<tr>
+<td>eq()</td>
+<td>索引等于某个数，如eq(2)选择第三项</td>
+</tr>
+</tbody>
+</table>
+<p><strong>内容过滤器</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语句</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">:contains(“google.com”)</td>
+<td>选取含有文本google.com的元素</td>
+</tr>
+<tr>
+<td style="text-align:left">:empty</td>
+<td>选择不包含子元素或空文本的元素</td>
+</tr>
+<tr>
+<td style="text-align:left">:has(selector)</td>
+<td>包含某特征的元素，如$(‘:has(.red)’)</td>
+</tr>
+<tr>
+<td style="text-align:left">:parent</td>
+<td>选取含有子元素或文本的元素</td>
+</tr>
+</tbody>
+</table>
+<p><strong>对应的方法</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">parent()</td>
+<td>选择当前父元素</td>
+</tr>
+<tr>
+<td style="text-align:left">parents()</td>
+<td>选择所有祖先元素</td>
+</tr>
+<tr>
+<td style="text-align:left">parentsUntil(‘div’)</td>
+<td>往上选择所有祖先元素，直到遇到div停止，不包含div</td>
+</tr>
+</tbody>
+</table>
+<p><strong>子元素过滤器</strong></p>
+<table>
+<thead>
+<tr>
+<th>伪类</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:first-child</td>
+<td>获取第一个子元素，对应的最后一个子元素是:last-child</td>
+</tr>
+<tr>
+<td>:only-child</td>
+<td>只有一个子元素的元素</td>
+</tr>
+<tr>
+<td>:nth-child()</td>
+<td>获取指定索引的子元素，$(‘li:nth-child(even)’)选择奇数项，:nth-child(3n)隔3选择一个</td>
+</tr>
+</tbody>
+</table>
+<p><strong>其他方法</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">is()</td>
+<td>判断是否是某对象，如$(‘.red’).is(‘li’)是否是li元素</td>
+</tr>
+<tr>
+<td style="text-align:left">slice(m,n)</td>
+<td>选择第m+1项到第n项，可用负数表示倒数，如$(‘li’).slice(2,4)选择第3个和第4个</td>
+</tr>
+<tr>
+<td style="text-align:left">next()</td>
+<td>选择后面一个同级元素，prev()是选择前一个</td>
+</tr>
+<tr>
+<td style="text-align:left">size()</td>
+<td>计算jquery集合对象的元素个数,如$(‘ul’).children().size()有多少个子元素</td>
+</tr>
+<tr>
+<td style="text-align:left">contents()</td>
+<td>返回文本元素，如contents().size()返回文本元素个数</td>
+</tr>
+<tr>
+<td style="text-align:left">filter()</td>
+<td>过滤器，$(‘li’).filter(‘.red,:first’)选择类red和第一个元素</td>
+</tr>
+</tbody>
+</table>
+<h4 id="五、基础DOM和CSS操作"><a href="#五、基础DOM和CSS操作" class="headerlink" title="五、基础DOM和CSS操作"></a>五、基础DOM和CSS操作</h4><hr>
+<h5 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h5><table>
+<thead>
+<tr>
+<th style="text-align:left">方法名</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">text()</td>
+<td style="text-align:left">获取的是文本，有html会自动清理，这点与html()不同</td>
+</tr>
+<tr>
+<td style="text-align:left">val()</td>
+<td style="text-align:left">获取或设置表单中的文本内容，$(‘input’).val([‘男’,’女’])男女都选定，用于设置单选复选框</td>
+</tr>
+<tr>
+<td style="text-align:left">attr()</td>
+<td style="text-align:left">获取属性，attr(‘title’,’helo’)设置属性，class不建议用attr()设置</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>使用举例</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'div'</span>).html(<span class="function"><span class="keyword">function</span> (<span class="params">index,value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> value + <span class="string">'google.com'</span>;               <span class="comment">//value表示div内部的html内容</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="操作CSS"><a href="#操作CSS" class="headerlink" title="操作CSS"></a>操作CSS</h5><table>
+<thead>
+<tr>
+<th>举例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CSS([‘color’,’width’])</td>
+<td>获取多个属性，返回一个数组</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//传属性名和属性的值</span></span><br><span class="line">$.each(box,<span class="function"><span class="keyword">function</span>(<span class="params">attr,value</span>) </span>&#123;</span><br><span class="line">    alert(attr + <span class="string">':'</span> + value);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>多属性操作</strong><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'div'</span>).css(&#123;</span><br><span class="line">    width:<span class="number">20</span>px,</span><br><span class="line">    height:<span class="number">40</span>px</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><strong>需要计算的CSS值</strong><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'div'</span>).css(<span class="string">'width'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">index,value</span>) </span>&#123;            <span class="comment">//value表示width原先的值</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="built_in">parseInt</span>(value)<span class="number">-500</span>) + <span class="string">'px'</span>      <span class="comment">//返回像素值</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><strong>切换类</strong><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="keyword">this</span>).toggleClass(<span class="string">'red size'</span>)   <span class="comment">//在默认样式和添加的样式之间切换，同时切换颜色和尺寸</span></span><br><span class="line">$(<span class="keyword">this</span>).toggleClass(<span class="string">'red'</span>,<span class="literal">true</span>)   <span class="comment">//true表示切换到toggleClass里的类red,不管原先什么状态，如果是false则切换回默认的类</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>尺寸方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>innerWidth()</td>
+<td>元素宽度，包含padding，类似有innerHeight()</td>
+</tr>
+<tr>
+<td>outerWidth()</td>
+<td>包含border和padding，类似有outerHeight()</td>
+</tr>
+<tr>
+<td>outerWidth(true)</td>
+<td>包含border,padding和margin，类似有outerWidth(true)</td>
+</tr>
+<tr>
+<td>offset()</td>
+<td>离视口边界的距离，如offset().left，还有top等</td>
+</tr>
+<tr>
+<td>position()</td>
+<td>相对于父元素的距离，position().right，同上</td>
+</tr>
+<tr>
+<td>scrollTop()</td>
+<td>获取或设置垂直滚动条的距离，如scrollTop(300),类似有scrollLeft()</td>
+</tr>
+</tbody>
+</table>
+<h4 id="六、DOM操作"><a href="#六、DOM操作" class="headerlink" title="六、DOM操作"></a>六、DOM操作</h4><hr>
+<h6 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h6><p><strong>内部插入</strong></p>
+<table>
+<thead>
+<tr>
+<th>例子</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>var box = $(‘<div id="box">节点</div>‘);</td>
+<td>创建节点</td>
+</tr>
+<tr>
+<td>$(‘body’).append(box);</td>
+<td>向body内部末尾插入节点，prepend在内部前面插入</td>
+</tr>
+<tr>
+<td>$(‘div’).append(index,html) {};</td>
+<td>index表示$(‘div’)里某元素的索引，插入在该索引元素后面，html表示插入前原本的内容</td>
+</tr>
+<tr>
+<td>$(‘strong’).appendTo(‘div’);</td>
+<td>把strong放到div里面，对应有prependTo()</td>
+</tr>
+</tbody>
+</table>
+<p><strong>外部插入</strong></p>
+<table>
+<thead>
+<tr>
+<th>例子</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>after(content);</td>
+<td>跟在元素后面插入，成为同级元素，before()表示前面插入</td>
+</tr>
+<tr>
+<td>after(function (index,html) {});</td>
+<td>index索引，html表示插入前内部的html内容</td>
+</tr>
+<tr>
+<td>insertAfter(content);</td>
+<td>将元素移到content外部的后面，类似有insertBefore(content)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>包裹节点</strong></p>
+<table>
+<thead>
+<tr>
+<th>例子</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$(‘p’).wrap(‘&lt;div&gt;123&lt;/div&gt;’);</td>
+<td>变成&lt;div&gt;123&lt;p&gt;haha&lt;/p&gt;&lt;/div&gt;，如有两个&lt;p&gt;则包含两个 </td>
+</tr>
+<tr>
+<td>unwrap()</td>
+<td>移除一层包裹的内容，移两层则用两次</td>
+</tr>
+<tr>
+<td>$(‘p’).wrapAll(html)</td>
+<td>把所有p用html包裹，不用每个都包裹，html须为DOM对象</td>
+</tr>
+<tr>
+<td>wrapInner(html)</td>
+<td>内部加一层包裹，即将所有子元素用html包裹</td>
+</tr>
+</tbody>
+</table>
+<p><strong>其他节点操作</strong></p>
+<table>
+<thead>
+<tr>
+<th>例子</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$(‘div’).clone(true).appendTo(‘body’)</td>
+<td>复制div插入到body里面</td>
+</tr>
+<tr>
+<td>$(‘div’).remove(‘.box’)</td>
+<td>删除div里带box类的元素</td>
+</tr>
+<tr>
+<td>$(‘div’).detach().appendTo(‘body)</td>
+<td>detach()保留事件，重新插入body后事件还存在，而remove()则不保留事件</td>
+</tr>
+<tr>
+<td>empty()</td>
+<td>清空节点，但节点名称还保留，如剩下&lt;div&gt;&lt;/div&gt;，内部被清空了</td>
+</tr>
+<tr>
+<td>replaceWith(html)</td>
+<td>用html替换</td>
+</tr>
+</tbody>
+</table>
+<h4 id="七、表单选择器"><a href="#七、表单选择器" class="headerlink" title="七、表单选择器"></a>七、表单选择器</h4><hr>
+<h5 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h5><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:enabled</td>
+<td>选择所有可用元素,类似有:disabled</td>
+</tr>
+<tr>
+<td>:checked</td>
+<td>被选中元素</td>
+</tr>
+<tr>
+<td>:selected</td>
+<td>针对下拉列表</td>
+</tr>
+</tbody>
+</table>
+<h4 id="八、基础事件"><a href="#八、基础事件" class="headerlink" title="八、基础事件"></a>八、基础事件</h4><hr>
+<h5 id="绑定事件"><a href="#绑定事件" class="headerlink" title="绑定事件"></a>绑定事件</h5><ul>
+<li>$(‘div’).bind(‘click mouseover’),function() {});  //绑定多个事件</li>
+</ul>
+<h6 id="bind绑定多个事件"><a href="#bind绑定多个事件" class="headerlink" title="bind绑定多个事件"></a>bind绑定多个事件</h6><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'div'</span>).bind(&#123;</span><br><span class="line">    mouseover:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">    mouseout:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h6 id="解除绑定unbind"><a href="#解除绑定unbind" class="headerlink" title="解除绑定unbind()"></a>解除绑定unbind()</h6><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'input'</span>).unbind(<span class="string">'click'</span>,fn2);  <span class="comment">//删除click事件绑定的fn2方法</span></span><br></pre></td></tr></table></figure>
+<h5 id="更好的绑定事件"><a href="#更好的绑定事件" class="headerlink" title="更好的绑定事件"></a>更好的绑定事件</h5><ul>
+<li><p>自1.7版本推出了on() off() 方法替换bind() unbind(), 不推荐bind(),unbind(),以免混乱</p>
+</li>
+<li><p>on()方法</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'.button'</span>).on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;alert(<span class="string">"点击事件"</span>)&#125;);   <span class="comment">//替换bind()方法</span></span><br><span class="line">$(<span class="string">'.button'</span>).on(<span class="string">'click'</span>,&#123;user:<span class="string">'yoomin'</span>&#125;<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;alert(e.data.user)&#125;);   <span class="comment">//添加额外数据</span></span><br><span class="line">$(<span class="string">'.button'</span>).on(<span class="string">'click mouseover'</span>,&#123;alert(e.data.user)&#125;);    <span class="comment">//绑定多个事件</span></span><br><span class="line">$(<span class="string">'form'</span>).on(<span class="string">'submit'</span>,<span class="literal">false</span>);  <span class="comment">//相当于return false，用以阻止默认行为</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>off()方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'.button'</span>).off(<span class="string">'click'</span>);  <span class="comment">//移除事件</span></span><br><span class="line">$(<span class="string">'.button'</span>).off(<span class="string">'click'</span>,fn);  <span class="comment">//绑定函数</span></span><br><span class="line">$(<span class="string">'.button'</span>).off(<span class="string">'click.clk1'</span>);  <span class="comment">//命名空间</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>one()方法</li>
+</ul>
+<p>此方法仅一次事件触发，触发一次后自动销毁。</p>
+<h6 id="其他事件"><a href="#其他事件" class="headerlink" title="其他事件"></a>其他事件</h6><table>
+<thead>
+<tr>
+<th>事件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>select</td>
+<td>选中表单的文本时触发</td>
+</tr>
+<tr>
+<td>mouseover</td>
+<td>鼠标移入，omuseout 鼠标移出</td>
+</tr>
+<tr>
+<td>mouseenter</td>
+<td>鼠标穿过，mouseleave 鼠标穿出，从自身移入子元素时也会触发</td>
+</tr>
+</tbody>
+</table>
+<p><strong>keydown(),keyup() 返回键码</strong><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'input'</span>).keydown(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    alert(e.keyCode);   <span class="comment">//返回65</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>keypress()返回字符编码</strong><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">alert(e.charCode);    <span class="comment">//返回97，字符编码</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>focusin()子元素获取焦点，此事件也会触发。focusout()相似 </li>
+<li>toggle(f1,f2,…)此方法在1.8版本中已废弃</li>
+<li>找回旧版本删除的方法，用jquery-migrate插件</li>
+</ul>
+<h4 id="九、事件对象"><a href="#九、事件对象" class="headerlink" title="九、事件对象"></a>九、事件对象</h4><hr>
+<p><strong>event对象的属性</strong></p>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>事件类型，如click</td>
+</tr>
+<tr>
+<td>target</td>
+<td>触发事件的DOM元素（触发元素）</td>
+</tr>
+<tr>
+<td>currentTarget</td>
+<td>绑定事件的DOM元素（监听元素）</td>
+</tr>
+<tr>
+<td>data</td>
+<td>事件调用时的额外数据，bind(‘click’,123,function(e){alert(e.data)});输出123</td>
+</tr>
+<tr>
+<td>pageX/pageY</td>
+<td>距离页面原点位置，即body左上角</td>
+</tr>
+<tr>
+<td>screenX/screenY</td>
+<td>距离显示器屏幕位置，此事件为JS原生</td>
+</tr>
+<tr>
+<td>clientX/clientY</td>
+<td>相对于页面视口位置</td>
+</tr>
+<tr>
+<td>which</td>
+<td>获取鼠标点击的键，左中右（123）键，若是键盘则返回按键</td>
+</tr>
+<tr>
+<td>altKey/shiftKey/ctrlKey/metaKey</td>
+<td>点击的同时是否按下了这些键</td>
+</tr>
+</tbody>
+</table>
+<p><strong>阻止冒泡</strong><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'input'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    e.stopPropagation();  <span class="comment">//禁止冒泡，点击input不会触发祖先元素的click事件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>阻止默认行为</strong>：如点击右键弹出菜单或点击链接时跳转到href等默认行为<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'a'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    e.preventDefault();  <span class="comment">//阻止默认行为</span></span><br><span class="line">    e.isDefaultPrevented();   <span class="comment">//是否使用了preventDefault()</span></span><br><span class="line">    e.isPropagationStopped();    <span class="comment">//是否调用了stopPropagation()</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="十、高级事件"><a href="#十、高级事件" class="headerlink" title="十、高级事件"></a>十、高级事件</h4><hr>
+<h5 id="模拟操作"><a href="#模拟操作" class="headerlink" title="模拟操作"></a>模拟操作</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'input'</span>).trigger(<span class="string">'click'</span>);   <span class="comment">//模拟点击操作，会触发默认行为，所有input都会触发，并返回jquery对象，会冒泡</span></span><br><span class="line">$(<span class="string">'input'</span>).triggerHandler(<span class="string">'click'</span>);  <span class="comment">//模拟点击操作，不会触发默认行为，匹配第一个元素并返回事件执行的返回值，否则undefined，不会冒泡</span></span><br><span class="line">$(<span class="string">'input'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params">e,data1,data2</span>) </span>&#123;</span><br><span class="line">    alert();</span><br><span class="line">&#125;).trigger(<span class="string">'click'</span>,[<span class="string">'123'</span>,<span class="string">'abc'</span>]);     <span class="comment">//模拟事件传递参数，用中括号包括多个参数</span></span><br></pre></td></tr></table></figure>
+<h5 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'input'</span>).bind(<span class="string">'myEvent'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;     <span class="comment">//定义我的自定义事件</span></span><br><span class="line">    alert(<span class="string">'我的自定义事件'</span>);   <span class="comment">//自定义事件执行的函数</span></span><br><span class="line">&#125;).trigger(<span class="string">'myEvent'</span>);    <span class="comment">//模拟触发自定义事件</span></span><br></pre></td></tr></table></figure>
+<h5 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">bind(<span class="string">'click.clk1'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br><span class="line">bind(<span class="string">'click.clk2'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br><span class="line">unbind(<span class="string">'click.clk1'</span>);   <span class="comment">//用命名空间识别click，表示移除click.clk1绑定的click事件</span></span><br></pre></td></tr></table></figure>
+<h5 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h5><h6 id="live"><a href="#live" class="headerlink" title="live()"></a>live()</h6><p><strong>此方法在1.9中已删除，不能连缀调用</strong><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'.button'</span>).live(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;);   <span class="comment">//live绑定的是document，点击.button是冒泡到document触发点击事件的</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>delegate()和live相似，但绑定的是父元素，而不是document</li>
+</ul>
+<h4 id="十一、动画"><a href="#十一、动画" class="headerlink" title="十一、动画"></a>十一、动画</h4><hr>
+<h5 id="显示和隐藏"><a href="#显示和隐藏" class="headerlink" title="显示和隐藏"></a>显示和隐藏</h5><p>show()方法的回调函数是在动画结束后才执行</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'span'</span>).show(<span class="string">'slow'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;alert(<span class="string">"hello"</span>);&#125;);   <span class="comment">//动画完毕后弹出窗口，此特性可实现列队动画，一个接一个显示，这样用缺点较多</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>列队动画，递归调用</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'div'</span>).first().show(<span class="string">'fast'</span>,<span class="function"><span class="keyword">function</span> <span class="title">divShow</span>(<span class="params"></span>) </span>&#123;   <span class="comment">//显示第一个</span></span><br><span class="line">    $(<span class="keyword">this</span>).next().show(<span class="string">'fast'</span>,divShow);    <span class="comment">//递归调用divShow，</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>toggle()切换显示状态</li>
+</ul>
+<h5 id="自定义动画animate"><a href="#自定义动画animate" class="headerlink" title="自定义动画animate()"></a>自定义动画animate()</h5><ul>
+<li>CSS不是动画方法，会默认排列到和第一动画方法同时执行</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'div'</span>).slideUp(<span class="string">'slow'</span>).slideDown(<span class="string">'slow'</span>).css(<span class="string">'background'</span>,<span class="string">'orange'</span>);  <span class="comment">//第一个动画开始同时会改变颜色</span></span><br><span class="line"><span class="comment">//解决方法</span></span><br><span class="line">$(<span class="string">'div'</span>).slideUp(<span class="string">'slow'</span>).slideDown(<span class="string">'slow'</span>).queue(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>).css(<span class="string">'background'</span>,<span class="string">'orange'</span>);</span><br><span class="line">&#125;);  <span class="comment">//用queue()方法包括，实现队列按顺序执行，此时后面若还有动画则不会执行</span></span><br><span class="line">$(<span class="string">'div'</span>).slideUp(<span class="string">'slow'</span>).queue(<span class="function"><span class="keyword">function</span>(<span class="params">next</span>)</span>&#123;    <span class="comment">//加一个默认的next可继续执行边缀方法</span></span><br><span class="line">    $(<span class="keyword">this</span>).css(<span class="string">'background'</span>,<span class="string">'orange'</span>);</span><br><span class="line">    next();</span><br><span class="line">&#125;).hide(<span class="string">'sloe'</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>缓动和匀动</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'div'</span>).animate(&#123;&#125;,<span class="number">3000</span>,<span class="string">'swing'</span>);   <span class="comment">//swing表示缓动，先慢后快再变慢，linear表示匀速</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>clearQueue()清理列队<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="keyword">this</span>).clearQueue();   <span class="comment">//在需要清理的回调函数里加入此语句，后续的连缀方法不会执行</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="动画状态"><a href="#动画状态" class="headerlink" title="动画状态"></a>动画状态</h5><ul>
+<li>stop()停止动画</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'div'</span>).stop();   <span class="comment">//马上停止动画，下次还从停止的地方继续</span></span><br><span class="line">$(<span class="string">'div'</span>).animate().animate();  <span class="comment">//在动画过程中使用stop()停止，只会停止第一个动画，其余继续进行</span></span><br><span class="line">stop(<span class="literal">true</span>,<span class="literal">true</span>);  <span class="comment">//第一个true表示停止并且清除后续的动画，默认为false；第二个为true表示停止后跳转到末尾的位置（不是状态）上，默认false</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>delay()延迟动画</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">delay(<span class="number">1000</span>);   <span class="comment">//动画延迟1秒钟执行</span></span><br></pre></td></tr></table></figure>
+<h5 id="动画全局属性"><a href="#动画全局属性" class="headerlink" title="动画全局属性"></a>动画全局属性</h5><ul>
+<li>$.fx.interval 设置每秒运动帧数，默认13</li>
+<li>$.fx.off  等于true时关闭页面上所有的动画</li>
+</ul>
+<h4 id="十二、Ajax"><a href="#十二、Ajax" class="headerlink" title="十二、Ajax"></a>十二、Ajax</h4><hr>
+<h5 id="load-异步加载"><a href="#load-异步加载" class="headerlink" title="load()异步加载"></a>load()异步加载</h5><ul>
+<li>load()方法，是局部方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'#box'</span>).load(<span class="string">'test.html .title'</span>);   <span class="comment">//不刷新页面加载test.html的内容，并筛选出.title的内容，.title可省略</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>load()传数据</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'#box'</span>).load(<span class="string">'test.php?url=google.com'</span>);   <span class="comment">//get方式提交，传一键值对</span></span><br><span class="line">$(<span class="string">'#box'</span>).load(<span class="string">'test.php'</span>,&#123;</span><br><span class="line">    url:<span class="string">'google.com'</span>       <span class="comment">//post方式发送</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>对应的php内容</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>($_GET[<span class="string">'url'</span>] == <span class="string">'google.com'</span>)&#123;<span class="keyword">echo</span> <span class="string">'成功'</span>&#125;<span class="keyword">else</span> &#123;<span class="keyword">echo</span> <span class="string">'登录失败！'</span>&#125;    <span class="comment">//get方式</span></span><br><span class="line"><span class="keyword">if</span>($_POST[<span class="string">'url'</span>] == <span class="string">'google.com'</span>)&#123;<span class="keyword">echo</span> <span class="string">'成功'</span>&#125;<span class="keyword">else</span> &#123;<span class="keyword">echo</span> <span class="string">'登录失败！'</span>&#125;    <span class="comment">//post方式</span></span><br></pre></td></tr></table></figure>
+<p>-load()回调函数</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'#box'</span>).load(<span class="string">'test.php'</span>,&#123;</span><br><span class="line">    url:<span class="string">'google.com'</span>       <span class="comment">//post方式发送</span></span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">response,status,xhr</span>) </span>&#123;     <span class="comment">//response服务器返回的内容，status请求状态success或者error，xhr表示XMLHttpRequest对象</span></span><br><span class="line">    <span class="keyword">if</span>(status == <span class="string">'success'</span>)&#123;&#125;  <span class="comment">//如果请求成功，</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>XMLHttpRequest对象属性</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性名</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">responseText</td>
+<td style="text-align:left">作为响应主体被的文本</td>
+</tr>
+<tr>
+<td style="text-align:left">responseXML</td>
+<td style="text-align:left">如果响应主体内容类型是text/html或application/xml,则返回包含响应数据的XML DOM文档</td>
+</tr>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">响应的HTTP状态，如404等</td>
+</tr>
+<tr>
+<td style="text-align:left">statusText</td>
+<td style="text-align:left">HTTP状态的说明</td>
+</tr>
+</tbody>
+</table>
+<h5 id="get-和-post-全局方法"><a href="#get-和-post-全局方法" class="headerlink" title="$.get()和$.post() 全局方法"></a>$.get()和$.post() 全局方法</h5><ul>
+<li>$.get()</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.get(<span class="string">'test.php'</span>,&#123;url:<span class="string">'google.com'</span>&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">response,status,xhr</span>) </span>&#123;&#125;,type)  <span class="comment">//'test.php'必选，前三个参数和load方法一样，type为xml、html、json、script、text、jsonp等</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>type参数自动判断返回类型，也可强制选用某种类型，若把纯文本强行转成XML或json则无法获取数据</p>
+</li>
+<li><p>$.post()</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.post(<span class="string">'test.php'</span>,<span class="string">''</span>url=google.com<span class="string">',function()&#123;&#125;);</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong>$.post不能用？传参,即不能用’test.php?url=google.com’</p>
+<ul>
+<li>举例获取XML</li>
+</ul>
+<p>XML代码</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>www.google.com<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.post(<span class="string">'test.xml'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">response,status,xhr</span>) </span>&#123;</span><br><span class="line">    alert($(response).find(<span class="string">'root'</span>).find(<span class="string">'url'</span>).text());  <span class="comment">//输出www.google.com</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="getScript-和-getJSON"><a href="#getScript-和-getJSON" class="headerlink" title="$.getScript()和$.getJSON()"></a>$.getScript()和$.getJSON()</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.getScript(<span class="string">'jquery.js'</span>);    <span class="comment">//异步加载JS文件</span></span><br></pre></td></tr></table></figure>
+<h5 id="ajax-最底层方法"><a href="#ajax-最底层方法" class="headerlink" title="$.ajax()最底层方法"></a>$.ajax()最底层方法</h5><ul>
+<li>例子</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type:<span class="string">'POST'</span>,</span><br><span class="line">   url:<span class="string">'test.php'</span>,</span><br><span class="line">   data:&#123;url:<span class="string">'google.com'</span>&#125;,</span><br><span class="line">   timeout:<span class="number">500</span>,                <span class="comment">//请求时间为500毫秒</span></span><br><span class="line">   global:<span class="literal">false</span>                <span class="comment">//不触发全局事件</span></span><br><span class="line">   success:<span class="function"><span class="keyword">function</span>(<span class="params">response,status,xhr</span>) </span>&#123;</span><br><span class="line">        $(<span class="string">'#box'</span>).html(response);</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong>对于data属性，如果是post模式，则不能用test.php?url=google.com</p>
+<ul>
+<li>获取用户名实例</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">    用户名：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"user"</span> /&gt;</span></span><br><span class="line">    邮件：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"email"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">data:&#123;</span><br><span class="line">    user:$(<span class="string">'form input[name=user]'</span>).val(),      <span class="comment">//获取上面表单中要提交的内容</span></span><br><span class="line">    email:$(<span class="string">'form input[name=email]'</span>).val()     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>serialize()序列化方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'form'</span>).serialize();    <span class="comment">//把表单里面的值变成字符串形式的键值对，并且编码，类似user=yoomin&amp;email=yy@gmail</span></span><br><span class="line">$(<span class="string">'form'</span>).serializeArray();   <span class="comment">//以json形式返回</span></span><br></pre></td></tr></table></figure>
+<h5 id="ajaxSetup-初始化ajax"><a href="#ajaxSetup-初始化ajax" class="headerlink" title="$.ajaxSetup()初始化ajax"></a>$.ajaxSetup()初始化ajax</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$.ajaxSetup(&#123;</span><br><span class="line">    type:&apos;POST&apos;,                //ajax中重复使用这几个ajax属性时可用此方法统一设置</span><br><span class="line">    url:&apos;test.php&apos;,</span><br><span class="line">    data:$(&apos;form&apos;).serialize()</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>后面的ajax只需用<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    success:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h5 id="param-解开键值对变为字符串形式"><a href="#param-解开键值对变为字符串形式" class="headerlink" title="$.param()解开键值对变为字符串形式"></a>$.param()解开键值对变为字符串形式</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">data:$.param(&#123;           <span class="comment">//把键值对解开成字符串，变成类似user=yoomin&amp;email=yy@gmail.com</span></span><br><span class="line">    user:$(<span class="string">'form input[name=user]'</span>).val(),      </span><br><span class="line">    email:$(<span class="string">'form input[name=email]'</span>).val()     </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="ajaxStart-和ajaxStop"><a href="#ajaxStart-和ajaxStop" class="headerlink" title="ajaxStart()和ajaxStop()"></a>ajaxStart()和ajaxStop()</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ajaxStart(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;     <span class="comment">//全局ajax开始时显示正在加载中</span></span><br><span class="line">    $(<span class="string">'.loading'</span>).show();</span><br><span class="line">&#125;).ajaxStop(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;               <span class="comment">//全局ajax结束时隐藏正在加载中</span></span><br><span class="line">    $(<span class="string">'.loading'</span>).hide();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="error错误"><a href="#error错误" class="headerlink" title="error错误"></a>error错误</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">error(<span class="function"><span class="keyword">function</span>(<span class="params">xhr,errorText,errorType</span>) </span>&#123;&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>ajaxError()全局错误方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ajaxError(<span class="function"><span class="keyword">function</span>(<span class="params">event,xhr,settings,errorType</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(event);     <span class="comment">//事件，有type data target等</span></span><br><span class="line">    <span class="built_in">console</span>.log(settings);   <span class="comment">//有type url等属性</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="请求事件"><a href="#请求事件" class="headerlink" title="请求事件"></a>请求事件</h5><table>
+<thead>
+<tr>
+<th>全局方法</th>
+<th>对应局部方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ajaxSuccess()</td>
+<td>success()</td>
+<td>请求成功时执行</td>
+</tr>
+<tr>
+<td>ajaxComplete()</td>
+<td>complete()</td>
+<td>请求完成时执行，不管是否成功</td>
+</tr>
+<tr>
+<td>ajaxSend()</td>
+<td>无</td>
+<td>只有属性beforeSend,请求发送之前要绑定的函数</td>
+</tr>
+</tbody>
+</table>
+<h5 id="获取json文件"><a href="#获取json文件" class="headerlink" title="获取json文件"></a>获取json文件</h5><ul>
+<li>本地获取json</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type:<span class="string">'POST'</span>,</span><br><span class="line">   url:<span class="string">'json.php'</span>,                           <span class="comment">//本地地址，无跨域</span></span><br><span class="line">   dataType:<span class="string">'json'</span>,                         <span class="comment">//由于是php文件，默认类型为html，所以强制为json以取得php文件里的json数据</span></span><br><span class="line">   success:<span class="function"><span class="keyword">function</span>(<span class="params">response,status,xhr</span>) </span>&#123;</span><br><span class="line">        alert(response);</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>跨域获取json</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type:<span class="string">'POST'</span>,</span><br><span class="line">   url:<span class="string">'http:\\google.com/jsonp.php?callback=?'</span>,                           <span class="comment">//跨域，必须加callback，响应服务器的callback，否则请求失败</span></span><br><span class="line">   dataType:<span class="string">'json'</span>,                         <span class="comment">//</span></span><br><span class="line">   success:<span class="function"><span class="keyword">function</span>(<span class="params">response,status,xhr</span>) </span>&#123;</span><br><span class="line">        alert(response);</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>说明：</strong>若不用callback也可设置<code>dataType:&#39;jsonp&#39;</code>,作用和加callback一样</p>
+<h5 id="jqXHR对象"><a href="#jqXHR对象" class="headerlink" title="jqXHR对象"></a>jqXHR对象</h5><ul>
+<li>jqXHR就是$.ajax()返回的对象</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> jqXHR =$.ajax(&#123;</span><br><span class="line">             type:<span class="string">'POST'</span>,</span><br><span class="line">             url:<span class="string">'json.php'</span>,                 </span><br><span class="line">             dataType:<span class="string">'json'</span>,              </span><br><span class="line">          &#125;);</span><br><span class="line">jqXHR.success(<span class="function"><span class="keyword">function</span>(<span class="params">response,status,xhr</span>) </span>&#123;</span><br><span class="line">                  alert(response);</span><br><span class="line">          &#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>建议使用done()方法代替success()</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">jqXHR.down(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;&#125;).down(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);     <span class="comment">//可连缀使用，可多次执行同一个回调函数</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>$.when()<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"> $.when(jqXHR,jqXHR2).done(<span class="function"><span class="keyword">function</span>(<span class="params">r1,r2</span>) </span>&#123;</span><br><span class="line">    alert(r1[<span class="number">0</span>]);    <span class="comment">//r1表示jqXHR本身，打印出三个，test.php success和自身对象，下标表示取test.php</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="十三、工具函数"><a href="#十三、工具函数" class="headerlink" title="十三、工具函数"></a>十三、工具函数</h4><hr>
+<h5 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h5><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trim()</td>
+<td>去除字符串左右两边的空格，如$.trim(‘   hello   ‘);</td>
+</tr>
+</tbody>
+</table>
+<h5 id="数组和对象"><a href="#数组和对象" class="headerlink" title="数组和对象"></a>数组和对象</h5><ul>
+<li>$.each()遍历</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.each(obj,<span class="function"><span class="keyword">function</span>(<span class="params">name,fn</span>) </span>&#123; &#125;);    <span class="comment">//遍历对象，name为属性名或方法名，fn为方法的代码</span></span><br><span class="line">$.each(array1,<span class="function"><span class="keyword">function</span>(<span class="params">index,value</span>) </span>&#123; &#125;);  <span class="comment">//遍历数组,index为索引，value为该索引的数据值</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>$.grep()数据筛选</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> array1 = [<span class="number">4</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">11</span>,<span class="number">25</span>,<span class="number">38</span>,<span class="number">59</span>];</span><br><span class="line">$.grep(array1,<span class="function"><span class="keyword">function</span>(<span class="params">element,index</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> element &lt; <span class="number">6</span> &amp;&amp; index &lt; <span class="number">5</span>;     <span class="comment">//返回值小于6且索引小于5的数据,输出4,6</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>$.map()修改数据</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> array1 = [<span class="number">4</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">11</span>,<span class="number">25</span>,<span class="number">38</span>,<span class="number">59</span>];</span><br><span class="line">$.grep(array1,<span class="function"><span class="keyword">function</span>(<span class="params">element,index</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(index&lt;<span class="number">5</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> element + <span class="number">1</span>;     <span class="comment">//前5项加1   </span></span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>inArray(11,array1) 找到11在数组array1的下标</p>
+</li>
+<li><p>检测数据函数</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>说明</th>
+<th>函数名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$.isArray()</td>
+<td>是否是数组</td>
+<td>$.isFunction()</td>
+<td>是否为函数</td>
+</tr>
+<tr>
+<td>$.isEmptyObject()</td>
+<td>是否为空对象</td>
+<td>$.isPlainObject()</td>
+<td>是否纯粹对象</td>
+</tr>
+<tr>
+<td>$.contains()</td>
+<td>DOM节点是否包含另一个DOM节点</td>
+<td>$.type(data)</td>
+<td>获取数据类型</td>
+</tr>
+<tr>
+<td>$.isNumeric(data)</td>
+<td>为是否为数值</td>
+<td>$.isWindow(data)</td>
+<td>是否为window对象</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>URL操作param()</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;name:<span class="string">'lee'</span>,age:<span class="number">32</span>&#125;;</span><br><span class="line">alert($.param(obj));    <span class="comment">//输出name=lee&amp;age=32</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>浏览器检测在jquery新版本中已废弃</li>
+</ul>
+<h4 id="十四、插件"><a href="#十四、插件" class="headerlink" title="十四、插件"></a>十四、插件</h4><hr>
+<ul>
+<li>jquery插件下载地址点<a href="http://plugins.jquery.com" target="_blank" rel="external">这里</a></li>
+</ul>
+<h5 id="简单使用插件"><a href="#简单使用插件" class="headerlink" title="简单使用插件"></a>简单使用插件</h5><ul>
+<li>验证插件</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"required email"</span> /&gt;</span>    //验证插件使用方法，非空和邮箱验证</span><br></pre></td></tr></table></figure>
+<ul>
+<li>autocomplete自动补全插件</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> user = [<span class="string">'yoomin'</span>,<span class="string">'Jim'</span>,<span class="string">'Marry'</span>];</span><br><span class="line">$(<span class="string">'form input[name=user]'</span>).autocomplete(user);</span><br></pre></td></tr></table></figure>
+<h5 id="自定义插件"><a href="#自定义插件" class="headerlink" title="自定义插件"></a>自定义插件</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'ul'</span>).stop().slideUp(<span class="string">'normal'</span>);   <span class="comment">//鼠标离开时马上停止动画,在防止动画出现延时反应</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>插件封装</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">;(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;     <span class="comment">//分号以防万一前面漏了分号，多个不会有副作用</span></span><br><span class="line">  $.extend(&#123;            <span class="comment">//全局性的使用$.extend，局部性使用$.fn.extend</span></span><br><span class="line">    <span class="string">'nav'</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">//插件代码</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)(jQuery);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>插件使用</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.nav();   <span class="comment">//全局性的</span></span><br><span class="line">$(<span class="string">'ul'</span>).nav();  <span class="comment">//局部性的插件使用</span></span><br></pre></td></tr></table></figure>
+<p><strong>说明：</strong>插件里的this，表示的是jquery对象而不是DOM，因为使用了$.extend();如return this，但被屏蔽的除外，如：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">find(<span class="string">'.nav'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">this</span>.width();&#125;);   <span class="comment">//这里this表示DOM</span></span><br></pre></td></tr></table></figure></p>
+<p>(更新中……)</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/note/">note</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/jquery/">jquery</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoomin1106.github.io/2014/03/14/note/jquery/" data-title="李炎恢jquery视频教程笔记 | matt&#39;s blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2014/03/14/note/javascript_W3SCHOOL笔记/" title="javascript_W3SCHOOL笔记">
+  <strong>上一篇：</strong><br/>
+  <span>
+  javascript_W3SCHOOL笔记</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2014/03/14/note/Professional_JavaScript_for_WEb_Developers_Note/"  title="Javascript高级程序设计笔记">
+ <strong>下一篇：</strong><br/> 
+ <span>Javascript高级程序设计笔记
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#李炎恢jquery视频教程笔记"><span class="toc-number">1.</span> <span class="toc-text">李炎恢jquery视频教程笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、入门"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">一、入门</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#版本信息"><span class="toc-number">1.0.0.1.1.</span> <span class="toc-text">版本信息</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、基础核心"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">二、基础核心</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#符号"><span class="toc-number">1.0.0.2.1.</span> <span class="toc-text">$符号</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#js原生DOM对象和jquery对象互换"><span class="toc-number">1.0.0.2.2.</span> <span class="toc-text">js原生DOM对象和jquery对象互换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#多个库冲突"><span class="toc-number">1.0.0.2.3.</span> <span class="toc-text">多个库冲突</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、常规选择器"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">三、常规选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#jquery选择器容错功能"><span class="toc-number">1.0.0.3.1.</span> <span class="toc-text">jquery选择器容错功能</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、高级选择器"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">四、高级选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#层次选择器"><span class="toc-number">1.0.0.4.1.</span> <span class="toc-text">层次选择器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#属性选择器"><span class="toc-number">1.0.0.4.2.</span> <span class="toc-text">属性选择器</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#过滤选择器"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">过滤选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、基础DOM和CSS操作"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">五、基础DOM和CSS操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#常用方法"><span class="toc-number">1.0.0.6.1.</span> <span class="toc-text">常用方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#操作CSS"><span class="toc-number">1.0.0.6.2.</span> <span class="toc-text">操作CSS</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、DOM操作"><span class="toc-number">1.0.0.7.</span> <span class="toc-text">六、DOM操作</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#常用方法-1"><span class="toc-number">1.0.0.7.0.1.</span> <span class="toc-text">常用方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#七、表单选择器"><span class="toc-number">1.0.0.8.</span> <span class="toc-text">七、表单选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#伪类"><span class="toc-number">1.0.0.8.1.</span> <span class="toc-text">伪类</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#八、基础事件"><span class="toc-number">1.0.0.9.</span> <span class="toc-text">八、基础事件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#绑定事件"><span class="toc-number">1.0.0.9.1.</span> <span class="toc-text">绑定事件</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#bind绑定多个事件"><span class="toc-number">1.0.0.9.1.1.</span> <span class="toc-text">bind绑定多个事件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#解除绑定unbind"><span class="toc-number">1.0.0.9.1.2.</span> <span class="toc-text">解除绑定unbind()</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更好的绑定事件"><span class="toc-number">1.0.0.9.2.</span> <span class="toc-text">更好的绑定事件</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#其他事件"><span class="toc-number">1.0.0.9.2.1.</span> <span class="toc-text">其他事件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#九、事件对象"><span class="toc-number">1.0.0.10.</span> <span class="toc-text">九、事件对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十、高级事件"><span class="toc-number">1.0.0.11.</span> <span class="toc-text">十、高级事件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#模拟操作"><span class="toc-number">1.0.0.11.1.</span> <span class="toc-text">模拟操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#自定义事件"><span class="toc-number">1.0.0.11.2.</span> <span class="toc-text">自定义事件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#命名空间"><span class="toc-number">1.0.0.11.3.</span> <span class="toc-text">命名空间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#事件委托"><span class="toc-number">1.0.0.11.4.</span> <span class="toc-text">事件委托</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#live"><span class="toc-number">1.0.0.11.4.1.</span> <span class="toc-text">live()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十一、动画"><span class="toc-number">1.0.0.12.</span> <span class="toc-text">十一、动画</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#显示和隐藏"><span class="toc-number">1.0.0.12.1.</span> <span class="toc-text">显示和隐藏</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#自定义动画animate"><span class="toc-number">1.0.0.12.2.</span> <span class="toc-text">自定义动画animate()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#动画状态"><span class="toc-number">1.0.0.12.3.</span> <span class="toc-text">动画状态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#动画全局属性"><span class="toc-number">1.0.0.12.4.</span> <span class="toc-text">动画全局属性</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十二、Ajax"><span class="toc-number">1.0.0.13.</span> <span class="toc-text">十二、Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#load-异步加载"><span class="toc-number">1.0.0.13.1.</span> <span class="toc-text">load()异步加载</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#get-和-post-全局方法"><span class="toc-number">1.0.0.13.2.</span> <span class="toc-text">$.get()和$.post() 全局方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#getScript-和-getJSON"><span class="toc-number">1.0.0.13.3.</span> <span class="toc-text">$.getScript()和$.getJSON()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ajax-最底层方法"><span class="toc-number">1.0.0.13.4.</span> <span class="toc-text">$.ajax()最底层方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ajaxSetup-初始化ajax"><span class="toc-number">1.0.0.13.5.</span> <span class="toc-text">$.ajaxSetup()初始化ajax</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#param-解开键值对变为字符串形式"><span class="toc-number">1.0.0.13.6.</span> <span class="toc-text">$.param()解开键值对变为字符串形式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ajaxStart-和ajaxStop"><span class="toc-number">1.0.0.13.7.</span> <span class="toc-text">ajaxStart()和ajaxStop()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#error错误"><span class="toc-number">1.0.0.13.8.</span> <span class="toc-text">error错误</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#请求事件"><span class="toc-number">1.0.0.13.9.</span> <span class="toc-text">请求事件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#获取json文件"><span class="toc-number">1.0.0.13.10.</span> <span class="toc-text">获取json文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#jqXHR对象"><span class="toc-number">1.0.0.13.11.</span> <span class="toc-text">jqXHR对象</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十三、工具函数"><span class="toc-number">1.0.0.14.</span> <span class="toc-text">十三、工具函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#字符串操作"><span class="toc-number">1.0.0.14.1.</span> <span class="toc-text">字符串操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#数组和对象"><span class="toc-number">1.0.0.14.2.</span> <span class="toc-text">数组和对象</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十四、插件"><span class="toc-number">1.0.0.15.</span> <span class="toc-text">十四、插件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#简单使用插件"><span class="toc-number">1.0.0.15.1.</span> <span class="toc-text">简单使用插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#自定义插件"><span class="toc-number">1.0.0.15.2.</span> <span class="toc-text">自定义插件</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/html-css/" title="html/css">html/css<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/note/" title="note">note<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tools/" title="tools">tools<sup>3</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/jquery/" title="jquery">jquery<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/js/" title="js">js<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sass/" title="sass">sass<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css/" title="css">css<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css3/" title="css3">css3<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/前端工具/" title="前端工具">前端工具<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/gulp/" title="gulp">gulp<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/调试/" title="调试">调试<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/webview/" title="webview">webview<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/X5/" title="X5">X5<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.cnblogs.com/yoomin" target="_blank" title="matt&#39;s blog">matt&#39;s blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hi! This is matt. <br/>
+			</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Matt.Wu">Matt.Wu</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

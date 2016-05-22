@@ -1,0 +1,562 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>jQuery插件开发 | matt&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Matt.Wu">
+    
+
+    
+    <meta name="description" content="jQuery 插件开发模式jQuery 的插件开发模式主要有三种：
+
+通过$.extend()来扩展jQuery
+通过$.fn向jQuery添加新的方法
+通过$.widget()应用jQuery UI 的部件工厂方式创建
+
+这里我们选用第二种：$.fn.myplugin = functin() &amp;#123;	// plugin code&amp;#125;
+因为这种方法是加在jQuery对象上，可以在jQ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery插件开发">
+<meta property="og:url" content="http://yoomin1106.github.io/2015/12/29/javascript/jquery_plugin/index.html">
+<meta property="og:site_name" content="matt's blog">
+<meta property="og:description" content="jQuery 插件开发模式jQuery 的插件开发模式主要有三种：
+
+通过$.extend()来扩展jQuery
+通过$.fn向jQuery添加新的方法
+通过$.widget()应用jQuery UI 的部件工厂方式创建
+
+这里我们选用第二种：$.fn.myplugin = functin() &amp;#123;	// plugin code&amp;#125;
+因为这种方法是加在jQuery对象上，可以在jQ">
+<meta property="og:updated_time" content="2016-04-27T00:35:43.304Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery插件开发">
+<meta name="twitter:description" content="jQuery 插件开发模式jQuery 的插件开发模式主要有三种：
+
+通过$.extend()来扩展jQuery
+通过$.fn向jQuery添加新的方法
+通过$.widget()应用jQuery UI 的部件工厂方式创建
+
+这里我们选用第二种：$.fn.myplugin = functin() &amp;#123;	// plugin code&amp;#125;
+因为这种方法是加在jQuery对象上，可以在jQ">
+
+    
+    <link rel="alternative" href="/atom.xml" title="matt&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="matt&#39;s blog" title="matt&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="matt&#39;s blog">matt&#39;s blog</a></h1>
+				<h2 class="blog-motto">Write to remember!</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoomin1106.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/12/29/javascript/jquery_plugin/" title="jQuery插件开发" itemprop="url">jQuery插件开发</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Matt.Wu" target="_blank" itemprop="author">Matt.Wu</a>
+		
+  <p class="article-time">
+    <time datetime="2015-12-28T16:00:00.000Z" itemprop="datePublished"> 发表于 2015-12-29</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery-插件开发模式"><span class="toc-number">1.</span> <span class="toc-text">jQuery 插件开发模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一个非常简单的例子"><span class="toc-number">2.</span> <span class="toc-text">一个非常简单的例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象开发插件"><span class="toc-number">3.</span> <span class="toc-text">面向对象开发插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#大体思路如下："><span class="toc-number">3.1.</span> <span class="toc-text">大体思路如下：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本结构"><span class="toc-number">3.2.</span> <span class="toc-text">基本结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#放到立即执行的匿名函数内部"><span class="toc-number">3.3.</span> <span class="toc-text">放到立即执行的匿名函数内部</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#默认参数"><span class="toc-number">3.4.</span> <span class="toc-text">默认参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化方法"><span class="toc-number">3.5.</span> <span class="toc-text">初始化方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#防止多次初始化"><span class="toc-number">3.6.</span> <span class="toc-text">防止多次初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遍历所有元素"><span class="toc-number">3.7.</span> <span class="toc-text">遍历所有元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保持链式操作"><span class="toc-number">3.8.</span> <span class="toc-text">保持链式操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#给插件添加方法"><span class="toc-number">3.9.</span> <span class="toc-text">给插件添加方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置参数中添加事件"><span class="toc-number">3.10.</span> <span class="toc-text">配置参数中添加事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#兼容AMD规范"><span class="toc-number">3.11.</span> <span class="toc-text">兼容AMD规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结语"><span class="toc-number">3.12.</span> <span class="toc-text">结语</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h2 id="jQuery-插件开发模式"><a href="#jQuery-插件开发模式" class="headerlink" title="jQuery 插件开发模式"></a>jQuery 插件开发模式</h2><p>jQuery 的插件开发模式主要有三种：</p>
+<ul>
+<li>通过$.extend()来扩展jQuery</li>
+<li>通过$.fn向jQuery添加新的方法</li>
+<li>通过$.widget()应用jQuery UI 的部件工厂方式创建</li>
+</ul>
+<p>这里我们选用第二种：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.fn.myplugin = functin() &#123;</span><br><span class="line">	<span class="comment">// plugin code</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>因为这种方法是加在jQuery对象上，可以在jQuery选择器选择元素后直接调用：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(&apos;body&apos;).myplugin();</span><br></pre></td></tr></table></figure></p>
+<p>若对其他两种方法有兴趣，请自行查看jQuery <a href="http://api.jquery.com/" target="_blank" rel="external">官方文档</a>。</p>
+<h2 id="一个非常简单的例子"><a href="#一个非常简单的例子" class="headerlink" title="一个非常简单的例子"></a>一个非常简单的例子</h2><p>改变元素的背景颜色插件：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.fn.tinyPlugin = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.css(<span class="string">'background-color'</span>,<span class="string">'#fff'</span>); <span class="comment">// 这里的this是jQuery对象，而不是原生的js对象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样写的话，颜色不能使用时定义，修改一下：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.fn.tinyPlugin = <span class="function"><span class="keyword">function</span>(<span class="params">bg</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.css(<span class="string">'background-color'</span>,bg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以上是一个jQuery插件的基本结构。但编写更复杂的jQuery插件，借助面向对象的思想可以使插件具有更好的扩展性、可维护性。</p>
+<h2 id="面向对象开发插件"><a href="#面向对象开发插件" class="headerlink" title="面向对象开发插件"></a>面向对象开发插件</h2><h3 id="大体思路如下："><a href="#大体思路如下：" class="headerlink" title="大体思路如下："></a>大体思路如下：</h3><p>1.创建myplugin构造函数</p>
+<p>2.定义myplugin的方法</p>
+<p>3.添加到jQuery对象中</p>
+<h3 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h3><p>首先将代码放到一个自执行的匿名函数中，防止全局对象污染：<br>根据上面的步骤，基本结构大致如下：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 定义构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myplugin</span>(<span class="params">$element,options</span>)</span>&#123;</span><br><span class="line">	<span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加方法</span></span><br><span class="line">myplugin.prototype = &#123;</span><br><span class="line">	method1: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="comment">// ...</span></span><br><span class="line">	&#125;,</span><br><span class="line">	method2: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="comment">// ...</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加到jQuery对象中</span></span><br><span class="line">$.fn.myplugin = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">new</span> myplugin(<span class="keyword">this</span>,options);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>后面将在这个结构上进行完善：</p>
+<h3 id="放到立即执行的匿名函数内部"><a href="#放到立即执行的匿名函数内部" class="headerlink" title="放到立即执行的匿名函数内部"></a>放到立即执行的匿名函数内部</h3><p>放到匿名函数内部的主要作用是隔离作用域，避免变量污染，而自执行可以返回需要的函数或对象，而不需要每次通过条件判断为处理，只需要在首次加载的时候赋值给某个变量。更详细的信息参见知乎上的 <a href="https://www.zhihu.com/question/35832285" target="_blank" rel="external">这个问题</a>。<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">;(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;)(jQuery);</span><br></pre></td></tr></table></figure></p>
+<p>留意到上面，函数前还加了分号，这是由于自执行函数前省略分号的表达式时，某些情况下会报错，可以看 <a href="https://www.zhihu.com/question/29526862" target="_blank" rel="external">这里</a>。</p>
+<p>在匿名函数里面还传入了jQuery对象，这样做的好处是美元符号 <code>$</code> 在内部是一个私有变量，仅代表jQuery，可以防止和其他使用 <code>$</code> 的库冲突。</p>
+<p>有的自执行函数还将window对象、undefined对象传入，具体作用可以看 <a href="https://segmentfault.com/q/1010000000311686" target="_blank" rel="external">这里</a>。</p>
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>options是提供给使用者定义的参数。一个好的插件，应该提供必要的参数给使用者，并且提供好默认的参数，因为很多情况下不是每个参数都需要自定义。之前在项目中写了一个加载更多 <code>LoadMore</code> 插件，就以这个插件为例：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LoadMore</span>(<span class="params">$element,options</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.$element = $element;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>._defaults = &#123;</span><br><span class="line">        loadingSelector: <span class="string">".zc_loading"</span>,  <span class="comment">//加载中的提示</span></span><br><span class="line">        overSelector: <span class="string">".zc_loaded"</span>,  <span class="comment">// 加载完毕的加载</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.options = $.extend(&#123;&#125;,<span class="keyword">this</span>._defaults,options||&#123;&#125;);  <span class="comment">// 合并参数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="初始化方法"><a href="#初始化方法" class="headerlink" title="初始化方法"></a>初始化方法</h3><p>一般插件都会有一个 <code>init()</code> 方法，调用插件时做一些初始化操作：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myplugin</span>(<span class="params">$element,options</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.init();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加方法</span></span><br><span class="line">myplugin.prototype = &#123;</span><br><span class="line">    init: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="防止多次初始化"><a href="#防止多次初始化" class="headerlink" title="防止多次初始化"></a>防止多次初始化</h3><p>为了防止用户多次在同一个元素上调用插件，有必要加一些已初始化的判断。通过在该元素上用 <code>data()</code> 方法缓存插件的实例对象，每次实例化时判断该缓存对象即可。<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.fn.myplugin = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!$.data(<span class="keyword">this</span>, <span class="string">'myplugin'</span>)) &#123;</span><br><span class="line">        $.data(<span class="keyword">this</span>, <span class="string">'myplugin'</span>, <span class="keyword">new</span> myplugin(<span class="keyword">this</span>, options));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="遍历所有元素"><a href="#遍历所有元素" class="headerlink" title="遍历所有元素"></a>遍历所有元素</h3><p><code>$</code> 选择器返回的有可能是多个元素，因此需要返回的所有元素添加插件，直接使用jQuery自带的 <code>each()</code> 方法：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.fn.myplugin = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!$.data(<span class="keyword">this</span>, <span class="string">'myplugin'</span>)) &#123;</span><br><span class="line">            $.data(<span class="keyword">this</span>, <span class="string">'myplugin'</span>, <span class="keyword">new</span> myplugin(<span class="keyword">this</span>, options));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意这里的<code>this</code> 是jQuery对象，而不是原生JS对象。所以可以直接使用<code>this.each()</code>。</p>
+<h3 id="保持链式操作"><a href="#保持链式操作" class="headerlink" title="保持链式操作"></a>保持链式操作</h3><p>由于jQuery有个链式操作的特性，在每个方法调用后都会返回该对象，因此只需要 <code>return</code> 该对象即可保持链式操作：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.fn.myplugin = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="给插件添加方法"><a href="#给插件添加方法" class="headerlink" title="给插件添加方法"></a>给插件添加方法</h3><p>插件不仅有可配置的参数，很多时候还需要调用方法。比如说“加载更多”插件，可能需要知道现在加载到第几页，或者是否已经全部加载完毕。此时就需要调用方法来获得结果。</p>
+<p>在前面我们知道是在 <code>prototype</code> 定义方法：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">LoadMore.prototype = &#123;</span><br><span class="line">        init: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">        <span class="comment">// 重新加载</span></span><br><span class="line">        reload: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">        <span class="comment">// 开始加载</span></span><br><span class="line">        startLoad: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">        <span class="comment">// 本次加载完成</span></span><br><span class="line">        loadOver: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">        <span class="comment">// 全部加载完毕</span></span><br><span class="line">        allLoadOver: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">        <span class="comment">// 插入内容</span></span><br><span class="line">        insert: <span class="function"><span class="keyword">function</span>(<span class="params">content</span>)</span>&#123;&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>方法名可以通过options参数传入，只需在内部做字符串判断：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.fn.LoadMore = <span class="function"><span class="keyword">function</span>(<span class="params">options,para</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> instance;</span><br><span class="line">        instance = $.data(<span class="keyword">this</span>,<span class="string">'LoadMore'</span>);</span><br><span class="line">        <span class="keyword">if</span>(!instance)&#123;</span><br><span class="line">            instance = <span class="keyword">new</span> LoadMore(<span class="keyword">this</span>,options);</span><br><span class="line">            $.data(<span class="keyword">this</span>,<span class="string">'LoadMore'</span>,instance);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果是字符串则调用方法</span></span><br><span class="line">        <span class="keyword">if</span>($.type(options) === <span class="string">'string'</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> instance[options](para);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;  <span class="comment">// 保持链式</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>因此我们调用方法可以像下面这样：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'#list'</span>).LoadMore(<span class="string">'startLoad'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>但是，当调用的方法需要传参怎么办？很简单，那就再加一个参数 <code>para</code> ：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.fn.LoadMore = <span class="function"><span class="keyword">function</span>(<span class="params">options,para</span>)</span>&#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">        <span class="comment">// 如果是字符串则调用方法</span></span><br><span class="line">        <span class="keyword">if</span>($.type(options) === <span class="string">'string'</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> instance[options](para);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;  <span class="comment">// 保持链式</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>调用带参数的方法：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'#list'</span>).LoadMore(<span class="string">'insert'</span>,<span class="string">'这是待插入的内容'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>这里如果要使用回调函数，和上面也是一样的道理，只需在内部加个函数判断。不详述。若有更多的参数，请使用对象 <code>{}</code>。</p>
+<h3 id="配置参数中添加事件"><a href="#配置参数中添加事件" class="headerlink" title="配置参数中添加事件"></a>配置参数中添加事件</h3><p>在写 <code>LoadMore</code> 插件的过程中，还发现需要使用事件，比如说滚动到某个位置时，执行某些操作。也很简单，事件我们可以直接写在配置参数 options 中：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">this</span>._defaults = &#123;</span><br><span class="line">    onScroll: <span class="literal">null</span>,  <span class="comment">// scroll中</span></span><br><span class="line">    onScrollBottom: <span class="literal">null</span>  <span class="comment">// scroll到底部</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后在内部 <code>init()</code> 函数中调用前判断：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">init: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> that = <span class="keyword">this</span>,</span><br><span class="line">        $win = $(<span class="built_in">window</span>),</span><br><span class="line">        $doc = $(<span class="built_in">document</span>);</span><br><span class="line">    $win.on(<span class="string">'scroll'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        (<span class="keyword">typeof</span> that.options[<span class="string">'onScroll'</span>] == <span class="string">'function'</span>) &amp;&amp; that.options[<span class="string">'onScroll'</span>]();</span><br><span class="line">        <span class="keyword">if</span>($win.scrollTop() + $win.height() &gt;= $doc.height()<span class="number">-10</span>)&#123;</span><br><span class="line">            (<span class="keyword">typeof</span> that.options[<span class="string">'onScrollBottom'</span>] == <span class="string">'function'</span>) &amp;&amp; that.options[<span class="string">'onScrollBottom'</span>]();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="兼容AMD规范"><a href="#兼容AMD规范" class="headerlink" title="兼容AMD规范"></a>兼容AMD规范</h3><p>现在流行模块化开发，AMD是require.js在推广过程中的规范化产出，AMD说明见 <a href="https://github.com/amdjs/amdjs-api/wiki/AMD" target="_blank" rel="external">这里</a>。<br>下面的代码可以使你的插件兼容AMD规范，可以在require.js中直接调用，当然，没有使用require.js直接 <code>&lt;script&gt;</code> 引入也是可以的。<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// amd support</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">factory</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// amd support</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> define === <span class="string">'function'</span> &amp;&amp; define.amd)&#123;</span><br><span class="line">        define([<span class="string">'jquery'</span>],factory);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        factory(jQuery);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> exports = &#123;&#125;;</span><br><span class="line">    <span class="comment">// 这里写插件代码</span></span><br><span class="line">    <span class="keyword">return</span> exports;</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure></p>
+<p>上面的前一段是判断是否有define函数，有则调用define方法定义一个模块，否则直接执行。后一段的 <code>exports</code> 对象是模块的返回对象，模块对外的接口。关于AMD规范的具体信息，可参考阮一峰的 <a href="http://javascript.ruanyifeng.com/tool/requirejs.html" target="_blank" rel="external">这篇文章</a>。</p>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>上面所写的就是写一个插件的大致流程，由于能力有限，还有很多要完善的地方。想要了解更多，这里推荐一篇文章 <a href="http://blog.jobbole.com/30550/" target="_blank" rel="external">深入理解jQuery插件开发</a>。另外，这里提供一个gitHub上面的某位大神写的插件 <a href="https://github.com/Wayou/SlipHover" target="_blank" rel="external">SlipHover</a> 供参考。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/tools/">tools</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/jquery/">jquery</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoomin1106.github.io/2015/12/29/javascript/jquery_plugin/" data-title="jQuery插件开发 | matt&#39;s blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/12/21/html_css/sass_practice/"  title="sass进阶与实战">
+ <strong>下一篇：</strong><br/> 
+ <span>sass进阶与实战
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery-插件开发模式"><span class="toc-number">1.</span> <span class="toc-text">jQuery 插件开发模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一个非常简单的例子"><span class="toc-number">2.</span> <span class="toc-text">一个非常简单的例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象开发插件"><span class="toc-number">3.</span> <span class="toc-text">面向对象开发插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#大体思路如下："><span class="toc-number">3.1.</span> <span class="toc-text">大体思路如下：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本结构"><span class="toc-number">3.2.</span> <span class="toc-text">基本结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#放到立即执行的匿名函数内部"><span class="toc-number">3.3.</span> <span class="toc-text">放到立即执行的匿名函数内部</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#默认参数"><span class="toc-number">3.4.</span> <span class="toc-text">默认参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化方法"><span class="toc-number">3.5.</span> <span class="toc-text">初始化方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#防止多次初始化"><span class="toc-number">3.6.</span> <span class="toc-text">防止多次初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遍历所有元素"><span class="toc-number">3.7.</span> <span class="toc-text">遍历所有元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保持链式操作"><span class="toc-number">3.8.</span> <span class="toc-text">保持链式操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#给插件添加方法"><span class="toc-number">3.9.</span> <span class="toc-text">给插件添加方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置参数中添加事件"><span class="toc-number">3.10.</span> <span class="toc-text">配置参数中添加事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#兼容AMD规范"><span class="toc-number">3.11.</span> <span class="toc-text">兼容AMD规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结语"><span class="toc-number">3.12.</span> <span class="toc-text">结语</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/html-css/" title="html/css">html/css<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/note/" title="note">note<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tools/" title="tools">tools<sup>3</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/jquery/" title="jquery">jquery<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/js/" title="js">js<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sass/" title="sass">sass<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css/" title="css">css<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css3/" title="css3">css3<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/前端工具/" title="前端工具">前端工具<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/gulp/" title="gulp">gulp<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/调试/" title="调试">调试<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/webview/" title="webview">webview<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/X5/" title="X5">X5<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.cnblogs.com/yoomin" target="_blank" title="matt&#39;s blog">matt&#39;s blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hi! This is matt. <br/>
+			</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Matt.Wu">Matt.Wu</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

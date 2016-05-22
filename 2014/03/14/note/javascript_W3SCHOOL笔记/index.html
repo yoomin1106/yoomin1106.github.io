@@ -1,0 +1,624 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>javascript_W3SCHOOL笔记 | matt&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Matt.Wu">
+    
+
+    
+    <meta name="description" content="Javascript_W3SCHOOL笔记对象
+创建对象1.定义并创建对象的实例
+这个例子创建了对象的一个新实例，并向其添加了四个属性：person=new Object();person.firstname=&quot;Bill&quot;;person.lastname=&quot;Gates&quot;;person.age=56;person.eyecolor=&quot;blue&quot;;
+2.使用函数来定义对象，然后创建新的对象实例
+
+使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript_W3SCHOOL笔记">
+<meta property="og:url" content="http://yoomin1106.github.io/2014/03/14/note/javascript_W3SCHOOL笔记/index.html">
+<meta property="og:site_name" content="matt's blog">
+<meta property="og:description" content="Javascript_W3SCHOOL笔记对象
+创建对象1.定义并创建对象的实例
+这个例子创建了对象的一个新实例，并向其添加了四个属性：person=new Object();person.firstname=&quot;Bill&quot;;person.lastname=&quot;Gates&quot;;person.age=56;person.eyecolor=&quot;blue&quot;;
+2.使用函数来定义对象，然后创建新的对象实例
+
+使用">
+<meta property="og:updated_time" content="2016-01-10T05:17:54.846Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript_W3SCHOOL笔记">
+<meta name="twitter:description" content="Javascript_W3SCHOOL笔记对象
+创建对象1.定义并创建对象的实例
+这个例子创建了对象的一个新实例，并向其添加了四个属性：person=new Object();person.firstname=&quot;Bill&quot;;person.lastname=&quot;Gates&quot;;person.age=56;person.eyecolor=&quot;blue&quot;;
+2.使用函数来定义对象，然后创建新的对象实例
+
+使用">
+
+    
+    <link rel="alternative" href="/atom.xml" title="matt&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="matt&#39;s blog" title="matt&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="matt&#39;s blog">matt&#39;s blog</a></h1>
+				<h2 class="blog-motto">Write to remember!</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoomin1106.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/03/14/note/javascript_W3SCHOOL笔记/" title="javascript_W3SCHOOL笔记" itemprop="url">javascript_W3SCHOOL笔记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Matt.Wu" target="_blank" itemprop="author">Matt.Wu</a>
+		
+  <p class="article-time">
+    <time datetime="2014-03-13T16:00:00.000Z" itemprop="datePublished"> 发表于 2014-03-14</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Javascript-W3SCHOOL笔记"><span class="toc-number">1.</span> <span class="toc-text">Javascript_W3SCHOOL笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#对象"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建对象"><span class="toc-number">1.0.0.1.1.</span> <span class="toc-text">创建对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#javascript类"><span class="toc-number">1.0.0.1.2.</span> <span class="toc-text">javascript类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#遍历对象"><span class="toc-number">1.0.0.1.3.</span> <span class="toc-text">遍历对象</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数字"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">数字</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#所有-JavaScript-数字均为-64-位"><span class="toc-number">1.0.0.2.1.</span> <span class="toc-text">所有 JavaScript 数字均为 64 位</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#八进制和十六进制"><span class="toc-number">1.0.0.2.2.</span> <span class="toc-text">八进制和十六进制</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#常用方法"><span class="toc-number">1.0.0.3.1.</span> <span class="toc-text">常用方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#日期"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">日期</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#设置日期"><span class="toc-number">1.0.0.4.1.</span> <span class="toc-text">设置日期</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#比较日期"><span class="toc-number">1.0.0.4.2.</span> <span class="toc-text">比较日期</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#定义数组"><span class="toc-number">1.0.0.5.1.</span> <span class="toc-text">定义数组</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Window"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">Window</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#window尺寸"><span class="toc-number">1.0.0.6.1.</span> <span class="toc-text">window尺寸</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#window其他方法"><span class="toc-number">1.0.0.6.2.</span> <span class="toc-text">window其他方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#window-screen"><span class="toc-number">1.0.0.6.3.</span> <span class="toc-text">window screen</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#window-location"><span class="toc-number">1.0.0.6.4.</span> <span class="toc-text">window location</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#加载新文档"><span class="toc-number">1.0.0.6.5.</span> <span class="toc-text">加载新文档</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Window-History"><span class="toc-number">1.0.0.7.</span> <span class="toc-text">Window History</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#常用方法-1"><span class="toc-number">1.0.0.7.1.</span> <span class="toc-text">常用方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Window-Navigator"><span class="toc-number">1.0.0.8.</span> <span class="toc-text">Window Navigator</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#常用方法-2"><span class="toc-number">1.0.0.8.1.</span> <span class="toc-text">常用方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#浏览器检测"><span class="toc-number">1.0.0.8.2.</span> <span class="toc-text">浏览器检测</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookies"><span class="toc-number">1.0.0.9.</span> <span class="toc-text">Cookies</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建和存储-cookie"><span class="toc-number">1.0.0.9.1.</span> <span class="toc-text">创建和存储 cookie</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+		
+		</div>
+		
+		<h1 id="Javascript-W3SCHOOL笔记"><a href="#Javascript-W3SCHOOL笔记" class="headerlink" title="Javascript_W3SCHOOL笔记"></a>Javascript_W3SCHOOL笔记</h1><h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><hr>
+<h5 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h5><p>1.定义并创建对象的实例</p>
+<p>这个例子创建了对象的一个新实例，并向其添加了四个属性：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">person=<span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">person.firstname=<span class="string">"Bill"</span>;</span><br><span class="line">person.lastname=<span class="string">"Gates"</span>;</span><br><span class="line">person.age=<span class="number">56</span>;</span><br><span class="line">person.eyecolor=<span class="string">"blue"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>2.使用函数来定义对象，然后创建新的对象实例</p>
+<ul>
+<li><p>使用函数构造对象</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">person</span>(<span class="params">firstname,lastname,age,eyecolor</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line"><span class="keyword">this</span>.firstname=firstname;</span><br><span class="line"><span class="keyword">this</span>.lastname=lastname;</span><br><span class="line"><span class="keyword">this</span>.age=age;</span><br><span class="line"><span class="keyword">this</span>.eyecolor=eyecolor;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建 JavaScript 对象实例</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myFather=<span class="keyword">new</span> person(<span class="string">"Bill"</span>,<span class="string">"Gates"</span>,<span class="number">56</span>,<span class="string">"blue"</span>);</span><br><span class="line"><span class="keyword">var</span> myMother=<span class="keyword">new</span> person(<span class="string">"Steve"</span>,<span class="string">"Jobs"</span>,<span class="number">48</span>,<span class="string">"green"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="javascript类"><a href="#javascript类" class="headerlink" title="javascript类"></a>javascript类</h5><p>JavaScript 是面向对象的语言，但 JavaScript 不使用类。</p>
+<p>在 JavaScript 中，不会创建类，也不会通过类来创建对象（就像在其他面向对象的语言中那样）。</p>
+<p>JavaScript 基于 prototype，而不是基于类的。</p>
+<h5 id="遍历对象"><a href="#遍历对象" class="headerlink" title="遍历对象"></a>遍历对象</h5><p>JavaScript for…in 语句循环遍历对象的属性。<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person=&#123;fname:<span class="string">"Bill"</span>,lname:<span class="string">"Gates"</span>,age:<span class="number">56</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (x <span class="keyword">in</span> person)</span><br><span class="line">  &#123;</span><br><span class="line">  txt=txt + person[x];</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><hr>
+<h5 id="所有-JavaScript-数字均为-64-位"><a href="#所有-JavaScript-数字均为-64-位" class="headerlink" title="所有 JavaScript 数字均为 64 位"></a>所有 JavaScript 数字均为 64 位</h5><p>JavaScript 不是类型语言。与许多其他编程语言不同，JavaScript 不定义不同类型的数字，比如整数、短、长、浮点等等。<br>JavaScript 中的所有数字都存储为根为 10 的 64 位（8 比特），浮点数。小数的最大位数是 17，但是浮点运算并不总是 100% 准确。</p>
+<h5 id="八进制和十六进制"><a href="#八进制和十六进制" class="headerlink" title="八进制和十六进制"></a>八进制和十六进制</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> y=<span class="number">0377</span>;  <span class="comment">//前面加零表示八进制</span></span><br><span class="line"><span class="keyword">var</span> z=<span class="number">0xFF</span>;  <span class="comment">//前面加0x表示十六进制</span></span><br></pre></td></tr></table></figure>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><hr>
+<h5 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h5><p><code>match()</code><br>使用 match() 来查找字符串中特定的字符，并且如果找到的话，则返回这个字符。</p>
+<h4 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h4><hr>
+<h5 id="设置日期"><a href="#设置日期" class="headerlink" title="设置日期"></a>设置日期</h5><p>我们为日期对象设置了一个特定的日期 (2008 年 8 月 9 日)：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myDate=<span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">myDate.setFullYear(<span class="number">2008</span>,<span class="number">7</span>,<span class="number">9</span>)</span><br></pre></td></tr></table></figure></p>
+<p>我们将日期对象设置为 5 天后的日期：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myDate=<span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">myDate.setDate(myDate.getDate()+<span class="number">5</span>)</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意:</strong>如果增加天数会改变月份或者年份，那么日期对象会自动完成这种转换。</p>
+<h5 id="比较日期"><a href="#比较日期" class="headerlink" title="比较日期"></a>比较日期</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">myDate &gt; today</span><br></pre></td></tr></table></figure>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><hr>
+<h5 id="定义数组"><a href="#定义数组" class="headerlink" title="定义数组"></a>定义数组</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> mycars=<span class="keyword">new</span> <span class="built_in">Array</span>()</span><br><span class="line">mycars[<span class="number">0</span>]=<span class="string">"Saab"</span></span><br><span class="line">mycars[<span class="number">1</span>]=<span class="string">"Volvo"</span></span><br><span class="line">mycars[<span class="number">2</span>]=<span class="string">"BMW"</span></span><br></pre></td></tr></table></figure>
+<p>第二种方法：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> mycars=<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"Saab"</span>,<span class="string">"Volvo"</span>,<span class="string">"BMW"</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="Window"><a href="#Window" class="headerlink" title="Window"></a>Window</h4><hr>
+<h5 id="window尺寸"><a href="#window尺寸" class="headerlink" title="window尺寸"></a>window尺寸</h5><p>对于Internet Explorer、Chrome、Firefox、Opera 以及 Safari：</p>
+<ul>
+<li>window.innerHeight - 浏览器窗口的内部高度</li>
+<li>window.innerWidth - 浏览器窗口的内部宽度</li>
+</ul>
+<p>对于 Internet Explorer 8、7、6、5：</p>
+<ul>
+<li>document.documentElement.clientHeight</li>
+<li>document.documentElement.clientWidth</li>
+</ul>
+<p>或者</p>
+<ul>
+<li>document.body.clientHeight</li>
+<li>document.body.clientWidth</li>
+</ul>
+<p>实用的 JavaScript 方案（涵盖所有浏览器）：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> w=<span class="built_in">window</span>.innerWidth || <span class="built_in">document</span>.documentElement.clientWidth || <span class="built_in">document</span>.body.clientWidth;</span><br><span class="line"><span class="keyword">var</span> h=<span class="built_in">window</span>.innerHeight || <span class="built_in">document</span>.documentElement.clientHeight || <span class="built_in">document</span>.body.clientHeight;</span><br></pre></td></tr></table></figure></p>
+<p>该例显示浏览器窗口的高度和宽度：（不包括工具栏/滚动条）。</p>
+<h5 id="window其他方法"><a href="#window其他方法" class="headerlink" title="window其他方法"></a>window其他方法</h5><ul>
+<li>window.open() - 打开新窗口</li>
+<li>window.close() - 关闭当前窗口</li>
+<li>window.moveTo() - 移动当前窗口</li>
+<li>window.resizeTo() - 调整当前窗口的尺寸</li>
+</ul>
+<h5 id="window-screen"><a href="#window-screen" class="headerlink" title="window screen"></a>window screen</h5><p>window.screen 对象在编写时可以不使用 window 这个前缀。</p>
+<ul>
+<li>screen.availWidth - 可用的屏幕宽度，即屏幕分辨率</li>
+<li>screen.availHeight - 可用的屏幕高度</li>
+</ul>
+<h5 id="window-location"><a href="#window-location" class="headerlink" title="window location"></a>window location</h5><ul>
+<li>location.hostname 返回 web 主机的域名</li>
+<li>location.pathname 返回当前页面的路径和文件名</li>
+<li>location.port 返回 web 主机的端口 （80 或 443）</li>
+<li>location.protocol 返回所使用的 web 协议（http:// 或 https://）</li>
+<li>location.href 属性返回当前页面的 URL</li>
+</ul>
+<h5 id="加载新文档"><a href="#加载新文档" class="headerlink" title="加载新文档"></a>加载新文档</h5><p>location.assign() 方法加载新的文档，以下代码将跳转到 <code>http://www.w3school.com.cn</code><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.location.assign(<span class="string">"http://www.w3school.com.cn"</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="Window-History"><a href="#Window-History" class="headerlink" title="Window History"></a>Window History</h4><hr>
+<h5 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h5><ul>
+<li>history.back() - 与在浏览器点击后退按钮相同</li>
+<li>history.forward() - 与在浏览器中点击按钮向前相同</li>
+</ul>
+<h4 id="Window-Navigator"><a href="#Window-Navigator" class="headerlink" title="Window Navigator"></a>Window Navigator</h4><hr>
+<h5 id="常用方法-2"><a href="#常用方法-2" class="headerlink" title="常用方法"></a>常用方法</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">txt = <span class="string">"&lt;p&gt;Browser CodeName: "</span> + navigator.appCodeName + <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line">txt+= <span class="string">"&lt;p&gt;Browser Name: "</span> + navigator.appName + <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line">txt+= <span class="string">"&lt;p&gt;Browser Version: "</span> + navigator.appVersion + <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line">txt+= <span class="string">"&lt;p&gt;Cookies Enabled: "</span> + navigator.cookieEnabled + <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line">txt+= <span class="string">"&lt;p&gt;Platform: "</span> + navigator.platform + <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line">txt+= <span class="string">"&lt;p&gt;User-agent header: "</span> + navigator.userAgent + <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line">txt+= <span class="string">"&lt;p&gt;User-agent language: "</span> + navigator.systemLanguage + <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"example"</span>).innerHTML=txt;</span><br></pre></td></tr></table></figure>
+<p>以上代码输出：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Browser CodeName: Mozilla</span><br><span class="line"></span><br><span class="line">Browser Name: Netscape</span><br><span class="line"></span><br><span class="line">Browser Version: <span class="number">5.0</span> (Windows NT <span class="number">6.1</span>) AppleWebKit/<span class="number">537.36</span> (KHTML, like Gecko) Chrome/<span class="number">31.0</span><span class="number">.1650</span><span class="number">.63</span> Safari/<span class="number">537.36</span></span><br><span class="line"></span><br><span class="line">Cookies Enabled: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">Platform: Win32</span><br><span class="line"></span><br><span class="line">User-agent header: Mozilla/<span class="number">5.0</span> (Windows NT <span class="number">6.1</span>) AppleWebKit/<span class="number">537.36</span> (KHTML, like Gecko) Chrome/<span class="number">31.0</span><span class="number">.1650</span><span class="number">.63</span> Safari/<span class="number">537.36</span></span><br><span class="line"></span><br><span class="line">User-agent language: <span class="literal">undefined</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>注意：</strong>来自 navigator 对象的信息具有误导性，不应该被用于检测浏览器版本，这是因为：</p>
+<ul>
+<li>navigator 数据可被浏览器使用者更改</li>
+<li>浏览器无法报告晚于浏览器发布的新操作系统</li>
+</ul>
+<h5 id="浏览器检测"><a href="#浏览器检测" class="headerlink" title="浏览器检测"></a>浏览器检测</h5><p>由于 navigator 可误导浏览器检测，使用对象检测可用来嗅探不同的浏览器。由于不同的浏览器支持不同的对象，您可以使用对象来检测浏览器。例如，由于只有 Opera 支持属性 “window.opera”，您可以据此识别出 Opera。如下：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.opera) &#123;...some action...&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h4><hr>
+<h5 id="创建和存储-cookie"><a href="#创建和存储-cookie" class="headerlink" title="创建和存储 cookie"></a>创建和存储 cookie</h5><p>首先，我们会创建一个可在 cookie 变量中存储访问者姓名的函数：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">c_name,value,expiredays</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line"><span class="keyword">var</span> exdate=<span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">exdate.setDate(exdate.getDate()+expiredays)</span><br><span class="line"><span class="built_in">document</span>.cookie=c_name+ <span class="string">"="</span> +<span class="built_in">escape</span>(value)+</span><br><span class="line">((expiredays==<span class="literal">null</span>) ? <span class="string">""</span> : <span class="string">";expires="</span>+exdate.toGMTString())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面这个函数中的参数存有 cookie 的名称、值以及过期天数。</p>
+<p>在上面的函数中，我们首先将天数转换为有效的日期，然后，我们将 cookie 名称、值及其过期日期存入 document.cookie 对象。<br>之后，我们要创建另一个函数来检查是否已设置 cookie：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">c_name</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.cookie.length&gt;<span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">  c_start=<span class="built_in">document</span>.cookie.indexOf(c_name + <span class="string">"="</span>)</span><br><span class="line">  <span class="keyword">if</span> (c_start!=<span class="number">-1</span>)</span><br><span class="line">    &#123; </span><br><span class="line">    c_start=c_start + c_name.length+<span class="number">1</span> </span><br><span class="line">    c_end=<span class="built_in">document</span>.cookie.indexOf(<span class="string">";"</span>,c_start)</span><br><span class="line">    <span class="keyword">if</span> (c_end==<span class="number">-1</span>) c_end=<span class="built_in">document</span>.cookie.length</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">unescape</span>(<span class="built_in">document</span>.cookie.substring(c_start,c_end))</span><br><span class="line">    &#125; </span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面的函数首先会检查 document.cookie 对象中是否存有 cookie。假如 document.cookie 对象存有某些 cookie，那么会继续检查我们指定的 cookie 是否已储存。如果找到了我们要的 cookie，就返回值，否则返回空字符串。<br>最后，我们要创建一个函数，这个函数的作用是：如果 cookie 已设置，则显示欢迎词，否则显示提示框来要求用户输入名字。</p>
+<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">checkCookie</span>(<span class="params"></span>)
+</span>{
+username=getCookie(<span class="string">'username'</span>)
+<span class="keyword">if</span> (username!=<span class="literal">null</span> &amp;&amp; username!=<span class="string">""</span>)
+  {alert(<span class="string">'Welcome again '</span>+username+<span class="string">'!'</span>)}
+<span class="keyword">else</span> 
+  {
+  username=prompt(<span class="string">'Please enter your name:'</span>,<span class="string">""</span>)
+  <span class="keyword">if</span> (username!=<span class="literal">null</span> &amp;&amp; username!=<span class="string">""</span>)
+    {
+    setCookie(<span class="string">'username'</span>,username,<span class="number">365</span>)
+    }
+  }
+}
+</code></pre>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/note/">note</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/jquery/">jquery</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoomin1106.github.io/2014/03/14/note/javascript_W3SCHOOL笔记/" data-title="javascript_W3SCHOOL笔记 | matt&#39;s blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2014/05/20/note/js_basic_note/" title="javascript基础教程笔记">
+  <strong>上一篇：</strong><br/>
+  <span>
+  javascript基础教程笔记</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2014/03/14/note/jquery/"  title="李炎恢jquery视频教程笔记">
+ <strong>下一篇：</strong><br/> 
+ <span>李炎恢jquery视频教程笔记
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Javascript-W3SCHOOL笔记"><span class="toc-number">1.</span> <span class="toc-text">Javascript_W3SCHOOL笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#对象"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建对象"><span class="toc-number">1.0.0.1.1.</span> <span class="toc-text">创建对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#javascript类"><span class="toc-number">1.0.0.1.2.</span> <span class="toc-text">javascript类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#遍历对象"><span class="toc-number">1.0.0.1.3.</span> <span class="toc-text">遍历对象</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数字"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">数字</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#所有-JavaScript-数字均为-64-位"><span class="toc-number">1.0.0.2.1.</span> <span class="toc-text">所有 JavaScript 数字均为 64 位</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#八进制和十六进制"><span class="toc-number">1.0.0.2.2.</span> <span class="toc-text">八进制和十六进制</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#常用方法"><span class="toc-number">1.0.0.3.1.</span> <span class="toc-text">常用方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#日期"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">日期</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#设置日期"><span class="toc-number">1.0.0.4.1.</span> <span class="toc-text">设置日期</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#比较日期"><span class="toc-number">1.0.0.4.2.</span> <span class="toc-text">比较日期</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#定义数组"><span class="toc-number">1.0.0.5.1.</span> <span class="toc-text">定义数组</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Window"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">Window</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#window尺寸"><span class="toc-number">1.0.0.6.1.</span> <span class="toc-text">window尺寸</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#window其他方法"><span class="toc-number">1.0.0.6.2.</span> <span class="toc-text">window其他方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#window-screen"><span class="toc-number">1.0.0.6.3.</span> <span class="toc-text">window screen</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#window-location"><span class="toc-number">1.0.0.6.4.</span> <span class="toc-text">window location</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#加载新文档"><span class="toc-number">1.0.0.6.5.</span> <span class="toc-text">加载新文档</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Window-History"><span class="toc-number">1.0.0.7.</span> <span class="toc-text">Window History</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#常用方法-1"><span class="toc-number">1.0.0.7.1.</span> <span class="toc-text">常用方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Window-Navigator"><span class="toc-number">1.0.0.8.</span> <span class="toc-text">Window Navigator</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#常用方法-2"><span class="toc-number">1.0.0.8.1.</span> <span class="toc-text">常用方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#浏览器检测"><span class="toc-number">1.0.0.8.2.</span> <span class="toc-text">浏览器检测</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookies"><span class="toc-number">1.0.0.9.</span> <span class="toc-text">Cookies</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建和存储-cookie"><span class="toc-number">1.0.0.9.1.</span> <span class="toc-text">创建和存储 cookie</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/html-css/" title="html/css">html/css<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/note/" title="note">note<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tools/" title="tools">tools<sup>3</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/jquery/" title="jquery">jquery<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/js/" title="js">js<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sass/" title="sass">sass<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css/" title="css">css<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css3/" title="css3">css3<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/前端工具/" title="前端工具">前端工具<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/gulp/" title="gulp">gulp<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/调试/" title="调试">调试<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/webview/" title="webview">webview<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/X5/" title="X5">X5<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.cnblogs.com/yoomin" target="_blank" title="matt&#39;s blog">matt&#39;s blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hi! This is matt. <br/>
+			</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Matt.Wu">Matt.Wu</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
