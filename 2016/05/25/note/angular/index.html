@@ -1,0 +1,718 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>angular note | matt&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Matt.Wu">
+    
+
+    
+    <meta name="description" content="最佳实践
+在视图中建议通过对象的属性而非对象本身来进行引用绑定，如：&amp;lt;h1&amp;gt;&amp;#123;&amp;#123;now&amp;#125;&amp;#125;&amp;lt;/h1&amp;gt;
+
+
+应改为：&amp;lt;h1&amp;gt;&amp;#123;&amp;#123;clock.now&amp;#125;&amp;#125;&amp;lt;/h1&amp;gt;
+模块
+模块声明下面的app为名字，后面为依赖的模块数组：angular.module(&amp;apos;app&amp;apo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angular note">
+<meta property="og:url" content="http://yoomin1106.github.io/2016/05/25/note/angular/index.html">
+<meta property="og:site_name" content="matt's blog">
+<meta property="og:description" content="最佳实践
+在视图中建议通过对象的属性而非对象本身来进行引用绑定，如：&amp;lt;h1&amp;gt;&amp;#123;&amp;#123;now&amp;#125;&amp;#125;&amp;lt;/h1&amp;gt;
+
+
+应改为：&amp;lt;h1&amp;gt;&amp;#123;&amp;#123;clock.now&amp;#125;&amp;#125;&amp;lt;/h1&amp;gt;
+模块
+模块声明下面的app为名字，后面为依赖的模块数组：angular.module(&amp;apos;app&amp;apo">
+<meta property="og:updated_time" content="2016-06-03T14:51:33.781Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angular note">
+<meta name="twitter:description" content="最佳实践
+在视图中建议通过对象的属性而非对象本身来进行引用绑定，如：&amp;lt;h1&amp;gt;&amp;#123;&amp;#123;now&amp;#125;&amp;#125;&amp;lt;/h1&amp;gt;
+
+
+应改为：&amp;lt;h1&amp;gt;&amp;#123;&amp;#123;clock.now&amp;#125;&amp;#125;&amp;lt;/h1&amp;gt;
+模块
+模块声明下面的app为名字，后面为依赖的模块数组：angular.module(&amp;apos;app&amp;apo">
+
+    
+    <link rel="alternative" href="/atom.xml" title="matt&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="matt&#39;s blog" title="matt&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="matt&#39;s blog">matt&#39;s blog</a></h1>
+				<h2 class="blog-motto">Write to remember!</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+						<li><a href="/excercise">Excercise</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoomin1106.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/05/25/note/angular/" title="angular note" itemprop="url">angular note</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Matt.Wu" target="_blank" itemprop="author">Matt.Wu</a>
+		
+  <p class="article-time">
+    <time datetime="2016-05-24T16:00:00.000Z" itemprop="datePublished"> 发表于 2016-05-25</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#最佳实践"><span class="toc-number">1.</span> <span class="toc-text">最佳实践</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模块"><span class="toc-number">2.</span> <span class="toc-text">模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#作用域"><span class="toc-number">3.</span> <span class="toc-text">作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控制器"><span class="toc-number">4.</span> <span class="toc-text">控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表达式"><span class="toc-number">5.</span> <span class="toc-text">表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#过滤器"><span class="toc-number">6.</span> <span class="toc-text">过滤器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义过滤器"><span class="toc-number">6.1.</span> <span class="toc-text">自定义过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表单验证"><span class="toc-number">6.2.</span> <span class="toc-text">表单验证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#指令简介"><span class="toc-number">7.</span> <span class="toc-text">指令简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常见指令"><span class="toc-number">7.1.</span> <span class="toc-text">常见指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#妙味补充"><span class="toc-number">8.</span> <span class="toc-text">妙味补充</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#指令"><span class="toc-number">8.1.</span> <span class="toc-text">指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#标签指令"><span class="toc-number">8.1.1.</span> <span class="toc-text">标签指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义指令"><span class="toc-number">8.1.2.</span> <span class="toc-text">自定义指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指令作用域"><span class="toc-number">8.1.3.</span> <span class="toc-text">指令作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指令实例-选项卡"><span class="toc-number">8.1.4.</span> <span class="toc-text">指令实例-选项卡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指令实例-拖拽"><span class="toc-number">8.1.5.</span> <span class="toc-text">指令实例-拖拽</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指令间交互"><span class="toc-number">8.1.6.</span> <span class="toc-text">指令间交互</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表单验证-1"><span class="toc-number">8.2.</span> <span class="toc-text">表单验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象写控制器"><span class="toc-number">8.3.</span> <span class="toc-text">面向对象写控制器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http-服务"><span class="toc-number">8.4.</span> <span class="toc-text">$http 服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#location-服务"><span class="toc-number">8.5.</span> <span class="toc-text">$location 服务</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ul>
+<li>在视图中建议通过对象的属性而非对象本身来进行引用绑定，如：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123;now&#125;&#125;&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>应改为：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123;clock.now&#125;&#125;&lt;/h1&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><ul>
+<li>模块声明<br>下面的app为名字，后面为依赖的模块数组：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">angular.module(&apos;app&apos;,[&apos;datapicker&apos;]);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul>
+<li><code>$scope.$destory()</code> 方法可清理这个作用域。</li>
+<li>指令通常不会创建自己的 <code>$scope</code>, 但 <code>ng-controller</code> 和 <code>ng-repeat</code> 会创建自己的子作用域并附加到DOM元素上。</li>
+</ul>
+<h2 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h2><ul>
+<li><p>创建控制器：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'app'</span>,[]);</span><br><span class="line">app.controller(<span class="string">'appCtrl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>) </span>&#123;</span><br><span class="line">	$scope.message = <span class="string">'hello'</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设计良好的应用会将复杂的逻辑放到指令和服务中。</p>
+</li>
+</ul>
+<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><ul>
+<li><p>$parse()可解析作用域中的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">angular.module(<span class="string">'myApp'</span>, [])</span><br><span class="line">.controller(<span class="string">'MyController'</span>,</span><br><span class="line">[<span class="string">'$scope'</span>, <span class="string">'$parse'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, $parse</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  $scope.person = &#123;</span><br><span class="line">    name: <span class="string">"Ari Lerner"</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  $scope.$watch(<span class="string">'expr'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">newVal, oldVal, scope</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (newVal !== oldVal) &#123;</span><br><span class="line">      <span class="comment">// Let's set up our parseFun with the expression</span></span><br><span class="line">      <span class="keyword">var</span> parseFun = $parse(newVal);</span><br><span class="line">      <span class="comment">// Get the value of the parsed expression, set it on the scope for output</span></span><br><span class="line">      scope.parsedExpr = parseFun(scope);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;]);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>把双括号解析修改为其他符号：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$interpolateProvider.startSymbol(&apos;__&apos;);</span><br><span class="line">$interpolateProvider.endSymbol(&apos;__&apos;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><ul>
+<li><p>在js控制器中使用过滤器:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">app.controller(&apos;DemoController&apos;, [&apos;$scope&apos;, &apos;$filter&apos;, function() &#123;</span><br><span class="line">	$scope.name = $filter(&apos;lowercase&apos;)(&apos;Ari&apos;);</span><br><span class="line">&#125;]);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>HTML中使用过滤器：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;&#123;输入|过滤器:参数&#125;&#125;</span><br><span class="line">&#123;&#123;123.44568|number:2&#125;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>实例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 设置货币, ￥123.00</span><br><span class="line">&#123;&#123;123|currency:&apos;￥&apos;&#125;&#125;</span><br><span class="line"></span><br><span class="line">// 根据对象属性过滤</span><br><span class="line">&#123;&#123;输入数组|filter:&#123;属性名:属性值&#125;&#125;&#125;</span><br><span class="line">ng-repeat=&quot;item in emList|filter:&#123;&apos;number&apos;:emSearchKey&#125;&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自定义函数过滤</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 将首字母大写</span><br><span class="line">$scope.isCapitalized = function(str) &#123;</span><br><span class="line">  return str[0] = str[0].toUpperCase();</span><br><span class="line">&#125;</span><br><span class="line">&#123;&#123;[&apos;mobi_pho&apos;,&apos;fixedtel&apos;,&apos;pers_email&apos;] | filter:isCapitalized&#125;&#125;</span><br><span class="line"></span><br><span class="line">// 添加第二个参数, true为进行严格比较</span><br><span class="line">&#123;&#123;[&apos;mobi_pho&apos;,&apos;fixedtel&apos;,&apos;pers_email&apos;] | filter:isCapitalized:true&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>json 过滤器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 将展现格式化后的json，方便调试</span><br><span class="line">&#123;&#123; &#123;&apos;name&apos;:&apos;matt&apos;&#125; | json &#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>limitTo</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 取前3位</span><br><span class="line">&#123;&#123;&apos;hello world&apos; | limitTo:3&#125;&#125;</span><br><span class="line"></span><br><span class="line">// 取后6位</span><br><span class="line">&#123;&#123;&apos;hello world&apos; | limitTo:-3&#125;&#125;</span><br><span class="line"></span><br><span class="line">// 截断数组</span><br><span class="line">&#123;&#123;[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;] | limitTo:1&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>lowercase</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;&#123;&apos;Hello world&apos; | lowercase&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>number</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// number 格式化</span><br><span class="line">&#123;&#123;1233 | number:2&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>orderBy</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 按某字段排序, 第二参数为 true 时反序</span><br><span class="line">&#123;&#123;[&#123;&#125;,&#123;&#125;] | orderBy:&apos;name&apos;:false&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h3><ul>
+<li>创建<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 首字母大写格式化</span></span><br><span class="line">angular.module(<span class="string">'myApp.filters'</span>,[])</span><br><span class="line">.filter(<span class="string">'capitalize'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">input</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(input) &#123;</span><br><span class="line">      <span class="keyword">return</span> input[<span class="number">0</span>].toUpperCase() + input.slice(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h3><ul>
+<li>要使用表单，表单上必须有name属性</li>
+<li><p>在表单元素上添加 <code>novalidate</code> 可禁止浏览器默认的验证</p>
+</li>
+<li><p>表单实例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 正则</span><br><span class="line">&lt;input type=&quot;text&quot; ng-pattern-&quot;[a-zA-Z]&quot;&gt;</span><br><span class="line"></span><br><span class="line">// 必填</span><br><span class="line">&lt;input type=&quot;text&quot; require&gt;</span><br><span class="line"></span><br><span class="line">// 最小长度</span><br><span class="line">&lt;input type=&quot;text&quot; ng-minlength=&quot;5&quot;&gt;</span><br><span class="line"></span><br><span class="line">// 电子邮件</span><br><span class="line">&lt;input type=&quot;email&quot;&gt;</span><br><span class="line"></span><br><span class="line">// url</span><br><span class="line">&lt;input type=&quot;url&quot;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表单中的变量：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 是否未修改</span><br><span class="line">formName.inputFieldName.$pristine</span><br><span class="line"></span><br><span class="line">// 是否修改</span><br><span class="line">formName.inputFieldName.$dirty</span><br><span class="line"></span><br><span class="line">// 是否合法</span><br><span class="line">formName.inputFieldName.$valid</span><br><span class="line"></span><br><span class="line">// 是否非法</span><br><span class="line">formName.inputFieldName.$invalid</span><br><span class="line"></span><br><span class="line">// 错误对象</span><br><span class="line">formName.inputFieldName.$error</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>说明：对应的表单状态会添加相应的class:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.ng-pristine &#123;&#125;</span><br><span class="line">.ng-dirty &#123;&#125;</span><br><span class="line">.ng-valid &#123;&#125;</span><br><span class="line">.ng-invalid &#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>判断表单的 <code>$invald</code> 禁用按钮</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;button ng-disabled=&quot;signup_form.$invalid&quot;&gt;&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示错误消息</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;error&quot; ng-show=&quot;signup_form.name.$dirty &amp;&amp; signup_form.name.$invalid &amp;&amp; signup_form.submitted&quot;&gt;</span><br><span class="line">这里是错误消息</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ngMessages<br>安装：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install angular-messages --save-dev</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>引入依赖：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">angular.module(&apos;app&apos;, [&apos;ngMessages&apos;]);</span><br></pre></td></tr></table></figure></p>
+<p>使用；<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;error&quot; ng-messages=&quot;signup_form.name.$error&quot;&gt;</span><br><span class="line">    &lt;span ng-message=&quot;required&quot;&gt;这是必填项&lt;/span&gt;</span><br><span class="line">    &lt;span ng-message=&quot;minlength&quot;&gt;最小长度为3个字符&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>上面的一次只会显示一个错误消息，若想要同时显示多个，加一个属性：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;error&quot; ng-messages=&quot;signup_form.name.$error&quot; ng-messages-multiple&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>可以引入模板，加载错误消息：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;error&quot; ng-messages=&quot;signup_form.name.$error&quot; ng-messages-include=&quot;templates/errors.html&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="指令简介"><a href="#指令简介" class="headerlink" title="指令简介"></a>指令简介</h2><h3 id="常见指令"><a href="#常见指令" class="headerlink" title="常见指令"></a>常见指令</h3><hr>
+<h2 id="妙味补充"><a href="#妙味补充" class="headerlink" title="妙味补充"></a>妙味补充</h2><h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><ul>
+<li><p>ng-class<br>添加class:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div ng-class=&quot;&#123;red:true,yellow:true&#125;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ng-style</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div ng-style=&quot;&#123;color:&apos;red&apos;,background:&apos;#ddd&apos;&#125;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>放到js中：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$scope.style=&#123;color:&apos;red&apos;,background:&apos;#ddd&apos;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>然后HTML这样调用：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div ng-style=&quot;&#123;&#123;style&#125;&#125;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>ng-attr-(suffix)<br>通用的方式，没有提供指令的可使用（如title,）：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div ng-attr-title=&quot;&#123;&#123;text&#125;&#125;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>有ng指令的也可使用（如class）：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div ng-attr-class=&quot;&#123;&#123;text&#125;&#125;&quot; ng-attr-href=&quot;&#123;&#123;url&#125;&#125;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>ng-if<br>控制元素显示隐藏，通过移除DOM，而 <code>ng-show</code> 是通过display的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div ng-if=&quot;&#123;&#123;isInsert&#125;&#125;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ng-switch<br>变量btn为开关，控制when和detault的显示隐藏，较少使用，基本可用ng-show替代：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div ng-switch on=&quot;btn&quot;&gt;</span><br><span class="line">  &lt;p ng-switch-detault&gt;默认的效果&lt;/p&gt;</span><br><span class="line">  &lt;p ng-switch-when=&quot;false&quot;&gt;切换的效果&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ng-open<br>用于在details标签中，details标签Firefox和IE都不支持，控制内容的显示隐藏，ng-open为false时，只显示标题：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;details ng-open=&quot;btn&quot;&gt;</span><br><span class="line">  &lt;summary&gt;标题&lt;/summary&gt;</span><br><span class="line">  &lt;p&gt;内容&lt;/p&gt;</span><br><span class="line">&lt;/details&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ng-init<br>一般建议在$scope上初始化变量，在双重循环时获取 <code>$index</code> 时可以使用 <code>ng-init</code> 保存 <code>$index</code> ，防止和内层循环的 <code>$index</code> 冲突：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div ng-repeat=&quot;item in items&quot; ng-init=&quot;outerIndex=$index&quot;&gt;</span><br><span class="line">  &lt;p ng-repeat=&quot;title in titles&quot; ng-init=&quot;innerIndex=$index&quot;&gt;</span><br><span class="line">    &lt;span&gt;这是外层的下标：&#123;&#123;outerIndex&#125;&#125;&lt;/span&gt;</span><br><span class="line">    &lt;span&gt;这是内层的下标：&#123;&#123;innerIndex&#125;&#125;&lt;/span&gt;</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ng-include<br>引入一段HTML代码，路径用单引号包裹：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div ng-include=&quot;&apos;temp.html&apos;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ng-model<br>双向绑定数据， <code>ng-model-option</code> 可配置参数：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- 配置 blur 时更新 model --&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; ng-model=&quot;name&quot; ng-model-option=&quot;&#123;updateOn:&apos;blur&apos;&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="标签指令"><a href="#标签指令" class="headerlink" title="标签指令"></a>标签指令</h4><ul>
+<li><code>select</code><br>声明一个对象数组：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$sope.colors = [</span><br><span class="line">  &#123; name:&apos;red&apos;&#125;,</span><br><span class="line">  &#123; name:&apos;yellow&apos;&#125;,</span><br><span class="line">  &#123; name:&apos;blue&apos;&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在 <code>select</code> 中使用 <code>ng-options</code> ：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;select ng-model=&quot;myColors&quot; ng-options=&quot;color.name for color in colors&quot;&gt;&lt;/select&gt;</span><br><span class="line">&lt;!-- 当select改变时，下面也会跟着变 --&gt;</span><br><span class="line">&lt;span&gt;&#123;&#123;myColor.name&#125;&#125;&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h4><ul>
+<li>创建一个指令：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var m1 = angular.module(&apos;myApp&apos;,[]);</span><br><span class="line">m1.directive(&apos;myHello&apos;,function()&#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    restrict : &apos;AECM&apos;,   //区分大小写，而且是可以组合使用的</span><br><span class="line">    replace : true,  // 是否替换使用指令的该元素</span><br><span class="line">    template : &apos;&lt;div&gt;hello angular&lt;/div&gt;&apos;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>四种限定分别表示：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&apos;A&apos; - only matches attribute name</span><br><span class="line">&apos;E&apos; - only matches element name</span><br><span class="line">&apos;C&apos; - only matches class name</span><br><span class="line">&apos;M&apos; - only matches comment</span><br></pre></td></tr></table></figure></p>
+<h4 id="指令作用域"><a href="#指令作用域" class="headerlink" title="指令作用域"></a>指令作用域</h4><ul>
+<li><p>独立作用域<br>自定义指令是共享作用域的，在不同的页面使用指令数据会相互影响，可以通过指定scope属性声明使用独立的作用域：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">m1.directive(&apos;myHello&apos;,function()&#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    restrict : &apos;AECM&apos;, </span><br><span class="line">    replace : true, </span><br><span class="line">    scope: true, // 使用独立的作用域 </span><br><span class="line">    template : &apos;&lt;div&gt;hello angular&lt;/div&gt;&apos;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>隔离作用域<br>上面的独立作用域作继续外围的controller的属性，隔离作用域就是指指令内的变量不受外面的作用域的影响，只有自己使用：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">m1.directive(&apos;myHello&apos;,function()&#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    restrict : &apos;AECM&apos;, </span><br><span class="line">    replace : true, </span><br><span class="line">    // 下面这些是绑定策略</span><br><span class="line">    scope : &#123;</span><br><span class="line">      myId : &apos;@&apos;,  // 完整的是写@myId，由于名字相同可省略名字，会把下面的my-id解析成字符串div1</span><br><span class="line">      myName : &apos;=&apos;,  // 这里会把下面的name解析成变量，而不是字符串name</span><br><span class="line">      myFn : &apos;&amp;&apos;  // 绑定父级控制器的作用域，如下面的Aaa控制器</span><br><span class="line">    &#125;,</span><br><span class="line">    controller : [&apos;$scope&apos;,function($scope)&#123;</span><br><span class="line">      $scope.name = &apos;miaov&apos;;</span><br><span class="line">    &#125;],  // 该指令共享的属性写在这里</span><br><span class="line">    template : &apos;&lt;div&gt;hello angular&lt;/div&gt;&apos;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>与上面对应的绑定策略的HTML：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body ng-controller=&quot;Aaa&quot;&gt;</span><br><span class="line">&lt;my-tab my-id=&quot;div1&quot; my-name=&quot;name&quot; my-fn=&quot;show(num)&quot;&gt;&#123;&#123;myId&#125;&#125;&lt;/my-tab&gt;</span><br><span class="line">&lt;my-tab my-id=&quot;div2&quot; my-name=&quot;name&quot; my-fn=&quot;show(num)&quot;&gt;&#123;&#123;myName&#125;&#125;&lt;/my-tab&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在HTML中的四种使用方法：<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-hello</span>&gt;</span><span class="tag">&lt;/<span class="name">my-hello</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">my-hello</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"myHello"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!-- directive:myHello  --&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>link<br>link 一般用于DOM操作，可以访问指令控制器的作用域，只需将scope传递进link的函数中：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">m1.directive(&apos;myHello&apos;,function()&#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    restrict : &apos;AECM&apos;, </span><br><span class="line">    replace : true, </span><br><span class="line">    // 下面这些是绑定策略</span><br><span class="line">    scope : &#123;</span><br><span class="line">      myId : &apos;@&apos;,  // 完整的是写@myId，由于名字相同可省略名字，会把下面的my-id解析成字符串div1</span><br><span class="line">      myName : &apos;=&apos;,  // 这里会把下面的name解析成变量，而不是字符串name</span><br><span class="line">      myFn : &apos;&amp;&apos;  // 绑定父级控制器的作用域，如下面的Aaa控制器</span><br><span class="line">    &#125;,</span><br><span class="line">    controller : [&apos;$scope&apos;,function($scope)&#123;</span><br><span class="line">      $scope.name = &apos;miaov&apos;;</span><br><span class="line">    &#125;],  // 该指令共享的属性写在这里</span><br><span class="line">    link: function(scope,element,attr) &#123;</span><br><span class="line">      console.log(scope.name);  // miaov，上面controller中定义的name</span><br><span class="line">      console.log(element);  // 指令的根元素，这里就是template最外层的元素，即下在的 div.wrap</span><br><span class="line">      console.log(attr);  // 指令的根元素的所有属性都在这个对象可以找到</span><br><span class="line">    &#125;，</span><br><span class="line">    template : &apos;&lt;div class=&quot;wrap&quot;&gt;hello angular&lt;/div&gt;&apos;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="指令实例-选项卡"><a href="#指令实例-选项卡" class="headerlink" title="指令实例-选项卡"></a>指令实例-选项卡</h4><p>30ng.html</p>
+<h4 id="指令实例-拖拽"><a href="#指令实例-拖拽" class="headerlink" title="指令实例-拖拽"></a>指令实例-拖拽</h4><p>31ng.html</p>
+<h4 id="指令间交互"><a href="#指令间交互" class="headerlink" title="指令间交互"></a>指令间交互</h4><ul>
+<li>指令嵌套<br>指令嵌套时，外层的指令会把内层的替换掉，可使用 <code>transclude</code> 处理，并且在 template 中用 <code>ng-transclude</code> 指定插入的位置：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">m1.directive(&apos;hello&apos;,function()&#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    restrict : &apos;E&apos;,   </span><br><span class="line">    replace : true,</span><br><span class="line">    transclude : true,</span><br><span class="line">    template : &apos;&lt;div&gt;hello angular&lt;h1 ng-transclude&gt;&lt;/h1&gt;&lt;/div&gt;&apos;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>再加一个 <code>hi</code> 指令嵌套在上面的 <code>hello</code> 内部：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">m1.directive(&apos;hi&apos;,function()&#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    restrict : &apos;E&apos;,   </span><br><span class="line">    replace : true,</span><br><span class="line">    template : &apos;&lt;span&gt;hi angular&lt;/span&gt;&apos;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>HTML中嵌套两个指令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;hello&gt;</span><br><span class="line">  &lt;hi&gt;&lt;/hi&gt;</span><br><span class="line">&lt;/hello&gt;</span><br></pre></td></tr></table></figure></p>
+<p>则会生成如下HTML：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">hello angular</span><br><span class="line">  &lt;h1 ng-transclude=&quot;&quot;&gt;</span><br><span class="line">    &lt;span class=&quot;ng-scope&quot;&gt;hi angular&lt;/span&gt;</span><br><span class="line">  &lt;/h1&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>指令间依赖<br>指令嵌套使用时，通过 require 属性指定依赖的指令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">m1.directive(&apos;hi&apos;,function()&#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    restrict : &apos;E&apos;,   </span><br><span class="line">    replace : true,</span><br><span class="line">    require : &apos;hello&apos;,  // 表示在当前指令上查找 hello指令，适用于 &lt;hi hello&gt;&lt;/hi&gt;</span><br><span class="line">    // require : &apos;^hello&apos;,  // 表示在父级元素中查找，适用于 &lt;hello&gt;&lt;hi&gt;&lt;/hi&gt;&lt;/hello&gt;</span><br><span class="line">    // require : &apos;?^hello&apos;,   // 加上问号表示找不到hello指令时不报错，增强容错</span><br><span class="line">    template : &apos;&lt;span&gt;hi angular&lt;/span&gt;&apos;,</span><br><span class="line">    link : function(scope,element,attr,reController)&#123;</span><br><span class="line">      console.log( reController );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指令继承<br>指令可以继承其他指令的 controller ，在 link 的第四个参数表示继承 require 指令的构造函数：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">m1.directive(&apos;hi&apos;,function()&#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    restrict : &apos;E&apos;,   </span><br><span class="line">    replace : true,</span><br><span class="line">    require : &apos;hello&apos;, </span><br><span class="line">    template : &apos;&lt;span&gt;hi angular&lt;/span&gt;&apos;,</span><br><span class="line">    link : function(scope,element,attr,reController)&#123;</span><br><span class="line">      console.log( reController.name );  // 获取 hello 指令中的 this.name，$scope.name 则无法获取</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="表单验证-1"><a href="#表单验证-1" class="headerlink" title="表单验证"></a>表单验证</h3><p>阻止表单默认的验证：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;form novalidate&gt;&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<p>表单验证常用字段，通过name匹配，同时要写 <code>ng-model</code> ：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div ng-controller=&quot;Aaa&quot;&gt;</span><br><span class="line">  &lt;form novalidate name=&quot;myForm&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;email&quot; name=&quot;myEmail&quot; ng-model=&quot;email&quot; required&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;myForm.myEmail.$valid&#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;myForm.myEmail.$invalid&#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;myForm.myEmail.$pristine&#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;myForm.myEmail.$dirty&#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;myForm.myEmail.$error&#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/form&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>$error</code>对象示例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;&quot;required&quot;:false, &quot;minlength&quot;:true&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>表单验证实例实战：<br>HTML:<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div ng-controller=&quot;Aaa&quot;&gt;</span><br><span class="line">    &lt;form novalidate name=&quot;nForm&quot;&gt;</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;label&gt;用户名:&lt;/label&gt;</span><br><span class="line">            &lt;input type=&quot;text&quot; name=&quot;nText&quot; ng-model=&quot;regText.name&quot; required ng-pattern=&quot;/^[a-zA-Z]+$/&quot; ng-blur=&quot;change(&apos;regText&apos;,nForm.nText.$error)&quot;&gt;</span><br><span class="line">            &lt;span ng-repeat=&quot; re in regText.regList | filter : regText.regVal &quot;&gt;&#123;&#123; re.tips &#125;&#125;&lt;/span&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">        &lt;label&gt;密码:&lt;/label&gt;</span><br><span class="line">            &lt;input type=&quot;password&quot; name=&quot;nPassword&quot; ng-model=&quot;regPassword.name&quot; required ng-minlength=&quot;6&quot; ng-blur=&quot;change(&apos;regPassword&apos;,nForm.nPassword.$error)&quot;&gt;</span><br><span class="line">            &lt;span ng-repeat=&quot; re in regPassword.regList | filter : regPassword.regVal &quot;&gt;&#123;&#123; re.tips &#125;&#125;&lt;/span&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>js:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var m1 = angular.module(&apos;myApp&apos;,[]);</span><br><span class="line">m1.controller(&apos;Aaa&apos;,[&apos;$scope&apos;,function($scope)&#123;</span><br><span class="line">  </span><br><span class="line">  $scope.regText = &#123;</span><br><span class="line">    regVal : &apos;default&apos;,</span><br><span class="line">    regList : [</span><br><span class="line">      &#123; name : &apos;default&apos; , tips : &apos;请输入用户名&apos;&#125;,</span><br><span class="line">      &#123; name : &apos;required&apos; , tips : &apos;用户名不能为空&apos;&#125;,</span><br><span class="line">      &#123; name : &apos;pattern&apos; , tips : &apos;用户名必须是字母&apos;&#125;,</span><br><span class="line">      &#123; name : &apos;pass&apos; , tips : &apos;√&apos;&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;;</span><br><span class="line">  </span><br><span class="line">  $scope.regPassword = &#123;</span><br><span class="line">    regVal : &apos;default&apos;,</span><br><span class="line">    regList : [</span><br><span class="line">      &#123; name : &apos;default&apos; , tips : &apos;请输入密码&apos;&#125;,</span><br><span class="line">      &#123; name : &apos;required&apos; , tips : &apos;密码不能为空&apos;&#125;,</span><br><span class="line">      &#123; name : &apos;minlength&apos; , tips : &apos;密码至少6位&apos;&#125;,</span><br><span class="line">      &#123; name : &apos;pass&apos; , tips : &apos;√&apos;&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;;</span><br><span class="line">  </span><br><span class="line">  $scope.change = function( reg , err )&#123;</span><br><span class="line">    for(var attr in err)&#123;</span><br><span class="line">      if( err[attr] == true )&#123;</span><br><span class="line">        $scope[reg].regVal = attr;</span><br><span class="line">        return;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    $scope[reg].regVal = &apos;pass&apos;;</span><br><span class="line">  &#125;;</span><br><span class="line">  </span><br><span class="line">&#125;]);</span><br></pre></td></tr></table></figure></p>
+<p><strong>说明：</strong> 以上实例，for 循环中的 <code>return</code> 保证提示只出现一个。</p>
+<h3 id="面向对象写控制器"><a href="#面向对象写控制器" class="headerlink" title="面向对象写控制器"></a>面向对象写控制器</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var m1 = angular.module(&apos;app&apos;,[]);</span><br><span class="line">m1.controller(&apos;M1&apos;, [&apos;$scope&apos;, Fn]);</span><br><span class="line"></span><br><span class="line">function Fn($scope) &#123;</span><br><span class="line">&#125;</span><br><span class="line">// 添加方法</span><br><span class="line">Fn.prototype.num = 123;</span><br><span class="line">Fn.prototype.show = function()&#123;</span><br><span class="line">  return &apos;hello&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后对应的HTML要使用 <code>as</code> 创建构造函数的对象：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div ng-controller=&quot;Fn as item&quot;&gt;</span><br><span class="line">  &lt;span&gt;&#123;&#123;item.num&#125;&#125;&lt;/span&gt;</span><br><span class="line">  &lt;span&gt;&#123;&#123;item.show()&#125;&#125;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="http-服务"><a href="#http-服务" class="headerlink" title="$http 服务"></a>$http 服务</h3><ul>
+<li>使用举例：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$http(&#123;</span><br><span class="line">    method : &apos;GET&apos;,</span><br><span class="line">    url : &apos;data.php&apos;</span><br><span class="line">  &#125;).success(function(data,state,headers,config)&#123;</span><br><span class="line">    console.log(state);</span><br><span class="line">  &#125;).error(function(data)&#123;</span><br><span class="line">    console.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>另一种使用方式：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$http.get(&apos;data.php&apos;).success(function(data,state,headers,config)&#123;</span><br><span class="line">    console.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="location-服务"><a href="#location-服务" class="headerlink" title="$location 服务"></a>$location 服务</h3><ul>
+<li><p>absUrl()<br>获取绝对路径</p>
+</li>
+<li><p>path<br>获取或设置 hash 值：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$location.path();  // 获取</span><br><span class="line">$location.path(&apos;aaa/bbb/ccc&apos;).replace();  // 设置并且不保留历史记录</span><br><span class="line">$location.search(&#123;&apos;age&apos;:&apos;20&apos;&#125;);  // 设置参数，index.html#default?age=20</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>哈希与锚点对应<br>angular 改变了 hash 值时，默认是不会在浏览器中滚动到锚点，需要使用 <code>$anchorScroll</code> 服务：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">m1.controller(&apos;Aaa&apos;,[&apos;$scope&apos;,&apos;$location&apos;,&apos;$anchorScroll&apos;,function($scope,$location,$anchorScroll)&#123;</span><br><span class="line">    $scope.change = function(id)&#123;</span><br><span class="line">      $location.hash(id);</span><br><span class="line">      $anchorScroll();</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;]);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/note/">note</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/angular/">angular</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoomin1106.github.io/2016/05/25/note/angular/" data-title="angular note | matt&#39;s blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/12/29/javascript/jquery_plugin/"  title="jQuery插件开发">
+ <strong>下一篇：</strong><br/> 
+ <span>jQuery插件开发
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#最佳实践"><span class="toc-number">1.</span> <span class="toc-text">最佳实践</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模块"><span class="toc-number">2.</span> <span class="toc-text">模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#作用域"><span class="toc-number">3.</span> <span class="toc-text">作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控制器"><span class="toc-number">4.</span> <span class="toc-text">控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表达式"><span class="toc-number">5.</span> <span class="toc-text">表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#过滤器"><span class="toc-number">6.</span> <span class="toc-text">过滤器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义过滤器"><span class="toc-number">6.1.</span> <span class="toc-text">自定义过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表单验证"><span class="toc-number">6.2.</span> <span class="toc-text">表单验证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#指令简介"><span class="toc-number">7.</span> <span class="toc-text">指令简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常见指令"><span class="toc-number">7.1.</span> <span class="toc-text">常见指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#妙味补充"><span class="toc-number">8.</span> <span class="toc-text">妙味补充</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#指令"><span class="toc-number">8.1.</span> <span class="toc-text">指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#标签指令"><span class="toc-number">8.1.1.</span> <span class="toc-text">标签指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义指令"><span class="toc-number">8.1.2.</span> <span class="toc-text">自定义指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指令作用域"><span class="toc-number">8.1.3.</span> <span class="toc-text">指令作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指令实例-选项卡"><span class="toc-number">8.1.4.</span> <span class="toc-text">指令实例-选项卡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指令实例-拖拽"><span class="toc-number">8.1.5.</span> <span class="toc-text">指令实例-拖拽</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指令间交互"><span class="toc-number">8.1.6.</span> <span class="toc-text">指令间交互</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表单验证-1"><span class="toc-number">8.2.</span> <span class="toc-text">表单验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象写控制器"><span class="toc-number">8.3.</span> <span class="toc-text">面向对象写控制器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http-服务"><span class="toc-number">8.4.</span> <span class="toc-text">$http 服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#location-服务"><span class="toc-number">8.5.</span> <span class="toc-text">$location 服务</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/html-css/" title="html/css">html/css<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/note/" title="note">note<sup>7</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tools/" title="tools">tools<sup>3</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/js/" title="js">js<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jquery/" title="jquery">jquery<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css3/" title="css3">css3<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/angular/" title="angular">angular<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sass/" title="sass">sass<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css/" title="css">css<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/前端工具/" title="前端工具">前端工具<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/gulp/" title="gulp">gulp<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/调试/" title="调试">调试<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/webview/" title="webview">webview<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/X5/" title="X5">X5<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.cnblogs.com/yoomin" target="_blank" title="matt&#39;s blog">matt&#39;s blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hi! This is matt. <br/>
+			</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Matt.Wu">Matt.Wu</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
