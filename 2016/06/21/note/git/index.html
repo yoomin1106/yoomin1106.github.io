@@ -1,0 +1,600 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Git Note | matt&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Matt.Wu">
+    
+
+    
+    <meta name="description" content="一、安装设置设置作者git config --global user.name &amp;quot;matt&amp;quot;git config --global user.email &amp;quot;123456@qq.com&amp;quot;
+查看所有配置git config --list
+二、概念介绍各个区介绍git 分为以下三个区：
+
+工作区：这里都是没有添加到 git 跟踪的代码
+暂存区：已添加到 git 跟">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git Note">
+<meta property="og:url" content="http://yoomin1106.github.io/2016/06/21/note/git/index.html">
+<meta property="og:site_name" content="matt's blog">
+<meta property="og:description" content="一、安装设置设置作者git config --global user.name &amp;quot;matt&amp;quot;git config --global user.email &amp;quot;123456@qq.com&amp;quot;
+查看所有配置git config --list
+二、概念介绍各个区介绍git 分为以下三个区：
+
+工作区：这里都是没有添加到 git 跟踪的代码
+暂存区：已添加到 git 跟">
+<meta property="og:updated_time" content="2016-06-21T14:17:58.067Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git Note">
+<meta name="twitter:description" content="一、安装设置设置作者git config --global user.name &amp;quot;matt&amp;quot;git config --global user.email &amp;quot;123456@qq.com&amp;quot;
+查看所有配置git config --list
+二、概念介绍各个区介绍git 分为以下三个区：
+
+工作区：这里都是没有添加到 git 跟踪的代码
+暂存区：已添加到 git 跟">
+
+    
+    <link rel="alternative" href="/atom.xml" title="matt&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="matt&#39;s blog" title="matt&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="matt&#39;s blog">matt&#39;s blog</a></h1>
+				<h2 class="blog-motto">Write to remember!</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+						<li><a href="/excercise">Excercise</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoomin1106.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/06/21/note/git/" title="Git Note" itemprop="url">Git Note</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Matt.Wu" target="_blank" itemprop="author">Matt.Wu</a>
+		
+  <p class="article-time">
+    <time datetime="2016-06-20T16:00:00.000Z" itemprop="datePublished"> 发表于 2016-06-21</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、安装设置"><span class="toc-number">1.</span> <span class="toc-text">一、安装设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设置作者"><span class="toc-number">1.1.</span> <span class="toc-text">设置作者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看所有配置"><span class="toc-number">1.2.</span> <span class="toc-text">查看所有配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、概念介绍"><span class="toc-number">2.</span> <span class="toc-text">二、概念介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#各个区介绍"><span class="toc-number">2.1.</span> <span class="toc-text">各个区介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、常用命令介绍"><span class="toc-number">3.</span> <span class="toc-text">三、常用命令介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-commit"><span class="toc-number">3.1.</span> <span class="toc-text">git commit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-diff"><span class="toc-number">3.2.</span> <span class="toc-text">git diff</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#撤销"><span class="toc-number">3.3.</span> <span class="toc-text">撤销</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-rm"><span class="toc-number">3.4.</span> <span class="toc-text">git rm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#恢复"><span class="toc-number">3.5.</span> <span class="toc-text">恢复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程仓库"><span class="toc-number">3.6.</span> <span class="toc-text">远程仓库</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h2 id="一、安装设置"><a href="#一、安装设置" class="headerlink" title="一、安装设置"></a>一、安装设置</h2><h3 id="设置作者"><a href="#设置作者" class="headerlink" title="设置作者"></a>设置作者</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;matt&quot;</span><br><span class="line">git config --global user.email &quot;123456@qq.com&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="查看所有配置"><a href="#查看所有配置" class="headerlink" title="查看所有配置"></a>查看所有配置</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+<h2 id="二、概念介绍"><a href="#二、概念介绍" class="headerlink" title="二、概念介绍"></a>二、概念介绍</h2><h3 id="各个区介绍"><a href="#各个区介绍" class="headerlink" title="各个区介绍"></a>各个区介绍</h3><p>git 分为以下三个区：</p>
+<ul>
+<li>工作区：这里都是没有添加到 git 跟踪的代码</li>
+<li>暂存区：已添加到 git 跟踪，可以提交到本地</li>
+<li>版本区：已提交的代码，可以推送到远程仓库</li>
+</ul>
+<p>git 命令行中符号介绍：</p>
+<ul>
+<li><code>+</code> 增加</li>
+<li><code>~</code> 修改</li>
+<li><code>-</code> 删除</li>
+</ul>
+<p>如 <code>+2</code> 表示有两个添加</p>
+<h2 id="三、常用命令介绍"><a href="#三、常用命令介绍" class="headerlink" title="三、常用命令介绍"></a>三、常用命令介绍</h2><h3 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h3><p>默认不能从工作区跳到版本区，但 commit 可加参数执行连续操作：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git commit -a -m &quot;add file&quot;</span><br></pre></td></tr></table></figure></p>
+<p><code>-a</code> 表示执行 <code>git add</code> 操作<br><code>-m</code> 表示要添加跟在其后的注释</p>
+<h3 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h3><p>对比命令。</p>
+<ol>
+<li><p>工作区与暂存区对比：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git diff</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>暂存区与版本区对比(下面两种写法效果一样)：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git diff --cached</span><br><span class="line">git diff --staged</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>工作区与版本库对比：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git diff master</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h3><ol>
+<li><p>撤销暂存区的内容：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset HEAD drag.js  // 撤销 drag.js 文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>撤销工作区内容：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git checkout -- drag.js</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>撤销上一次的提交（即合并此次和上次的提交为一次）：<br>如果已经提交了一次：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git commit -m &quot;add index.html&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>然后发现还有一个 index.css 没有提交，可以输入如下合并两次提交为一次，在 log 中只会看到一次提交：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git commit -m &quot;add index.html and index.css&quot; --amend</span><br></pre></td></tr></table></figure></p>
+<h3 id="git-rm"><a href="#git-rm" class="headerlink" title="git rm"></a>git rm</h3><p>删除操作。</p>
+<ol>
+<li>删除暂存区的内容，前提是要先要工作区（硬盘）中删除该内容：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git rm index.css</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>如果没有先在工作区中删除该内容，则不能删除，可以使用 <code>-f</code> 强制删除，或使用 <code>--cached</code> 指定删除暂存区内容：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git rm -f index.css  // 同时删除工作区和暂存区</span><br><span class="line">git rm --cached index.css  // 只删除暂存区内容</span><br></pre></td></tr></table></figure></p>
+<h3 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h3><ol>
+<li>恢复指定版本的指定文件:<br>先使用 <code>git log</code> 查看日志：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git log</span><br><span class="line">commit a04ab13a99f2eeb2725344f726c9ae8e6e4bb204</span><br><span class="line">Author: matt.wu &lt;matt.wu&gt;</span><br><span class="line">Date:   Sat Jun 18 18:22:25 2016 +0800</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>复制 commit 后面的字符串，不需要全部复制：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git checkout a04ab13a99f2eeb272534 index.css</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>所有恢复到指定版本：<br>历史记录如下：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git log</span><br><span class="line">commit a04ab13a99f2eeb2725344f726c9ae8e6e4bb204</span><br><span class="line">Author: matt.wu &lt;matt.wu&gt;</span><br><span class="line">Date:   Sat Jun 18 18:22:25 2016 +0800</span><br><span class="line"></span><br><span class="line">    add sass of css modules</span><br><span class="line"></span><br><span class="line">commit f7901c4a9b0a041e66ce29a2c60261900d9d4e7d</span><br><span class="line">Author: yoomin1106 &lt;yoomin1106@gmail.com&gt;</span><br><span class="line">Date:   Wed Jun 15 23:29:18 2016 +0800</span><br><span class="line"></span><br><span class="line">    update angular.md</span><br><span class="line"></span><br><span class="line">commit 403c5e274ef8de8d75f4b5be8c7d4e1a3a6724c8</span><br><span class="line">Author: matt.wu &lt;matt.wu&gt;</span><br><span class="line">Date:   Wed Jun 15 17:08:22 2016 +0800</span><br><span class="line"></span><br><span class="line">    add README</span><br><span class="line"></span><br><span class="line">commit ff58a119a3ae49ad34ee91ab0407beddc173574a</span><br><span class="line">Author: matt.wu &lt;matt.wu&gt;</span><br><span class="line">Date:   Tue Jun 14 20:58:57 2016 +0800</span><br><span class="line"></span><br><span class="line">    update css modules</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard a04ab13a99f2eeb2725344f  // 回到 add sass of css modules 版本</span><br></pre></td></tr></table></figure>
+<p>还可以使用指针恢复到上一个版本：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard HEAD^  // ^ 表示往回退一个版本</span><br></pre></td></tr></table></figure></p>
+<p>运行上述命令，如果当前的是在 <code>add sass of css modules</code> 则回到 <code>update angular.md</code></p>
+<p><code>HEAD</code> 始终指向当前的版本，执行一次上述操作，将使 <code>HEAD</code> 指向往回走一次。</p>
+<p>还可以往回退多个版本：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard HEAD~2  // 回退2个版本</span><br></pre></td></tr></table></figure></p>
+<p>当使用上述的命令后，已经被回退的版本在 log 中是看不到的，如 <code>git log</code> 后看不到 <code>add sass of css modules</code> 这一次提交。可以通过 <code>git reflog</code> 查看操作历史:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">a04ab13 HEAD@&#123;0&#125;: pull --ff: Fast-forward</span><br><span class="line">f7901c4 HEAD@&#123;1&#125;: commit: update angular.md</span><br><span class="line">403c5e2 HEAD@&#123;2&#125;: pull --ff: Fast-forward</span><br><span class="line">dd82d34 HEAD@&#123;3&#125;: rebase finished: returning to refs/heads/develop</span><br><span class="line">dd82d34 HEAD@&#123;4&#125;: rebase: checkout master</span><br></pre></td></tr></table></figure></p>
+<p>然后通过 <code>git reset --herd</code> 回到指定操作：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard f7901c4   // 回到 update angular.md</span><br></pre></td></tr></table></figure></p>
+<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><ol>
+<li>查看远程仓库：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote</span><br></pre></td></tr></table></figure></li>
+</ol>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/note/">note</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/git/">git</a><a href="/tags/tools/">tools</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoomin1106.github.io/2016/06/21/note/git/" data-title="Git Note | matt&#39;s blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/06/12/note/css_modules/"  title="CSS Modules">
+ <strong>下一篇：</strong><br/> 
+ <span>CSS Modules
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、安装设置"><span class="toc-number">1.</span> <span class="toc-text">一、安装设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设置作者"><span class="toc-number">1.1.</span> <span class="toc-text">设置作者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看所有配置"><span class="toc-number">1.2.</span> <span class="toc-text">查看所有配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、概念介绍"><span class="toc-number">2.</span> <span class="toc-text">二、概念介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#各个区介绍"><span class="toc-number">2.1.</span> <span class="toc-text">各个区介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、常用命令介绍"><span class="toc-number">3.</span> <span class="toc-text">三、常用命令介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-commit"><span class="toc-number">3.1.</span> <span class="toc-text">git commit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-diff"><span class="toc-number">3.2.</span> <span class="toc-text">git diff</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#撤销"><span class="toc-number">3.3.</span> <span class="toc-text">撤销</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-rm"><span class="toc-number">3.4.</span> <span class="toc-text">git rm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#恢复"><span class="toc-number">3.5.</span> <span class="toc-text">恢复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程仓库"><span class="toc-number">3.6.</span> <span class="toc-text">远程仓库</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/article/" title="article">article<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/html-css/" title="html/css">html/css<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/note/" title="note">note<sup>8</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tools/" title="tools">tools<sup>2</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/jquery/" title="jquery">jquery<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/js/" title="js">js<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css/" title="css">css<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/前端工具/" title="前端工具">前端工具<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sass/" title="sass">sass<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css3/" title="css3">css3<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/angular/" title="angular">angular<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/gulp/" title="gulp">gulp<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/调试/" title="调试">调试<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/webview/" title="webview">webview<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/X5/" title="X5">X5<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tools/" title="tools">tools<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.cnblogs.com/yoomin" target="_blank" title="matt&#39;s blog">matt&#39;s blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hi! This is matt. <br/>
+			</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Matt.Wu">Matt.Wu</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

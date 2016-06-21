@@ -1,0 +1,669 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>CSS Modules | matt&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Matt.Wu">
+    
+
+    
+    <meta name="description" content="CSS 模块化一、文件结构常见文件结构一个项目的CSS最基本结构通常是下面这样的：
+- base.css- common.css- pages.css
+复杂一点的项目可能是这样分：- base.css- header.css- footer.css- sidebar.css- forms.css- icons.css- buttons.css- dropdown.css- modals.css-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS Modules">
+<meta property="og:url" content="http://yoomin1106.github.io/2016/06/12/note/css_modules/index.html">
+<meta property="og:site_name" content="matt's blog">
+<meta property="og:description" content="CSS 模块化一、文件结构常见文件结构一个项目的CSS最基本结构通常是下面这样的：
+- base.css- common.css- pages.css
+复杂一点的项目可能是这样分：- base.css- header.css- footer.css- sidebar.css- forms.css- icons.css- buttons.css- dropdown.css- modals.css-">
+<meta property="og:updated_time" content="2016-06-21T13:12:59.127Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS Modules">
+<meta name="twitter:description" content="CSS 模块化一、文件结构常见文件结构一个项目的CSS最基本结构通常是下面这样的：
+- base.css- common.css- pages.css
+复杂一点的项目可能是这样分：- base.css- header.css- footer.css- sidebar.css- forms.css- icons.css- buttons.css- dropdown.css- modals.css-">
+
+    
+    <link rel="alternative" href="/atom.xml" title="matt&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="matt&#39;s blog" title="matt&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="matt&#39;s blog">matt&#39;s blog</a></h1>
+				<h2 class="blog-motto">Write to remember!</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+						<li><a href="/excercise">Excercise</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoomin1106.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/06/12/note/css_modules/" title="CSS Modules" itemprop="url">CSS Modules</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Matt.Wu" target="_blank" itemprop="author">Matt.Wu</a>
+		
+  <p class="article-time">
+    <time datetime="2016-06-11T16:00:00.000Z" itemprop="datePublished"> 发表于 2016-06-12</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS-模块化"><span class="toc-number">1.</span> <span class="toc-text">CSS 模块化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、文件结构"><span class="toc-number">1.1.</span> <span class="toc-text">一、文件结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常见文件结构"><span class="toc-number">1.1.1.</span> <span class="toc-text">常见文件结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SMACSS"><span class="toc-number">1.1.2.</span> <span class="toc-text">SMACSS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、命名"><span class="toc-number">1.2.</span> <span class="toc-text">二、命名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命名的重要性"><span class="toc-number">1.2.1.</span> <span class="toc-text">命名的重要性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#独一无二的规则"><span class="toc-number">1.2.2.</span> <span class="toc-text">独一无二的规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简短的命名"><span class="toc-number">1.2.3.</span> <span class="toc-text">简短的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浅嵌套"><span class="toc-number">1.2.4.</span> <span class="toc-text">浅嵌套</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目中存在的问题"><span class="toc-number">1.2.5.</span> <span class="toc-text">项目中存在的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BEM"><span class="toc-number">1.2.6.</span> <span class="toc-text">BEM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SUIT"><span class="toc-number">1.2.7.</span> <span class="toc-text">SUIT</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、模块之间的关系"><span class="toc-number">1.3.</span> <span class="toc-text">三、模块之间的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#嵌套"><span class="toc-number">1.3.1.</span> <span class="toc-text">嵌套</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解耦"><span class="toc-number">1.3.2.</span> <span class="toc-text">解耦</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">1.4.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原子类"><span class="toc-number">1.4.1.</span> <span class="toc-text">原子类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、CSS预处理-SASS"><span class="toc-number">1.5.</span> <span class="toc-text">四、CSS预处理 - SASS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本用法"><span class="toc-number">1.5.1.</span> <span class="toc-text">基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#变量"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#计算"><span class="toc-number">1.5.1.2.</span> <span class="toc-text">计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#嵌套-1"><span class="toc-number">1.5.1.3.</span> <span class="toc-text">嵌套</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#继承"><span class="toc-number">1.5.1.4.</span> <span class="toc-text">继承</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进阶用法"><span class="toc-number">1.5.2.</span> <span class="toc-text">进阶用法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Mixin"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">Mixin</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#颜色处理"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">颜色处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#流程控制"><span class="toc-number">1.5.2.3.</span> <span class="toc-text">流程控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#function"><span class="toc-number">1.5.2.4.</span> <span class="toc-text">function()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SASS-的文件结构"><span class="toc-number">1.5.3.</span> <span class="toc-text">SASS 的文件结构</span></a></li></ol></li></ol></li></ol>
+		
+		</div>
+		
+		<h1 id="CSS-模块化"><a href="#CSS-模块化" class="headerlink" title="CSS 模块化"></a>CSS 模块化</h1><h2 id="一、文件结构"><a href="#一、文件结构" class="headerlink" title="一、文件结构"></a>一、文件结构</h2><h3 id="常见文件结构"><a href="#常见文件结构" class="headerlink" title="常见文件结构"></a>常见文件结构</h3><p>一个项目的CSS最基本结构通常是下面这样的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- base.css</span><br><span class="line">- common.css</span><br><span class="line">- pages.css</span><br></pre></td></tr></table></figure>
+<p>复杂一点的项目可能是这样分：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- base.css</span><br><span class="line">- header.css</span><br><span class="line">- footer.css</span><br><span class="line">- sidebar.css</span><br><span class="line">- forms.css</span><br><span class="line">- icons.css</span><br><span class="line">- buttons.css</span><br><span class="line">- dropdown.css</span><br><span class="line">- modals.css</span><br><span class="line">- layout.css</span><br><span class="line">- index.css</span><br><span class="line">- user.css</span><br><span class="line">- admin.css</span><br><span class="line">- pages.css</span><br></pre></td></tr></table></figure></p>
+<p>如果后期不打算合并CSS的，建议尽可能减少 CSS 文件的数量。</p>
+<p>如果要做合并压缩 CSS 文件，则可以对CSS 文件进行适当的组织，这是 CSS 模块化最简单有效的方法。建议根据项目情况使用上述的两种或是其他文件组织方案。</p>
+<h3 id="SMACSS"><a href="#SMACSS" class="headerlink" title="SMACSS"></a>SMACSS</h3><p>SMACSS 的全称叫 Scalable and Modular Architecture for CSS。即可扩展和模块化的CSS架构。</p>
+<p>SMACSS将样式分成5种类型：Base，Layout，Module，State，Theme，下面说说每一种类型表示什么：</p>
+<ol>
+<li>Base: 基础样式表，定义了基本的样式，我们平时写CSS比如reset.css就是属于基础样式表，另外我认为清除浮动，一些动画也可以归类为基础样式。</li>
+<li>Layout: 布局样式，用于实现网页的基本布局，搭起整个网页的基本骨架。</li>
+<li>Module: 网页中不同的区域有这个不同的功能，这些功能是相对独立的，我们可以称其为模块。模块是独立的，可重用的组件，它们不依赖于布局组件，可以安全的删除修改而不影响其他模块。</li>
+<li>State: 状态样式，通常和js一起配合使用，表示某个组件或功能不同的状态，比如菜单选中状态，按钮不可用状态等。</li>
+<li>Theme: 主题皮肤，对于可更换皮肤的站点来说，这个是很有必要的，分离了结构和皮肤，根据不同的皮肤应用不同的样式文件。</li>
+</ol>
+<p>更多关于 SMACSS 的信息参见它的<a href="https://smacss.com/" target="_blank" rel="external">官网</a>。</p>
+<h2 id="二、命名"><a href="#二、命名" class="headerlink" title="二、命名"></a>二、命名</h2><h3 id="命名的重要性"><a href="#命名的重要性" class="headerlink" title="命名的重要性"></a>命名的重要性</h3><ul>
+<li>CSS 不像一般的编程语言，具有作用域和使名空间概念，它的每一条规则都是全局的，在 CSS 预处理出现之前，这很容易造成命名上的冲突。</li>
+<li>如果为了减少命名上的冲突，使用很长的名称，很可能会造成 CSS 文件异常宏大。</li>
+<li>涉及到多人维护同一段 CSS 代码时，命名的意义表达，也会影响到维护效率。</li>
+</ul>
+<p>CSS 的规则命名通常有以下几条原则：</p>
+<ol>
+<li>使用独一无二的规则</li>
+<li>使用简短的命名</li>
+<li>嵌套层级不宜过深，建议控制在3层以内</li>
+</ol>
+<h3 id="独一无二的规则"><a href="#独一无二的规则" class="headerlink" title="独一无二的规则"></a>独一无二的规则</h3><p>最完美的做法是，每条规则只使用一个选择器，并且每个选择器的命名唯一（有一些工具可以实现），但是会造成 CSS 文件过大，得不偿失。更好的做法是适当的使用嵌套：<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.module_header</span> &#123; <span class="attribute">background</span>:<span class="number">#fff</span>; <span class="attribute">font-size</span>:<span class="number">16px</span>; &#125;</span><br><span class="line"><span class="selector-class">.module_header</span> <span class="selector-class">.header_inner</span> &#123;  &#125;</span><br><span class="line"><span class="selector-class">.module_header</span> <span class="selector-class">.header_inner</span> <span class="selector-class">.header_logo</span> &#123; <span class="attribute">float</span>:left; &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="简短的命名"><a href="#简短的命名" class="headerlink" title="简短的命名"></a>简短的命名</h3><p>在能表达意思的前提下，使用单词的缩写，这是 CSS 的最佳实践之一。如上面的例子可以改成：<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.mod_header</span> &#123; <span class="attribute">background</span>:<span class="number">#fff</span>; <span class="attribute">font-size</span>:<span class="number">16px</span>; &#125;</span><br><span class="line"><span class="selector-class">.mod_header</span> <span class="selector-class">.hd_inner</span> &#123;  &#125;</span><br><span class="line"><span class="selector-class">.mod_header</span> <span class="selector-class">.hd_logo</span> &#123; <span class="attribute">float</span>:left; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>相同的模块使用前缀限制，这是最常见的做法：<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.det_top</span> &#123; <span class="attribute">padding</span>:.<span class="number">1rem</span>; &#125;</span><br><span class="line"><span class="selector-class">.det_top</span> <span class="selector-tag">h2</span> <span class="selector-tag">a</span> &#123; <span class="attribute">font-size</span>:<span class="number">18px</span>; <span class="attribute">color</span>:<span class="number">#2db7f5</span>; &#125;</span><br><span class="line"><span class="selector-class">.det_top_right</span>&#123;<span class="attribute">float</span>:right;&#125;</span><br><span class="line"><span class="selector-class">.det_top_right</span> <span class="selector-tag">button</span>&#123;<span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#C7CACC</span>;<span class="attribute">padding</span>: <span class="number">4px</span> <span class="number">30px</span>;<span class="attribute">background-color</span>: <span class="number">#fff</span>;<span class="attribute">border-radius</span>: <span class="number">3px</span>;<span class="attribute">outline</span>:none;&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.det_box</span> &#123; <span class="attribute">margin-bottom</span>:.<span class="number">2rem</span>; <span class="attribute">background</span>:<span class="number">#ffffff</span>; <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#e3e5ea</span>; <span class="attribute">border-radius</span>:<span class="number">4px</span>; <span class="attribute">padding</span>:<span class="number">0</span> .<span class="number">1rem</span>; &#125;</span><br><span class="line"><span class="selector-class">.det_box</span><span class="selector-pseudo">:last-child</span> &#123; <span class="attribute">margin-bottom</span>: <span class="number">0</span>; &#125;</span><br><span class="line"><span class="selector-class">.det_box</span> <span class="selector-class">.box_hd</span> &#123; <span class="attribute">height</span>:.<span class="number">22rem</span>; <span class="attribute">line-height</span>: .<span class="number">22rem</span>; <span class="attribute">padding</span>:.<span class="number">1rem</span> .<span class="number">2rem</span>; <span class="attribute">border-bottom</span>:<span class="number">1px</span> solid <span class="number">#ecedee</span>; <span class="attribute">overflow</span>:hidden; &#125;</span><br><span class="line"><span class="selector-class">.det_box</span> <span class="selector-class">.hd_tt</span> &#123; <span class="attribute">float</span>:left; <span class="attribute">font-size</span>:<span class="number">14px</span>; <span class="attribute">color</span>:<span class="number">#4f555c</span>; &#125;</span><br><span class="line"><span class="selector-class">.det_box</span> <span class="selector-class">.hd_edit</span> &#123; <span class="attribute">float</span>:right; <span class="attribute">font-size</span>:<span class="number">12px</span>; <span class="attribute">color</span>:<span class="number">#7b8791</span>; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>一来起到命名空间的作用，二来模块化效果很清晰。</p>
+<p>下面是一些常用的模块命名，可适当地使用单词缩写：</p>
+<blockquote>
+<p>头：header</p>
+<p>内容：content/container</p>
+<p>尾：footer</p>
+<p>导航：nav</p>
+<p>侧栏：sidebar</p>
+<p>栏目：column</p>
+<p>页面外围控制整体布局宽度：wrapper</p>
+<p>左右中：left right center</p>
+<p>登录条：loginbar</p>
+<p>标志：logo</p>
+<p>广告：banner</p>
+<p>页面主体：main</p>
+<p>热点：hot</p>
+<p>新闻：news</p>
+<p>下载：download</p>
+<p>子导航：subnav</p>
+<p>菜单：menu</p>
+<p>子菜单：submenu</p>
+<p>搜索：search</p>
+<p>友情链接：friendlink</p>
+<p>页脚：footer</p>
+<p>版权：copyright</p>
+<p>滚动：scroll</p>
+<p>内容：content</p>
+<p>标签页：tab</p>
+<p>文章列表：list</p>
+<p>提示信息：msg</p>
+<p>小技巧：tips</p>
+<p>栏目标题：title</p>
+<p>加入：joinus</p>
+<p>指南：guild</p>
+<p>服务：service</p>
+<p>注册：regsiter</p>
+<p>状态：status</p>
+<p>投票：vote</p>
+<p>合作伙伴：partner</p>
+</blockquote>
+<h3 id="浅嵌套"><a href="#浅嵌套" class="headerlink" title="浅嵌套"></a>浅嵌套</h3><p>还是上面的例子：<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.module_header</span> &#123; <span class="attribute">background</span>:<span class="number">#fff</span>; <span class="attribute">font-size</span>:<span class="number">16px</span>; &#125;</span><br><span class="line"><span class="selector-class">.module_header</span> <span class="selector-class">.header_inner</span> &#123;  &#125;</span><br><span class="line"><span class="selector-class">.module_header</span> <span class="selector-class">.header_inner</span> <span class="selector-class">.header_logo</span> &#123; <span class="attribute">float</span>:left; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>第三条规则的选择器可以缩减一下，变成：<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.module_header</span> <span class="selector-class">.header_logo</span> &#123; <span class="attribute">float</span>:left; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>因为一般不会有两个 logo 都放在头部。</p>
+<p><em>更多关于 CSS 命名，请看<a href="http://www.zhangxinxu.com/wordpress/2010/09/%E7%B2%BE%E7%AE%80%E9%AB%98%E6%95%88%E7%9A%84css%E5%91%BD%E5%90%8D%E5%87%86%E5%88%99%E6%96%B9%E6%B3%95/" target="_blank" rel="external">这篇文章</a></em></p>
+<p>在上面“命名的重要性”里面提到的缺点，可以通过使用名称缩写，还有选择器嵌套，保证每条规则的唯一性。</p>
+<h3 id="项目中存在的问题"><a href="#项目中存在的问题" class="headerlink" title="项目中存在的问题"></a>项目中存在的问题</h3><ul>
+<li>class 前面加标签：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.top_left p span.top_left_num label:first-child&#123;</span><br><span class="line">    font-size: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>看上面的例子，由于浏览器是从右向左解析 CSS 规则的，所以在找到 <code>.top_left_num</code> 后还要去判断是不是 span, CSS 解析反而是更慢的。一般只有两种情况下会用到多个选择器限定：</p>
+<ol>
+<li>为了提高优先级</li>
+<li>为了与同样选择器的元素区分，如下面为了区分展示状态和可编辑状态：</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.det_box</span> <span class="selector-class">.bd_table</span> <span class="selector-class">.val</span> &#123; <span class="attribute">display</span>: inline-block; <span class="attribute">padding</span>:<span class="number">6px</span>; <span class="attribute">line-height</span>:<span class="number">1</span>; <span class="attribute">border</span>:<span class="number">1px</span> solid transparent; <span class="attribute">box-sizing</span>:border-box; &#125;</span><br><span class="line"><span class="selector-class">.det_box</span> <span class="selector-class">.bd_table</span> <span class="selector-tag">input</span><span class="selector-class">.val</span> &#123; <span class="attribute">width</span>:<span class="number">1.8rem</span>; <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#e3e5ea</span>; <span class="attribute">border-radius</span>:<span class="number">4px</span>; <span class="attribute">background</span>:<span class="number">#eee</span>; &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>选择器太大：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.top_right</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:right;</span><br><span class="line">    <span class="attribute">min-width</span>:<span class="number">400px</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">25px</span>;</span><br><span class="line">    <span class="attribute">border-left</span>: <span class="number">1px</span> dashed <span class="number">#e0ddd4</span>;  </span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.top_right</span> <span class="selector-tag">li</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">22px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">22px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上面的代码很容易出现重名的情况，导致样式互相影响。</p>
+<ul>
+<li>原子类与模块样式混用：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.admin_childpages_header .f_l span&#123;</span><br><span class="line">    font-weight: 700;</span><br><span class="line">    color: rgb(46,46,46);</span><br><span class="line">    padding: 0 1.75rem;</span><br><span class="line">    border-right: 2px solid rgb(191,191,191);</span><br><span class="line">    cursor: pointer;</span><br><span class="line">    font-size: 14px;</span><br><span class="line">&#125;</span><br><span class="line">.admin_childpages_header .f_l span:last-of-type&#123;</span><br><span class="line">    border: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>原子类 <code>.f_l</code> 用于控制元素的 <code>float:left;</code> ，一般与其他原子类组合使用。上面的代码中，当这个元素不再需要 <code>.f_l</code> 时，所有使用 <code>.f_l</code> 的规则都会受到影响。建议用一个单独的 class 来控制样式。</p>
+<ul>
+<li>模块之间区分不明显，不知道哪里的样式是同一个模块的。</li>
+<li>模块没有添加注释说明</li>
+</ul>
+<h3 id="BEM"><a href="#BEM" class="headerlink" title="BEM"></a>BEM</h3><p>BEM是Block，Element，Modifier的缩写。是比较流行的一种 CSS 命名方式。下面分别介绍这三个概念：</p>
+<ol>
+<li>Block：在BEM的理论中，一个网页是由block组成的，比如头部是个block，内容是block，logo也是block，一个block可能由几个子block组成。</li>
+<li>Element：element是block的一部分，具有某种功能，element依赖于block，比如在logo中，img是logo的一个element，在菜单中，菜单项是菜单的一个element</li>
+<li>Modifier：modifier是用来修饰block或者element的，它表示block或者element在外观或行为上的改变</li>
+</ol>
+<p>根据 BEM 原则，CSS 的命名应该是像下面这样的：<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.block</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.block__element</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.block--modifier</span> &#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面的例子展示了一个BEM项目的类结构，下划线（__）被用来区分元素，而用连字符(–)是用来修饰元素的。再看一个例子：<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.product-details</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.product-details__price</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.product-details__price--sale</span> &#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>最后的修饰位，通常会加入各种标记，大的、小的、红的、绿的等等。但是这样的命名，卖相不太好。</p>
+<h3 id="SUIT"><a href="#SUIT" class="headerlink" title="SUIT"></a>SUIT</h3><p>Suit起源于BEM，但是它对组件名使用驼峰式和连字号把组件从他们的修饰和子孙后代中区分出来：<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.u-utility</span> &#123;&#125; </span><br><span class="line"><span class="selector-class">.ComponentName</span> &#123;&#125; </span><br><span class="line"><span class="selector-class">.ComponentName-modifierName</span> &#123;&#125; </span><br><span class="line"><span class="selector-class">.ComponentName-descendantName</span> &#123;&#125; </span><br><span class="line"><span class="selector-class">.ComponentName</span><span class="selector-class">.is-someState</span> &#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="三、模块之间的关系"><a href="#三、模块之间的关系" class="headerlink" title="三、模块之间的关系"></a>三、模块之间的关系</h2><h3 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h3><p>在写 CSS 的过程中，通常会遇到两个模块之间相互嵌套，比如说表单里面有按钮，按钮是一个组件，也是一个小的模块。</p>
+<h3 id="解耦"><a href="#解耦" class="headerlink" title="解耦"></a>解耦</h3><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="原子类"><a href="#原子类" class="headerlink" title="原子类"></a>原子类</h3><p>在阿当的《编写高质量代码 Web前段开发修炼之道》这本书中，提倡并提供了一套原子类，相信很多前端开发者都有所了解。它提供了一套包含高度复用样式的 class ，下面截取一段书中的 base.css 的代码：<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*文字排版*/</span>  </span><br><span class="line"><span class="selector-class">.f12</span>&#123;<span class="attribute">font-size</span>:<span class="number">12px</span>;&#125;  </span><br><span class="line"><span class="selector-class">.f20</span>&#123;<span class="attribute">font-size</span>:<span class="number">20px</span>;&#125;  </span><br><span class="line"><span class="selector-class">.fb</span>&#123;<span class="attribute">font-weight</span>:bold&#125;  </span><br><span class="line"><span class="selector-class">.fn</span>&#123;<span class="attribute">font-weight</span>:normal;&#125;  </span><br><span class="line"><span class="selector-class">.t2</span>&#123;<span class="attribute">text-indent</span>:<span class="number">2em</span>;&#125;  </span><br><span class="line"><span class="selector-class">.lh150</span>&#123;<span class="attribute">line-height</span>:<span class="number">150%</span>;&#125;  </span><br><span class="line"><span class="selector-class">.unl</span>&#123;<span class="attribute">text-decoration</span>:underlline;&#125;</span><br><span class="line"><span class="selector-class">.no_unl</span>&#123;<span class="attribute">text-decoration</span>:none;&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">/*定位*/</span>  </span><br><span class="line"><span class="selector-class">.tl</span>&#123;<span class="attribute">text-align</span>:left;&#125;  </span><br><span class="line"><span class="selector-class">.tc</span>&#123;<span class="attribute">text-align</span>:center;&#125;  </span><br><span class="line"><span class="selector-class">.tr</span>&#123;<span class="attribute">text-align</span>:right;&#125;  </span><br><span class="line"><span class="selector-class">.bc</span>&#123;<span class="attribute">margin-left</span>:<span class="number">0</span>;<span class="attribute">margin-right</span>:<span class="number">0</span>;&#125;  </span><br><span class="line"><span class="selector-class">.fl</span>&#123;<span class="attribute">float</span>:left;<span class="attribute">display</span>:inline;&#125;  </span><br><span class="line"><span class="selector-class">.fr</span>&#123;<span class="attribute">float</span>:right;<span class="attribute">display</span>:inline;&#125;  </span><br><span class="line"><span class="selector-class">.cb</span>&#123;<span class="attribute">clear</span>:both;&#125;  </span><br><span class="line"><span class="selector-class">.cl</span>&#123;<span class="attribute">clear</span>:left;&#125;  </span><br><span class="line"><span class="selector-class">.cr</span>&#123;<span class="attribute">clear</span>:rigth;&#125;  </span><br><span class="line"><span class="selector-class">.vm</span>&#123;<span class="attribute">verticle-align</span>:middle;&#125;</span><br><span class="line"><span class="selector-class">.abs-right</span>&#123;<span class="attribute">position</span>:absolute;<span class="attribute">right</span>:<span class="number">0</span>&#125;  </span><br><span class="line"><span class="selector-class">.zoom</span>&#123;<span class="attribute">zoom</span>:<span class="number">1</span>;&#125;  </span><br><span class="line"><span class="selector-class">.hidden</span>&#123;<span class="attribute">visiility</span>:hidden;&#125;  </span><br><span class="line"><span class="selector-class">.none</span>&#123;<span class="attribute">display</span>:none;&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">/*长度高度*/</span>  </span><br><span class="line"><span class="selector-class">.w10</span>&#123;<span class="attribute">width</span>:<span class="number">10px</span>;&#125;  </span><br><span class="line"><span class="selector-class">.w</span>&#123;<span class="attribute">width</span>:<span class="number">100%</span>&#125;  </span><br><span class="line"><span class="selector-class">.h50</span>&#123;<span class="attribute">width</span>:<span class="number">50px</span>;&#125;  </span><br><span class="line"><span class="selector-class">.h</span>&#123;<span class="attribute">height</span>:<span class="number">100%</span>&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">/*边距*/</span>  </span><br><span class="line"><span class="selector-class">.m10</span>&#123;<span class="attribute">margin</span>:<span class="number">10px</span>;&#125;  </span><br><span class="line"><span class="selector-class">.m15</span>&#123;<span class="attribute">margin</span>:<span class="number">15px</span>;&#125;  </span><br><span class="line"><span class="selector-class">.m30</span>&#123;<span class="attribute">margin</span>:<span class="number">30px</span>;&#125;  </span><br><span class="line"><span class="selector-class">.mt5</span>&#123;<span class="attribute">margin-top</span>:<span class="number">5px</span>;&#125;  </span><br><span class="line"><span class="selector-class">.mt10</span>&#123;<span class="attribute">margin-top</span>:<span class="number">10px</span>;&#125;  </span><br><span class="line"><span class="selector-class">.mt15</span>&#123;<span class="attribute">margin-top</span>:<span class="number">15px</span>;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>基于这些原子类，我们可以在项目中非常自由、灵活地组合使用，好处就是几乎不怎么需要你再写 CSS 代码了。但是，这种做法的缺点也是很明显的：</p>
+<ul>
+<li><p>维护困难<br>试想，当你在很多个地方用了 <code>.w100</code> ，如果要将这些宽度改为 <code>150px</code>，怎么做？</p>
+</li>
+<li><p>代码冗余<br>经常会出现这样一种情况，在一个元素上添加好多个 class ，导致HTML代码很长。如很简单的一个按钮：</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"h30 w30 tc f14 unl p10 fl"</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果是这样，其实和直接写行内样式有什么区别：<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">style</span>=<span class="string">"width:30px;text-align:center;padding:10px;"</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="四、CSS预处理-SASS"><a href="#四、CSS预处理-SASS" class="headerlink" title="四、CSS预处理 - SASS"></a>四、CSS预处理 - SASS</h2><p>SASS 是一种 CSS 预处理器，用它的语法书写样式，再编译成 CSS 文件。它自身兼容 CSS 语法，也就是说，把你的 CSS 文件复制到 SCSS 文件中也可以正常使用。</p>
+<p>SASS 使用了很多模块化和面向对象的思想，使得我们的样式更加易维护。下面讲一下 SASS 的常用特性。</p>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>声明变量，所有变量以 $ 开头：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// Color</span><br><span class="line">$gray-darker:          #333;</span><br><span class="line">$gray-dark:            #666;</span><br><span class="line">$gray:                 #999;</span><br><span class="line">$gray-light:           #ccc;</span><br><span class="line"></span><br><span class="line">// 文字主色</span><br><span class="line">$main-color:         #808080;</span><br><span class="line"></span><br><span class="line">// 其他颜色</span><br><span class="line">$body-bg:              #f6f6f6;</span><br><span class="line">$mod-bg:              #fcfcfc;  // 有内容模块背景色</span><br><span class="line"></span><br><span class="line">// 常用色</span><br><span class="line">$orange: #f90;</span><br><span class="line">$red: #cb0000;</span><br></pre></td></tr></table></figure></p>
+<h4 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">	margin: (14px/2);</span><br><span class="line">	top: 50px + 100px;</span><br><span class="line">	right: $var * 10%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="嵌套-1"><a href="#嵌套-1" class="headerlink" title="嵌套"></a>嵌套</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    h1 &#123;</span><br><span class="line">        color: red;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译后：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div h1 &#123;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>获取父元素：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">    &amp;:hover &#123; color: #ffb3ff; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用 <code>@at-root</code> 规则：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.zc_about &#123;</span><br><span class="line">    @at-root .zc_about_list &#123;</span><br><span class="line">        background-color:$mod-bg;</span><br><span class="line">        text-align:center;</span><br><span class="line">        overflow:hidden;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>SASS 可以用 <code>@extend</code> 继承一个选择器：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.uc_btn_default,</span><br><span class="line">.uc_btn_orange &#123;</span><br><span class="line">    background-color: $orange;</span><br><span class="line">    color: #fff;</span><br><span class="line">    &amp;:visited &#123;</span><br><span class="line">        @extend .uc_btn_orange;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="进阶用法"><a href="#进阶用法" class="headerlink" title="进阶用法"></a>进阶用法</h3><h4 id="Mixin"><a href="#Mixin" class="headerlink" title="Mixin"></a>Mixin</h4><p>Mixin 用于定义一些公用的部分，定义一个 Mixin:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 两边间隙布局</span><br><span class="line">@mixin layout &#123;</span><br><span class="line">    padding-left:10px;</span><br><span class="line">    padding-right:10px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过 <code>@include</code> 使用：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    @include layout;</span><br><span class="line">    height:1rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Mixin 还可以指定参数：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// icon基本样式</span><br><span class="line">@mixin icon-base($size) &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    width:$size;</span><br><span class="line">    height:$size;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-size: contain;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="颜色处理"><a href="#颜色处理" class="headerlink" title="颜色处理"></a>颜色处理</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lighten(#cc3, 10%) // #d6d65c</span><br><span class="line">darken(#cc3, 10%) // #a3a329</span><br><span class="line">grayscale(#cc3) // #808080</span><br><span class="line">complement(#cc3) // #33c</span><br></pre></td></tr></table></figure>
+<h4 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h4><p>条件判断：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@if lightness($color) &gt; 30% &#123;</span><br><span class="line">    background-color: #000;</span><br><span class="line">&#125; @else &#123;</span><br><span class="line">    background-color: #fff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在 CSS Sprite 中使用循环语句：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@for $i from 1 through 4 &#123;</span><br><span class="line">    .ico#&#123;$i&#125; &#123;</span><br><span class="line">      background-position:-25px*($i - 1) 0;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="function"><a href="#function" class="headerlink" title="function()"></a>function()</h4><p>SASS 还可以编写函数：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@function double($n) &#123;</span><br><span class="line">    @return $n * 2;</span><br><span class="line">&#125;</span><br><span class="line">#sidebar &#123;</span><br><span class="line">    width: double(5px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="SASS-的文件结构"><a href="#SASS-的文件结构" class="headerlink" title="SASS 的文件结构"></a>SASS 的文件结构</h3><p>由于 SASS 的预处理特性，我们可以把模块单独放到一个文件里面，使用文件夹来分类，更加方便管理，以下是一份比较完整的 SASS 文件结构组织：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sass/ </span><br><span class="line">| </span><br><span class="line">|– base/ </span><br><span class="line">|   |– _reset.scss       # Reset/normalize </span><br><span class="line">|   |– _typography.scss  # Typography rules </span><br><span class="line">|   ...                  # Etc… </span><br><span class="line">| </span><br><span class="line">|– components/ </span><br><span class="line">|   |– _buttons.scss     # Buttons </span><br><span class="line">|   |– _carousel.scss    # Carousel </span><br><span class="line">|   |– _cover.scss       # Cover </span><br><span class="line">|   |– _dropdown.scss    # Dropdown </span><br><span class="line">|   |– _navigation.scss  # Navigation </span><br><span class="line">|   ...                  # Etc… </span><br><span class="line">| </span><br><span class="line">|– helpers/ </span><br><span class="line">|   |– _variables.scss   # Sass Variables </span><br><span class="line">|   |– _functions.scss   # Sass Functions </span><br><span class="line">|   |– _mixins.scss      # Sass Mixins </span><br><span class="line">|   |– _helpers.scss     # Class &amp; placeholders helpers </span><br><span class="line">|   ...                  # Etc… </span><br><span class="line">| </span><br><span class="line">|– layout/ </span><br><span class="line">|   |– _grid.scss        # Grid system </span><br><span class="line">|   |– _header.scss      # Header </span><br><span class="line">|   |– _footer.scss      # Footer </span><br><span class="line">|   |– _sidebar.scss     # Sidebar </span><br><span class="line">|   |– _forms.scss       # Forms </span><br><span class="line">|   ...                  # Etc… </span><br><span class="line">| </span><br><span class="line">|– pages/ </span><br><span class="line">|   |– _home.scss        # Home specific styles </span><br><span class="line">|   |– _contact.scss     # Contact specific styles </span><br><span class="line">|   ...                  # Etc… </span><br><span class="line">| </span><br><span class="line">|– themes/ </span><br><span class="line">|   |– _theme.scss       # Default theme </span><br><span class="line">|   |– _admin.scss       # Admin theme </span><br><span class="line">|   ...                  # Etc… </span><br><span class="line">| </span><br><span class="line">|– vendors/ </span><br><span class="line">|   |– _bootstrap.scss   # Bootstrap </span><br><span class="line">|   |– _jquery-ui.scss   # jQuery UI </span><br><span class="line">|   ...                  # Etc… </span><br><span class="line">| </span><br><span class="line">| </span><br><span class="line">`– main.scss             # primary Sass file</span><br></pre></td></tr></table></figure></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/article/">article</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/css/">css</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoomin1106.github.io/2016/06/12/note/css_modules/" data-title="CSS Modules | matt&#39;s blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/06/21/note/git/" title="Git Note">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Git Note</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/05/25/note/angular/"  title="Angular Note">
+ <strong>下一篇：</strong><br/> 
+ <span>Angular Note
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS-模块化"><span class="toc-number">1.</span> <span class="toc-text">CSS 模块化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、文件结构"><span class="toc-number">1.1.</span> <span class="toc-text">一、文件结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常见文件结构"><span class="toc-number">1.1.1.</span> <span class="toc-text">常见文件结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SMACSS"><span class="toc-number">1.1.2.</span> <span class="toc-text">SMACSS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、命名"><span class="toc-number">1.2.</span> <span class="toc-text">二、命名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命名的重要性"><span class="toc-number">1.2.1.</span> <span class="toc-text">命名的重要性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#独一无二的规则"><span class="toc-number">1.2.2.</span> <span class="toc-text">独一无二的规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简短的命名"><span class="toc-number">1.2.3.</span> <span class="toc-text">简短的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浅嵌套"><span class="toc-number">1.2.4.</span> <span class="toc-text">浅嵌套</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目中存在的问题"><span class="toc-number">1.2.5.</span> <span class="toc-text">项目中存在的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BEM"><span class="toc-number">1.2.6.</span> <span class="toc-text">BEM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SUIT"><span class="toc-number">1.2.7.</span> <span class="toc-text">SUIT</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、模块之间的关系"><span class="toc-number">1.3.</span> <span class="toc-text">三、模块之间的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#嵌套"><span class="toc-number">1.3.1.</span> <span class="toc-text">嵌套</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解耦"><span class="toc-number">1.3.2.</span> <span class="toc-text">解耦</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">1.4.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原子类"><span class="toc-number">1.4.1.</span> <span class="toc-text">原子类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、CSS预处理-SASS"><span class="toc-number">1.5.</span> <span class="toc-text">四、CSS预处理 - SASS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本用法"><span class="toc-number">1.5.1.</span> <span class="toc-text">基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#变量"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#计算"><span class="toc-number">1.5.1.2.</span> <span class="toc-text">计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#嵌套-1"><span class="toc-number">1.5.1.3.</span> <span class="toc-text">嵌套</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#继承"><span class="toc-number">1.5.1.4.</span> <span class="toc-text">继承</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进阶用法"><span class="toc-number">1.5.2.</span> <span class="toc-text">进阶用法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Mixin"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">Mixin</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#颜色处理"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">颜色处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#流程控制"><span class="toc-number">1.5.2.3.</span> <span class="toc-text">流程控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#function"><span class="toc-number">1.5.2.4.</span> <span class="toc-text">function()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SASS-的文件结构"><span class="toc-number">1.5.3.</span> <span class="toc-text">SASS 的文件结构</span></a></li></ol></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/article/" title="article">article<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/html-css/" title="html/css">html/css<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/note/" title="note">note<sup>8</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tools/" title="tools">tools<sup>2</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/jquery/" title="jquery">jquery<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/js/" title="js">js<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css/" title="css">css<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/前端工具/" title="前端工具">前端工具<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sass/" title="sass">sass<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css3/" title="css3">css3<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/angular/" title="angular">angular<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/gulp/" title="gulp">gulp<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/调试/" title="调试">调试<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/webview/" title="webview">webview<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/X5/" title="X5">X5<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tools/" title="tools">tools<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.cnblogs.com/yoomin" target="_blank" title="matt&#39;s blog">matt&#39;s blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hi! This is matt. <br/>
+			</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Matt.Wu">Matt.Wu</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
